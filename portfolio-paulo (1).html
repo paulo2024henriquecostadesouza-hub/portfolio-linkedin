@@ -928,46 +928,90 @@ footer p { font-size: 12px; color: var(--muted); }
          PROJETO — Estatística Django
          ══════════════════════════════════════ -->
     <div class="project-card wide featured">
-      <div class="project-thumb">
-        <!-- <img src="imagens/estatistica-django.png" alt="Estatística Django"> -->
-        <div class="thumb-placeholder">
-          <div class="mock-ui" style="width:84%;height:84%;">
-            <div class="mock-topbar">
-              <div class="mock-dot" style="background:var(--accent)"></div>
-              <div class="mock-dot" style="background:var(--purple)"></div>
-              <div style="flex:1;height:3px;background:rgba(255,255,255,.05);border-radius:2px;margin-left:4px;"></div>
-              <div style="font-size:6px;color:rgba(79,255,176,.35);">📋 Estatística Operacional · Django</div>
-            </div>
-            <div class="mock-kpis" style="margin:6px 0;">
-              <div class="mock-kpi"><div class="mock-kpi-n" style="color:var(--accent)">312</div><div class="mock-kpi-l">Colaboradores</div></div>
-              <div class="mock-kpi"><div class="mock-kpi-n" style="color:var(--purple)">8.4%</div><div class="mock-kpi-l">Absenteísmo</div></div>
-              <div class="mock-kpi"><div class="mock-kpi-n" style="color:var(--blue)">94%</div><div class="mock-kpi-l">Produtividade</div></div>
-            </div>
-            <div style="display:flex;gap:4px;align-items:flex-end;flex:1;">
-              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:6px;color:var(--accent);">Jan</div><div style="width:100%;height:38px;background:rgba(79,255,176,.3);border-radius:2px 2px 0 0;"></div></div>
-              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:6px;color:var(--accent);">Fev</div><div style="width:100%;height:32px;background:rgba(79,255,176,.25);border-radius:2px 2px 0 0;"></div></div>
-              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:6px;color:var(--amber);">Mar</div><div style="width:100%;height:44px;background:rgba(251,191,36,.3);border-radius:2px 2px 0 0;"></div></div>
-              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:6px;color:var(--accent);">Abr</div><div style="width:100%;height:50px;background:rgba(79,255,176,.35);border-radius:2px 2px 0 0;"></div></div>
-              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:6px;color:var(--purple);">Mai</div><div style="width:100%;height:28px;background:rgba(167,139,250,.28);border-radius:2px 2px 0 0;"></div></div>
-              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:6px;color:var(--accent);">Jun</div><div style="width:100%;height:42px;background:rgba(79,255,176,.3);border-radius:2px 2px 0 0;"></div></div>
-            </div>
-          </div>
+      <div class="project-thumb" style="flex-direction:column;height:auto;padding:0;gap:0;">
+        <div style="position:relative;width:100%;height:300px;overflow:hidden;background:#07070f;flex-shrink:0;">
+          <img id="eg-img" src="" alt="Sistema Estatística CPLU" style="width:100%;height:100%;object-fit:cover;object-position:top center;transition:opacity .3s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(7,7,15,.95));pointer-events:none;"></div>
+          <p id="eg-cap" style="position:absolute;bottom:12px;left:16px;right:16px;font-size:12px;line-height:1.5;color:rgba(238,234,224,.85);margin:0;"></p>
         </div>
+        <div id="eg-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(79,255,176,.3) transparent;"></div>
       </div>
       <div class="project-body">
         <div class="project-tags">
           <span class="tag p">Python</span>
           <span class="tag p">Django</span>
           <span class="tag g">PostgreSQL</span>
+          <span class="tag b">Supabase</span>
+          <span class="tag b">Render</span>
           <span class="tag">Pandas</span>
           <span class="tag">FPDF2</span>
           <span class="tag">OpenPyXL</span>
         </div>
-        <div class="project-title">Sistema de Estatística Operacional — Django</div>
-        <div class="project-desc">Plataforma web completa em Django para gestão e análise de MDO, absenteísmo e produtividade. Painel administrativo separado por perfil de acesso, geração de relatórios em PDF e exportação para Excel, tudo integrado ao PostgreSQL.</div>
+        <div class="project-title">Sistema de Estatística Operacional — CPLU</div>
+        <div class="project-desc">Plataforma web multi-usuário desenvolvida do zero para o Consórcio Paulista de Limpeza Urbana. Controla a frequência diária de +300 colaboradores distribuídos em 4 regionais, gera documentos PDF (convocações, advertências, suspensões) e registra todas as ações em log de auditoria. Em produção no Render com PostgreSQL via Supabase.</div>
+        <ul style="margin:12px 0 16px;padding-left:0;font-size:13px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
+          <li style="color:rgba(238,234,224,.65);">✦ Controle de acesso por perfil</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Grade de frequência interativa</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Geração de PDF automática</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Importação de Excel (Base RH)</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Log de auditoria completo</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Deploy em produção no Render</li>
+        </ul>
         <a href="https://github.com/paulo2024henriquecostadesouza-hub/estatisticas-cplu" class="project-link">Ver no GitHub <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
+    <script>
+    (function(){
+      var pasta = "Imagens  (Estatistica)/";
+      var imgs = [
+        {src:"equipe do user.png",    cap:"Dashboard Principal — grade de frequência mensal com 10 tipos de ocorrência (Presença, Folga, Férias, Atestado, Suspensão...) editáveis em tempo real"},
+        {src:"login.png",             cap:"Login — acesso com seleção de usuário e senha, controle por perfil: Fiscal, Encarregado, Supervisor e Admin"},
+        {src:"convocação.png",        cap:"Convocação — formulário que gera automaticamente o PDF oficial com datas de folga, trabalho e horário"},
+        {src:"escrita.png",           cap:"Advertência Escrita — aplicação disciplinar com registro completo e download do documento em PDF"},
+        {src:"verbal.png",            cap:"Advertência Verbal — registro rápido da ocorrência com geração automática do documento"},
+        {src:"suspensão.png",         cap:"Suspensão — formulário com período, motivo detalhado e geração de PDF com opção de contar domingos"},
+        {src:"painel usuarios.png",   cap:"Admin › Usuários — gestão completa: cargo, regional e equipes permitidas por perfil de acesso"},
+        {src:"ação de adm.png",       cap:"Admin › Ações — salvar, resetar senha, desativar usuário ou alterar permissões individualmente"},
+        {src:"lista de equipes.png",  cap:"Admin › Equipes — visualização por fiscal com contagem de colaboradores e transferência de equipes"},
+        {src:"base rh.png",           cap:"Admin › Base RH — importação de planilha Excel da empresa para atualização automática dos funcionários"},
+        {src:"histórico de  usuario.png", cap:"Admin › Histórico — log das últimas 500 ações com data/hora, usuário e tipo de operação"},
+        {src:"documentos gerados por usuarios.png", cap:"Admin › Documentos — repositório dos últimos 200 documentos gerados: convocações, advertências e suspensões"}
+      ];
+
+      var mainImg = document.getElementById('eg-img');
+      var capEl   = document.getElementById('eg-cap');
+      var thumbsEl = document.getElementById('eg-thumbs');
+      var current = 0;
+
+      function setActive(i) {
+        current = i;
+        mainImg.style.opacity = '0';
+        setTimeout(function(){
+          mainImg.src = pasta + imgs[i].src;
+          capEl.textContent = imgs[i].cap;
+          mainImg.style.opacity = '1';
+        }, 150);
+        thumbsEl.querySelectorAll('button').forEach(function(b, j){
+          b.style.outline  = j === i ? '2px solid var(--accent)' : '2px solid transparent';
+          b.style.opacity  = j === i ? '1' : '0.45';
+        });
+      }
+
+      imgs.forEach(function(item, i){
+        var btn = document.createElement('button');
+        btn.style.cssText = 'flex-shrink:0;width:80px;height:50px;padding:0;border:none;border-radius:5px;overflow:hidden;cursor:pointer;outline:2px solid transparent;transition:opacity .2s,outline .2s;opacity:0.45;background:#0f0f1b;';
+        var img = document.createElement('img');
+        img.src = pasta + item.src;
+        img.alt = '';
+        img.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top;pointer-events:none;';
+        btn.appendChild(img);
+        btn.addEventListener('click', function(){ setActive(i); });
+        thumbsEl.appendChild(btn);
+      });
+
+      setActive(0);
+    })();
+    </script>
 
     <!-- ══════════════════════════════════════
          ➕ ADICIONAR NOVO PROJETO:
