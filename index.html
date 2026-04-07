@@ -1131,6 +1131,80 @@ footer p { font-size: 12px; color: var(--muted); }
 
          ══════════════════════════════════════ -->
 
+    <!-- ══════════════════════════════════════
+         PROJETO — Consulta Integrada (Buscador Django)
+         ══════════════════════════════════════ -->
+    <div class="project-card wide featured">
+      <span class="featured-badge">⭐ Destaque</span>
+      <div class="project-thumb" style="flex-direction:column;height:auto;padding:0;gap:0;">
+        <div style="position:relative;width:100%;height:300px;overflow:hidden;background:#07070f;flex-shrink:0;">
+          <img id="ct-img" src="" alt="Consulta Integrada CPLU" style="width:100%;height:100%;object-fit:cover;object-position:top center;transition:opacity .3s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(7,7,15,.95));pointer-events:none;"></div>
+          <p id="ct-cap" style="position:absolute;bottom:12px;left:16px;right:16px;font-size:12px;line-height:1.5;color:rgba(238,234,224,.85);margin:0;"></p>
+        </div>
+        <div id="ct-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(79,255,176,.3) transparent;"></div>
+      </div>
+      <div class="project-body">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" style="background:#fff;padding:2px;border-radius:3px;">Django</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">Pandas</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" alt="Selenium">Selenium</div>
+          <div class="tech-pill"><div class="tech-dot" style="background:#3fb450"></div>Leaflet.js</div>
+          <div class="tech-pill"><div class="tech-dot" style="background:#1d6f42"></div>OpenPyXL</div>
+          <div class="tech-pill"><div class="tech-dot" style="background:#38bdf8"></div>SQLite</div>
+        </div>
+        <div class="project-title">Consulta Integrada — Mapa de Ocorrências CPLU</div>
+        <div class="project-desc">Plataforma Django de inteligência operacional para o CCO / CPLU. Agrega e geocodifica 290 mil+ ocorrências de serviços municipais de 5 fontes distintas (SAC 156, Ouvidoria, ACIC, BFS, CNC) em um mapa de calor interativo com MarkerCluster. Permite filtrar por tipo, status, data e endereço, visualizar estatísticas em painel dinâmico e importar novos dados manualmente ou via automação Selenium que faz login e baixa os relatórios automaticamente.</div>
+        <ul style="margin:12px 0 16px;padding-left:0;font-size:13px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
+          <li style="color:rgba(238,234,224,.65);">✦ 290 mil+ ocorrências geocodificadas</li>
+          <li style="color:rgba(238,234,224,.65);">✦ 5 fontes municipais integradas</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Mapa de calor com MarkerCluster</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Importação automática via Selenium</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Exportação Excel com filtros</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Painel de estatísticas dinâmico</li>
+        </ul>
+        <span class="project-link" style="opacity:.4;cursor:default;pointer-events:none;">Projeto interno</span>
+      </div>
+    </div>
+    <script>
+    (function(){
+      var pasta = "Imagens (Consultas)/";
+      var imgs = [
+        {src:"dashboard.jpg",    cap:"Mapa de Calor Interativo — 290 mil ocorrências geocodificadas exibidas em clusters, filtráveis por tipo, status, data e endereço. Fontes: SAC 156, Ouvidoria, ACIC, BFS e CNC"},
+        {src:"estatisticas.jpg", cap:"Painel de Estatísticas — contagem total, concluídos e pendentes com breakdown por fonte, status (Top 15), tipo (Top 10) e regional, atualizado dinamicamente conforme os filtros do mapa"},
+        {src:"importacao.jpg",   cap:"Importação de Dados — upload manual de CSV/Excel ou automação via Selenium que faz login no Selimp e baixa os relatórios das 5 fontes automaticamente, com histórico de importações"}
+      ];
+      var mainImg  = document.getElementById('ct-img');
+      var capEl    = document.getElementById('ct-cap');
+      var thumbsEl = document.getElementById('ct-thumbs');
+      function setActive(i) {
+        mainImg.style.opacity = '0';
+        setTimeout(function(){
+          mainImg.src = pasta + imgs[i].src;
+          capEl.textContent = imgs[i].cap;
+          mainImg.style.opacity = '1';
+        }, 150);
+        thumbsEl.querySelectorAll('button').forEach(function(b, j){
+          b.style.outline = j === i ? '2px solid var(--accent)' : '2px solid transparent';
+          b.style.opacity = j === i ? '1' : '0.45';
+        });
+      }
+      imgs.forEach(function(item, i){
+        var btn = document.createElement('button');
+        btn.style.cssText = 'flex-shrink:0;width:80px;height:50px;padding:0;border:none;border-radius:5px;overflow:hidden;cursor:pointer;outline:2px solid transparent;transition:opacity .2s,outline .2s;opacity:0.45;background:#0f0f1b;';
+        var img = document.createElement('img');
+        img.src = pasta + item.src;
+        img.alt = '';
+        img.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top;pointer-events:none;';
+        btn.appendChild(img);
+        btn.addEventListener('click', function(){ setActive(i); });
+        thumbsEl.appendChild(btn);
+      });
+      setActive(0);
+    })();
+    </script>
+
   </div>
 </section>
 
