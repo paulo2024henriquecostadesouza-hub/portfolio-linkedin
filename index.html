@@ -833,68 +833,74 @@ footer p { font-size: 12px; color: var(--muted); }
          ══════════════════════════════════════ -->
     <div class="project-card wide featured">
       <span class="featured-badge">⭐ Destaque</span>
-      <div class="project-thumb">
-        <div class="thumb-placeholder">
-          <div class="mock-ui" style="width:90%;height:90%;">
-            <div class="mock-topbar" style="margin-bottom:5px;">
-              <div class="mock-dot" style="background:var(--accent)"></div>
-              <div style="flex:1;font-size:6px;color:rgba(79,255,176,.8);margin-left:5px;font-weight:700;">Monitor de Operações · CPLU</div>
-              <div style="font-size:5px;color:rgba(255,255,255,.25);">atualiz. 10s</div>
-            </div>
-            <div style="display:flex;gap:3px;margin-bottom:5px;">
-              <div style="flex:1;background:rgba(255,255,255,.05);border-radius:3px;padding:3px 4px;text-align:center;">
-                <div style="font-size:9px;color:var(--accent);font-weight:700;line-height:1;">75</div>
-                <div style="font-size:4px;color:rgba(255,255,255,.3);margin-top:1px;">Ordens</div>
-              </div>
-              <div style="flex:1;background:rgba(255,255,255,.05);border-radius:3px;padding:3px 4px;text-align:center;">
-                <div style="font-size:9px;color:var(--blue);font-weight:700;line-height:1;">3</div>
-                <div style="font-size:4px;color:rgba(255,255,255,.3);margin-top:1px;">Setores</div>
-              </div>
-              <div style="flex:1;background:rgba(255,255,255,.05);border-radius:3px;padding:3px 4px;text-align:center;">
-                <div style="font-size:9px;color:var(--amber);font-weight:700;line-height:1;">8</div>
-                <div style="font-size:4px;color:rgba(255,255,255,.3);margin-top:1px;">Tipos</div>
-              </div>
-              <div style="flex:1;background:rgba(255,255,255,.05);border-radius:3px;padding:3px 4px;text-align:center;">
-                <div style="font-size:9px;color:var(--purple);font-weight:700;line-height:1;">22</div>
-                <div style="font-size:4px;color:rgba(255,255,255,.3);margin-top:1px;">Veículos</div>
-              </div>
-            </div>
-            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:3px;">
-              <div style="background:rgba(255,255,255,.06);border-radius:3px;padding:3px 4px;border-top:2px solid rgba(79,255,176,.7);">
-                <div style="font-size:4px;color:rgba(255,255,255,.35);">Coleta · Jabaquara</div>
-                <div style="font-size:5px;color:rgba(255,255,255,.65);margin:2px 0;font-weight:600;">JA20402CV0002</div>
-                <div style="height:2px;border-radius:1px;background:rgba(79,255,176,.75);margin-bottom:3px;"></div>
-                <div style="font-size:7px;color:var(--accent);font-weight:700;">100%</div>
-              </div>
-              <div style="background:rgba(255,255,255,.06);border-radius:3px;padding:3px 4px;border-top:2px solid rgba(79,255,176,.7);">
-                <div style="font-size:4px;color:rgba(255,255,255,.35);">Lavagem · C.Ademar</div>
-                <div style="font-size:5px;color:rgba(255,255,255,.65);margin:2px 0;font-weight:600;">AD10402LE0003</div>
-                <div style="height:2px;border-radius:1px;background:rgba(79,255,176,.75);margin-bottom:3px;"></div>
-                <div style="font-size:7px;color:var(--accent);font-weight:700;">100%</div>
-              </div>
-              <div style="background:rgba(255,255,255,.06);border-radius:3px;padding:3px 4px;border-top:2px solid rgba(251,191,36,.7);">
-                <div style="font-size:4px;color:rgba(255,255,255,.35);">Coleta · C.Ademar</div>
-                <div style="font-size:5px;color:rgba(255,255,255,.65);margin:2px 0;font-weight:600;">AD20302CV0001</div>
-                <div style="height:2px;border-radius:1px;background:rgba(251,191,36,.6);margin-bottom:3px;width:87%;"></div>
-                <div style="font-size:7px;color:var(--amber);font-weight:700;">87.5%</div>
-              </div>
-              <div style="background:rgba(255,255,255,.06);border-radius:3px;padding:3px 4px;border-top:2px solid rgba(252,18,12,.6);">
-                <div style="font-size:4px;color:rgba(255,255,255,.35);">Multirão · C.Ademar</div>
-                <div style="font-size:5px;color:rgba(255,255,255,.65);margin:2px 0;font-weight:600;">AD11000NH0015</div>
-                <div style="height:2px;border-radius:1px;background:rgba(252,18,12,.55);margin-bottom:3px;width:70%;"></div>
-                <div style="font-size:7px;color:#FC6060;font-weight:700;">70.0%</div>
-              </div>
-            </div>
-          </div>
+      <div class="project-thumb" style="flex-direction:column;height:auto;padding:0;gap:0;">
+        <div style="position:relative;width:100%;height:300px;overflow:hidden;background:#07070f;flex-shrink:0;">
+          <img id="gm-img" src="" alt="Garbage Monitor CPLU" style="width:100%;height:100%;object-fit:cover;object-position:top center;transition:opacity .3s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(7,7,15,.95));pointer-events:none;"></div>
+          <p id="gm-cap" style="position:absolute;bottom:12px;left:16px;right:16px;font-size:12px;line-height:1.5;color:rgba(238,234,224,.85);margin:0;"></p>
         </div>
+        <div id="gm-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(79,255,176,.3) transparent;"></div>
       </div>
       <div class="project-body">
-        <div class="project-tags"><span class="tag p">Python</span><span class="tag p">Django</span><span class="tag">Pandas</span><span class="tag">Selenium</span><span class="tag b">REST API</span><span class="tag b">AJAX</span><span class="tag a">Plotly</span></div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" style="background:#fff;padding:2px;border-radius:3px;">Django</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">Pandas</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" alt="Selenium">Selenium</div>
+          <div class="tech-pill"><div class="tech-dot" style="background:#636efa"></div>Plotly</div>
+          <div class="tech-pill"><div class="tech-dot" style="background:#38bdf8"></div>REST API</div>
+          <div class="tech-pill"><div class="tech-dot" style="background:#4fffb0"></div>AJAX</div>
+        </div>
         <div class="project-title">Garbage Monitor — Rotas em Tempo Real</div>
         <div class="project-desc">Painel Django de monitoramento operacional desenvolvido para o CCO / CPLU. Consome a API Conforce em tempo real e exibe o percentual de execução de cada rota de coleta nos distritos Cidade Ademar, Ipiranga e Jabaquara. Atualização automática via AJAX a cada 10 segundos, raspagem de percentuais com Selenium rodando em background a cada 2 minutos, gráficos de ranking de motoristas com Plotly e visualização de mapas de rota em modal.</div>
+        <ul style="margin:12px 0 16px;padding-left:0;font-size:13px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
+          <li style="color:rgba(238,234,224,.65);">✦ Atualização AJAX a cada 10 segundos</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Raspagem Selenium a cada 2 minutos</li>
+          <li style="color:rgba(238,234,224,.65);">✦ 3 distritos monitorados em tempo real</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Ranking de motoristas com Plotly</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Modal de mapa por rota</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Exportação de dados em CSV</li>
+        </ul>
         <a href="#" class="project-link">Ver no LinkedIn <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
+    <script>
+    (function(){
+      var pasta = "Imagens (Monitor)/";
+      var imgs = [
+        {src:"dashboard.jpg",  cap:"Dashboard Principal — 75 ordens de serviço monitoradas em tempo real nos distritos Cidade Ademar, Ipiranga e Jabaquara, com cartões coloridos por percentual de execução e atualização automática via AJAX a cada 10 segundos"},
+        {src:"analiticos.jpg", cap:"Analíticos — ranking Top 10 de motoristas por % de execução, com gráficos comparativos por tipo de serviço (Coleta, Lavagem Especial, Varrição, Multirão...) gerados com Plotly.js"},
+        {src:"mapa.jpg",       cap:"Mapa de Acompanhamento — visualização do percurso completo da rota em modal, com pontos de coleta marcados e trajeto registrado pelo veículo em tempo real"}
+      ];
+      var mainImg  = document.getElementById('gm-img');
+      var capEl    = document.getElementById('gm-cap');
+      var thumbsEl = document.getElementById('gm-thumbs');
+      function setActive(i) {
+        mainImg.style.opacity = '0';
+        setTimeout(function(){
+          mainImg.src = pasta + imgs[i].src;
+          capEl.textContent = imgs[i].cap;
+          mainImg.style.opacity = '1';
+        }, 150);
+        thumbsEl.querySelectorAll('button').forEach(function(b, j){
+          b.style.outline = j === i ? '2px solid var(--accent)' : '2px solid transparent';
+          b.style.opacity = j === i ? '1' : '0.45';
+        });
+      }
+      imgs.forEach(function(item, i){
+        var btn = document.createElement('button');
+        btn.style.cssText = 'flex-shrink:0;width:80px;height:50px;padding:0;border:none;border-radius:5px;overflow:hidden;cursor:pointer;outline:2px solid transparent;transition:opacity .2s,outline .2s;opacity:0.45;background:#0f0f1b;';
+        var img = document.createElement('img');
+        img.src = pasta + item.src;
+        img.alt = '';
+        img.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top;pointer-events:none;';
+        btn.appendChild(img);
+        btn.addEventListener('click', function(){ setActive(i); });
+        thumbsEl.appendChild(btn);
+      });
+      setActive(0);
+    })();
+    </script>
 
     <!-- ══════════════════════════════════════
          PROJETO 5 — Gerador de Rotas
