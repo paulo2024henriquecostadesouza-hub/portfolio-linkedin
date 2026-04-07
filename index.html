@@ -826,35 +826,72 @@ footer p { font-size: 12px; color: var(--muted); }
     </div>
 
     <!-- ══════════════════════════════════════
-         PROJETO 4 — Garbage Monitor Flask
+         PROJETO 4 — Garbage Monitor Django
          ══════════════════════════════════════
-         DICA PARA VÍDEO: grave a tela do dashboard
-         em MP4 e use a tag <video> no thumb.
+         Dashboard Django de monitoramento de rotas
+         em tempo real — CCO / CPLU.
          ══════════════════════════════════════ -->
-    <div class="project-card wide">
+    <div class="project-card wide featured">
+      <span class="featured-badge">⭐ Destaque</span>
       <div class="project-thumb">
-        <!-- <video autoplay muted loop playsinline>
-               <source src="videos/garbage-monitor.mp4" type="video/mp4">
-             </video> -->
         <div class="thumb-placeholder">
-          <div class="mock-ui" style="width:84%;height:84%;">
-            <div class="mock-topbar"><div class="mock-dot" style="background:var(--blue)"></div><div style="flex:1;height:3px;background:rgba(255,255,255,.05);border-radius:2px;margin-left:4px;"></div><div style="font-size:6px;color:rgba(56,189,248,.3);">API Conforce · tempo real</div></div>
-            <div style="font-size:7px;color:rgba(56,189,248,.5);margin-bottom:6px;">🚛 Garbage Monitor — Rotas</div>
-            <div style="display:flex;gap:4px;align-items:flex-end;flex:1;">
-              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:6px;color:var(--accent);">98%</div><div style="width:100%;height:50px;background:rgba(79,255,176,.32);border-radius:2px 2px 0 0;"></div></div>
-              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:6px;color:var(--accent);">97%</div><div style="width:100%;height:46px;background:rgba(79,255,176,.28);border-radius:2px 2px 0 0;"></div></div>
-              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:6px;color:var(--amber);">71%</div><div style="width:100%;height:30px;background:rgba(251,191,36,.32);border-radius:2px 2px 0 0;"></div></div>
-              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:6px;color:var(--accent);">96%</div><div style="width:100%;height:44px;background:rgba(79,255,176,.26);border-radius:2px 2px 0 0;"></div></div>
-              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:6px;color:var(--accent);">98%</div><div style="width:100%;height:50px;background:rgba(79,255,176,.3);border-radius:2px 2px 0 0;"></div></div>
-              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:6px;color:var(--blue);">95%</div><div style="width:100%;height:42px;background:rgba(56,189,248,.28);border-radius:2px 2px 0 0;"></div></div>
+          <div class="mock-ui" style="width:90%;height:90%;">
+            <div class="mock-topbar" style="margin-bottom:5px;">
+              <div class="mock-dot" style="background:var(--accent)"></div>
+              <div style="flex:1;font-size:6px;color:rgba(79,255,176,.8);margin-left:5px;font-weight:700;">Monitor de Operações · CPLU</div>
+              <div style="font-size:5px;color:rgba(255,255,255,.25);">atualiz. 10s</div>
+            </div>
+            <div style="display:flex;gap:3px;margin-bottom:5px;">
+              <div style="flex:1;background:rgba(255,255,255,.05);border-radius:3px;padding:3px 4px;text-align:center;">
+                <div style="font-size:9px;color:var(--accent);font-weight:700;line-height:1;">75</div>
+                <div style="font-size:4px;color:rgba(255,255,255,.3);margin-top:1px;">Ordens</div>
+              </div>
+              <div style="flex:1;background:rgba(255,255,255,.05);border-radius:3px;padding:3px 4px;text-align:center;">
+                <div style="font-size:9px;color:var(--blue);font-weight:700;line-height:1;">3</div>
+                <div style="font-size:4px;color:rgba(255,255,255,.3);margin-top:1px;">Setores</div>
+              </div>
+              <div style="flex:1;background:rgba(255,255,255,.05);border-radius:3px;padding:3px 4px;text-align:center;">
+                <div style="font-size:9px;color:var(--amber);font-weight:700;line-height:1;">8</div>
+                <div style="font-size:4px;color:rgba(255,255,255,.3);margin-top:1px;">Tipos</div>
+              </div>
+              <div style="flex:1;background:rgba(255,255,255,.05);border-radius:3px;padding:3px 4px;text-align:center;">
+                <div style="font-size:9px;color:var(--purple);font-weight:700;line-height:1;">22</div>
+                <div style="font-size:4px;color:rgba(255,255,255,.3);margin-top:1px;">Veículos</div>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:3px;">
+              <div style="background:rgba(255,255,255,.06);border-radius:3px;padding:3px 4px;border-top:2px solid rgba(79,255,176,.7);">
+                <div style="font-size:4px;color:rgba(255,255,255,.35);">Coleta · Jabaquara</div>
+                <div style="font-size:5px;color:rgba(255,255,255,.65);margin:2px 0;font-weight:600;">JA20402CV0002</div>
+                <div style="height:2px;border-radius:1px;background:rgba(79,255,176,.75);margin-bottom:3px;"></div>
+                <div style="font-size:7px;color:var(--accent);font-weight:700;">100%</div>
+              </div>
+              <div style="background:rgba(255,255,255,.06);border-radius:3px;padding:3px 4px;border-top:2px solid rgba(79,255,176,.7);">
+                <div style="font-size:4px;color:rgba(255,255,255,.35);">Lavagem · C.Ademar</div>
+                <div style="font-size:5px;color:rgba(255,255,255,.65);margin:2px 0;font-weight:600;">AD10402LE0003</div>
+                <div style="height:2px;border-radius:1px;background:rgba(79,255,176,.75);margin-bottom:3px;"></div>
+                <div style="font-size:7px;color:var(--accent);font-weight:700;">100%</div>
+              </div>
+              <div style="background:rgba(255,255,255,.06);border-radius:3px;padding:3px 4px;border-top:2px solid rgba(251,191,36,.7);">
+                <div style="font-size:4px;color:rgba(255,255,255,.35);">Coleta · C.Ademar</div>
+                <div style="font-size:5px;color:rgba(255,255,255,.65);margin:2px 0;font-weight:600;">AD20302CV0001</div>
+                <div style="height:2px;border-radius:1px;background:rgba(251,191,36,.6);margin-bottom:3px;width:87%;"></div>
+                <div style="font-size:7px;color:var(--amber);font-weight:700;">87.5%</div>
+              </div>
+              <div style="background:rgba(255,255,255,.06);border-radius:3px;padding:3px 4px;border-top:2px solid rgba(252,18,12,.6);">
+                <div style="font-size:4px;color:rgba(255,255,255,.35);">Multirão · C.Ademar</div>
+                <div style="font-size:5px;color:rgba(255,255,255,.65);margin:2px 0;font-weight:600;">AD11000NH0015</div>
+                <div style="height:2px;border-radius:1px;background:rgba(252,18,12,.55);margin-bottom:3px;width:70%;"></div>
+                <div style="font-size:7px;color:#FC6060;font-weight:700;">70.0%</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="project-body">
-        <div class="project-tags"><span class="tag p">Python</span><span class="tag b">Flask</span><span class="tag">Requests</span><span class="tag">REST API</span><span class="tag b">Render</span></div>
+        <div class="project-tags"><span class="tag p">Python</span><span class="tag p">Django</span><span class="tag">Pandas</span><span class="tag">Selenium</span><span class="tag b">REST API</span><span class="tag b">AJAX</span><span class="tag a">Plotly</span></div>
         <div class="project-title">Garbage Monitor — Rotas em Tempo Real</div>
-        <div class="project-desc">Dashboard Flask que consome API Conforce em tempo real. Monitora percentual de execução de rotas por setor com filtros de data, setor e tipo de rota. Scraping com Selenium como fallback.</div>
+        <div class="project-desc">Painel Django de monitoramento operacional desenvolvido para o CCO / CPLU. Consome a API Conforce em tempo real e exibe o percentual de execução de cada rota de coleta nos distritos Cidade Ademar, Ipiranga e Jabaquara. Atualização automática via AJAX a cada 10 segundos, raspagem de percentuais com Selenium rodando em background a cada 2 minutos, gráficos de ranking de motoristas com Plotly e visualização de mapas de rota em modal.</div>
         <a href="#" class="project-link">Ver no LinkedIn <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
