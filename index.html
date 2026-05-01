@@ -1205,6 +1205,92 @@ footer p { font-size: 12px; color: var(--muted); }
     })();
     </script>
 
+    <!-- ══════════════════════════════════════
+         PROJETO — Varrição Manual (Django)
+         ══════════════════════════════════════ -->
+    <div class="project-card wide featured">
+      <span class="featured-badge">⭐ Destaque</span>
+      <div class="project-thumb" style="flex-direction:column;height:auto;padding:0;gap:0;">
+        <div style="position:relative;width:100%;height:300px;overflow:hidden;background:#07070f;flex-shrink:0;">
+          <video id="vr-vid" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;object-position:top center;transition:opacity .3s ease;"></video>
+          <img  id="vr-img" src="" alt="Varrição Manual CPLU" style="display:none;width:100%;height:100%;object-fit:cover;object-position:top center;transition:opacity .3s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(7,7,15,.95));pointer-events:none;"></div>
+          <p id="vr-cap" style="position:absolute;bottom:12px;left:16px;right:16px;font-size:12px;line-height:1.5;color:rgba(238,234,224,.85);margin:0;"></p>
+        </div>
+        <div id="vr-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(79,255,176,.3) transparent;"></div>
+      </div>
+      <div class="project-body">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" style="background:#fff;padding:2px;border-radius:3px;">Django</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" alt="Selenium">Selenium</div>
+          <div class="tech-pill"><div class="tech-dot" style="background:#FF6384"></div>Chart.js</div>
+          <div class="tech-pill"><div class="tech-dot" style="background:#38bdf8"></div>REST API</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite">SQLite</div>
+        </div>
+        <div class="project-title">Varrição Manual — Painel Operacional CPLU</div>
+        <div class="project-desc">Dashboard Django de monitoramento de rotas de varrição manual para o CCO / CPLU. Consome a API Conforce em tempo real, classifica cada rota como Excelente (≥90%), Em andamento ou Crítica com código de cores, e gera gráficos de desempenho por regional, dia da semana e tempo de execução via Chart.js. Permite filtrar por regional e turno, exportar CSV e visualizar o mapa de execução de cada rota em modal capturado via Selenium.</div>
+        <ul style="margin:12px 0 16px;padding-left:0;font-size:13px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
+          <li style="color:rgba(238,234,224,.65);">✦ KPIs: Excelente / Em andamento / Críticas</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Gráficos Chart.js por regional e turno</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Filtros por regional, turno e período</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Modal de mapa via Selenium</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Renovação automática de credenciais</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Exportação de dados em CSV</li>
+        </ul>
+        <a href="https://github.com/paulo2024henriquecostadesouza-hub/varricao-django" target="_blank" class="project-link">Ver no GitHub <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+    <script>
+    (function(){
+      var pasta = "Imagens (Varricao)/";
+      var items = [
+        {type:"video", src:"demo.mp4",   cap:"Demonstração ao vivo — filtros por regional e turno, tabela de rotas com percentual colorido, modal de mapa Selenium e exportação CSV"},
+        {type:"image", src:"visual.jpg", cap:"Dashboard Principal — KPIs em tempo real (Excelente ≥90%, Em andamento, Críticas) com gráficos por regional, dia da semana e tempo de execução via Chart.js"},
+        {type:"image", src:"api.jpg",    cap:"Acesso à API Conforce — integração REST com autenticação por cookie JWT, importação de ordens de serviço e detecção automática de sessão expirada"}
+      ];
+      var vid     = document.getElementById('vr-vid');
+      var img     = document.getElementById('vr-img');
+      var capEl   = document.getElementById('vr-cap');
+      var thumbsEl= document.getElementById('vr-thumbs');
+      function setActive(i) {
+        var item = items[i];
+        capEl.textContent = item.cap;
+        if (item.type === 'video') {
+          img.style.display = 'none';
+          vid.style.display = 'block';
+          if (vid.src.indexOf(item.src) === -1) { vid.src = pasta + item.src; }
+          vid.play();
+        } else {
+          vid.pause();
+          vid.style.display = 'none';
+          img.style.opacity = '0';
+          img.style.display = 'block';
+          setTimeout(function(){ img.src = pasta + item.src; img.style.opacity = '1'; }, 50);
+        }
+        thumbsEl.querySelectorAll('button').forEach(function(b, j){
+          b.style.outline = j === i ? '2px solid var(--accent)' : '2px solid transparent';
+          b.style.opacity = j === i ? '1' : '0.45';
+        });
+      }
+      items.forEach(function(item, i){
+        var btn = document.createElement('button');
+        btn.style.cssText = 'flex-shrink:0;width:80px;height:50px;padding:0;border:none;border-radius:5px;overflow:hidden;cursor:pointer;outline:2px solid transparent;transition:opacity .2s,outline .2s;opacity:0.45;background:#0f0f1b;';
+        if (item.type === 'video') {
+          btn.innerHTML = '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:18px;background:rgba(79,255,176,.08);">&#9654;</div>';
+        } else {
+          var timg = document.createElement('img');
+          timg.src = pasta + item.src;
+          timg.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top;pointer-events:none;';
+          btn.appendChild(timg);
+        }
+        btn.addEventListener('click', function(){ setActive(i); });
+        thumbsEl.appendChild(btn);
+      });
+      setActive(0);
+    })();
+    </script>
+
   </div>
 </section>
 
