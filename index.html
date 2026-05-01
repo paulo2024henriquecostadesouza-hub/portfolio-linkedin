@@ -992,7 +992,112 @@ footer p { font-size: 12px; color: var(--muted); }
     <!-- ══════════════════════════════════════
          PROJETO — Automação SAC 156 / Flip
          ══════════════════════════════════════ -->
-    <div class="project-card wide">
+    
+    <!-- ======================================
+         PROJETO — Gerador de Rotas Django
+         ====================================== -->
+    <div class="project-card wide featured">
+      <div class="project-thumb" style="flex-direction:column;height:auto;padding:0;gap:0;">
+        <div style="position:relative;width:100%;height:300px;overflow:hidden;background:#07070f;flex-shrink:0;">
+          <video id="gr-vid" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;object-position:top center;display:none;"></video>
+          <img id="gr-img" src="" alt="Gerador de Rotas" style="width:100%;height:100%;object-fit:cover;object-position:top center;transition:opacity .3s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(7,7,15,.95));pointer-events:none;"></div>
+          <p id="gr-cap" style="position:absolute;bottom:12px;left:16px;right:16px;font-size:12px;line-height:1.5;color:rgba(238,234,224,.85);margin:0;"></p>
+        </div>
+        <div id="gr-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(79,255,176,.3) transparent;"></div>
+      </div>
+      <div class="project-body">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" style="background:#fff;padding:2px;border-radius:3px;">Django</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.simpleicons.org/leaflet/199900" alt="Leaflet.js" style="width:16px;height:16px;">Leaflet.js</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.simpleicons.org/google/4285F4" alt="OR-Tools" style="width:16px;height:16px;">OR-Tools</div>
+          <div class="tech-pill"><div class="tech-dot" style="background:#38bdf8"></div>geopy</div>
+          <div class="tech-pill"><div class="tech-dot" style="background:#e25050"></div>ReportLab</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite">SQLite</div>
+        </div>
+        <div class="project-title">Gerador de Rotas — Fiscais CPLU</div>
+        <div class="project-desc">Sistema web em Django que recebe uma lista de endereços, geocodifica automaticamente via OpenStreetMap (Nominatim) e aplica otimizacao por menor distancia com OR-Tools (TSP offline). Exibe mapa interativo Leaflet com pontos numerados, links de navegacao para Google Maps e Waze, KPIs de distancia / tempo / combustivel e exportacao em PDF.</div>
+        <ul style="margin:12px 0 16px;padding-left:0;font-size:13px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
+          <li style="color:rgba(238,234,224,.65);">&#10022; Geocodificacao automatica (OpenStreetMap)</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; Otimizacao TSP via OR-Tools (offline)</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; Mapa interativo com Leaflet.js</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; Links Google Maps e Waze por parada</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; KPIs: distancia, tempo, combustivel</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; Exportacao PDF da rota completa</li>
+        </ul>
+        <a href="https://github.com/paulo2024henriquecostadesouza-hub/gerador-rotas-django" target="_blank" class="project-link">Ver no GitHub <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+    <script>
+    (function(){
+      var pastaImg = "Imagens (Gerador Rotas)/";
+      var items = [
+        {type:"video", src:pastaImg+"demo.mp4",        cap:"Demo ao vivo — entrada de enderecos, geocodificacao, otimizacao da rota e visualizacao no mapa"},
+        {type:"img",   src:"mapa.png",                 cap:"Mapa Interativo — rota otimizada com 17 paradas numeradas em Leaflet.js sobre OpenStreetMap"},
+        {type:"img",   src:"lista.png",                cap:"Lista de Paradas — sequencia otimizada com coordenadas, distancia e tempo ate a proxima parada"},
+        {type:"img",   src:"navegacao.png",            cap:"Navegacao — links Google Maps (rota completa) e Waze parada a parada para uso em campo"}
+      ];
+
+      var vid    = document.getElementById('gr-vid');
+      var imgEl  = document.getElementById('gr-img');
+      var capEl  = document.getElementById('gr-cap');
+      var thumbs = document.getElementById('gr-thumbs');
+      var cur    = 0;
+
+      function setActive(i) {
+        cur = i;
+        var item = items[i];
+        if (item.type === 'video') {
+          imgEl.style.opacity = '0';
+          setTimeout(function(){
+            imgEl.style.display = 'none';
+            vid.src = item.src;
+            vid.style.display = 'block';
+            vid.play();
+            capEl.textContent = item.cap;
+          }, 150);
+        } else {
+          vid.pause();
+          vid.style.display = 'none';
+          imgEl.style.opacity = '0';
+          setTimeout(function(){
+            imgEl.src = pastaImg + item.src;
+            capEl.textContent = item.cap;
+            imgEl.style.display = 'block';
+            imgEl.style.opacity = '1';
+          }, 150);
+        }
+        thumbs.querySelectorAll('button').forEach(function(b, j){
+          b.style.outline = j === i ? '2px solid var(--accent)' : '2px solid transparent';
+          b.style.opacity = j === i ? '1' : '0.45';
+        });
+      }
+
+      items.forEach(function(item, i){
+        var btn = document.createElement('button');
+        btn.style.cssText = 'flex-shrink:0;width:80px;height:50px;padding:0;border:none;border-radius:5px;overflow:hidden;cursor:pointer;outline:2px solid transparent;transition:opacity .2s,outline .2s;opacity:0.45;background:#0f0f1b;position:relative;';
+        if (item.type === 'video') {
+          var icon = document.createElement('div');
+          icon.style.cssText = 'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:20px;color:rgba(255,255,255,.7);';
+          icon.textContent = '▶';
+          btn.appendChild(icon);
+        } else {
+          var img = document.createElement('img');
+          img.src = pastaImg + item.src;
+          img.alt = '';
+          img.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top;pointer-events:none;';
+          btn.appendChild(img);
+        }
+        btn.addEventListener('click', function(){ setActive(i); });
+        thumbs.appendChild(btn);
+      });
+
+      setActive(0);
+    })();
+    </script>
+
+<div class="project-card wide">
       <div class="project-thumb">
         <div class="thumb-placeholder">
           <div class="mock-ui" style="width:84%;height:84%;">
