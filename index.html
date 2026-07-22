@@ -705,224 +705,64 @@ footer p { font-size: 12px; color: var(--muted); }
   <div class="projects-grid stagger">
 
     <!-- ══════════════════════════════════════
-         PROJETO 1 — Dashboard CCO (DESTAQUE)
-         ══════════════════════════════════════
-         COMO ADICIONAR SUA IMAGEM:
-         Dentro de <div class="project-thumb">, apague o
-         <div class="thumb-placeholder">...</div>
-         e coloque:
-         <img src="imagens/dashboard-cco.png" alt="Dashboard CCO">
-
-         Para vídeo:
-         <video autoplay muted loop playsinline>
-           <source src="videos/dashboard-cco.mp4" type="video/mp4">
-         </video>
-         ══════════════════════════════════════ -->
-    <div class="project-card wide featured">
-      <span class="featured-badge">⭐ Destaque</span>
-
-      <div class="project-thumb">
-        <!-- ▼▼▼ SUBSTITUA AQUI pela sua imagem ou vídeo ▼▼▼ -->
-        <div class="thumb-placeholder">
-          <div class="mock-ui" style="width:84%;height:84%;">
-            <div class="mock-topbar">
-              <div class="mock-dot" style="background:var(--accent)"></div>
-              <div class="mock-dot" style="background:var(--purple)"></div>
-              <div class="mock-dot" style="background:var(--blue)"></div>
-              <div style="flex:1;height:3px;background:rgba(255,255,255,.05);border-radius:2px;margin-left:6px;"></div>
-              <div style="font-size:6px;color:rgba(255,255,255,.18);">CCO · Acompanhamento Diário</div>
-            </div>
-            <div class="mock-kpis">
-              <div class="mock-kpi"><div class="mock-kpi-n" style="color:var(--accent)">91.06%</div><div class="mock-kpi-l">Cumprimento</div></div>
-              <div class="mock-kpi"><div class="mock-kpi-n" style="color:var(--purple)">0 km</div><div class="mock-kpi-l">Km Rodados</div></div>
-              <div class="mock-kpi"><div class="mock-kpi-n" style="color:var(--blue)">2041 km</div><div class="mock-kpi-l">Percurso</div></div>
-              <div class="mock-kpi"><div class="mock-kpi-n" style="color:var(--amber)">28d</div><div class="mock-kpi-l">Restantes</div></div>
-            </div>
-            <div class="mock-bars">
-              <div class="mock-bar" style="height:45%;background:rgba(79,255,176,.2)"></div>
-              <div class="mock-bar" style="height:75%;background:rgba(79,255,176,.4)"></div>
-              <div class="mock-bar" style="height:55%;background:rgba(79,255,176,.28)"></div>
-              <div class="mock-bar" style="height:90%;background:rgba(79,255,176,.6)"></div>
-              <div class="mock-bar" style="height:60%;background:rgba(79,255,176,.35)"></div>
-              <div class="mock-bar" style="height:100%;background:rgba(79,255,176,.75)"></div>
-              <div class="mock-bar" style="height:42%;background:rgba(79,255,176,.2)"></div>
-              <div class="mock-bar" style="height:78%;background:rgba(79,255,176,.5)"></div>
-            </div>
-            <svg class="mock-line" viewBox="0 0 200 26" height="24"><polyline points="0,22 30,15 60,19 90,8 120,11 150,4 180,7 200,2" fill="none" stroke="var(--purple)" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-        </div>
-        <!-- ▲▲▲ FIM DO PLACEHOLDER ▲▲▲ -->
-      </div>
-
-      <div class="project-body">
-        <div class="project-tags">
-          <span class="tag g">Python</span>
-          <span class="tag g">Pandas</span>
-          <span class="tag g">OpenPyXL</span>
-          <span class="tag g">Matplotlib</span>
-          <span class="tag b">Excel Avançado</span>
-        </div>
-        <div class="project-title">Dashboard Operacional — CCO / CPLU</div>
-        <div class="project-desc">
-          Painel de acompanhamento diário da operação de coleta e varrição. Monitora cumprimento de rotas, quilometragem, produtividade por setor e KPIs em tempo real. Usado pela gestão para tomada de decisão. 641 impressões no LinkedIn.
-        </div>
-        <!-- Troque o href="#" pelo link real do seu post no LinkedIn -->
-        <a href="#" class="project-link">
-          Ver no LinkedIn
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <!-- ══════════════════════════════════════
-         PROJETO 2 — Estatística Streamlit
-         ══════════════════════════════════════ -->
-    <div class="project-card">
-      <div class="project-thumb">
-        <!-- <img src="imagens/estatistica.png" alt="Estatística Operacional"> -->
-        <div class="thumb-placeholder">
-          <div class="mock-ui">
-            <div class="mock-topbar"><div class="mock-dot" style="background:var(--purple)"></div><div style="flex:1;height:3px;background:rgba(255,255,255,.05);border-radius:2px;margin-left:4px;"></div></div>
-            <div style="font-size:7px;color:rgba(167,139,250,.55);margin-bottom:5px;">📊 Estatística Operacional 2026</div>
-            <div class="mock-kpis" style="margin-bottom:5px;"><div class="mock-kpi"><div class="mock-kpi-n" style="color:var(--accent)">47</div><div class="mock-kpi-l">Ativos</div></div><div class="mock-kpi"><div class="mock-kpi-n" style="color:var(--purple)">12</div><div class="mock-kpi-l">Afastados</div></div></div>
-            <div style="display:flex;flex-direction:column;gap:3px;flex:1;">
-              <div style="height:5px;background:rgba(167,139,250,.28);border-radius:2px;width:85%;"></div>
-              <div style="height:5px;background:rgba(167,139,250,.18);border-radius:2px;width:65%;"></div>
-              <div style="height:5px;background:rgba(167,139,250,.13);border-radius:2px;width:90%;"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="project-body">
-        <div class="project-tags"><span class="tag p">Python</span><span class="tag p">Streamlit</span><span class="tag">Pandas</span><span class="tag b">Render</span><span class="tag">FPDF</span></div>
-        <div class="project-title">Sistema de Estatística Operacional</div>
-        <div class="project-desc">App web com Streamlit para análise de MDO, absenteísmo e produtividade. Gera relatórios PDF, controle de acesso por login, rodando em produção no Render.</div>
-        <a href="#" class="project-link">Ver no LinkedIn <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
-    </div>
-
-    <!-- ══════════════════════════════════════
          PROJETO 3 — Django + Supabase
          ══════════════════════════════════════ -->
-    <div class="project-card">
-      <div class="project-thumb">
-        <!-- <img src="imagens/django-sistema.png" alt="Sistema Django"> -->
-        <div class="thumb-placeholder">
-          <div class="mock-ui">
-            <div class="mock-topbar"><div class="mock-dot" style="background:var(--purple)"></div><div class="mock-dot" style="background:var(--blue)"></div><div style="flex:1;height:3px;background:rgba(255,255,255,.05);border-radius:2px;margin-left:4px;"></div></div>
-            <div style="display:flex;gap:5px;flex:1;margin-top:4px;">
-              <div style="width:30%;background:rgba(255,255,255,.03);border-right:1px solid rgba(255,255,255,.05);padding:4px;display:flex;flex-direction:column;gap:3px;"><div style="height:4px;background:rgba(167,139,250,.3);border-radius:2px;"></div><div style="height:4px;background:rgba(255,255,255,.08);border-radius:2px;"></div><div style="height:4px;background:rgba(255,255,255,.08);border-radius:2px;"></div></div>
-              <div style="flex:1;display:flex;flex-direction:column;gap:4px;"><div style="display:flex;gap:3px;"><div style="flex:1;background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.15);border-radius:3px;padding:3px;"><div style="font-size:7px;font-weight:600;color:var(--purple);">247</div><div style="font-size:5px;color:rgba(255,255,255,.2);">Usuários</div></div><div style="flex:1;background:rgba(79,255,176,.06);border:1px solid rgba(79,255,176,.12);border-radius:3px;padding:3px;"><div style="font-size:7px;font-weight:600;color:var(--accent);">1.2k</div><div style="font-size:5px;color:rgba(255,255,255,.2);">Registros</div></div></div><div style="flex:1;background:rgba(255,255,255,.03);border-radius:3px;padding:4px;"><div style="height:4px;background:rgba(167,139,250,.2);border-radius:2px;margin-bottom:3px;width:70%;"></div><div style="height:4px;background:rgba(255,255,255,.08);border-radius:2px;width:90%;"></div></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="project-body">
-        <div class="project-tags"><span class="tag p">Django</span><span class="tag b">Supabase</span><span class="tag g">PostgreSQL</span><span class="tag b">Render</span></div>
-        <div class="project-title">Sistema Web — Django + Supabase</div>
-        <div class="project-desc">Aplicação web completa com autenticação, painel admin e controle de acesso por perfil. Banco PostgreSQL via Supabase, deploy automatizado no Render.</div>
-        <a href="#" class="project-link">Ver projeto <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
-    </div>
+    
 
     <!-- ══════════════════════════════════════
-         PROJETO 4 — Garbage Monitor Flask
+         PROJETO 4 — Garbage Monitor Django
          ══════════════════════════════════════
-         DICA PARA VÍDEO: grave a tela do dashboard
-         em MP4 e use a tag <video> no thumb.
+         Dashboard Django de monitoramento de rotas
+         em tempo real — CCO / CPLU.
          ══════════════════════════════════════ -->
-    <div class="project-card wide">
-      <div class="project-thumb">
-        <!-- <video autoplay muted loop playsinline>
-               <source src="videos/garbage-monitor.mp4" type="video/mp4">
-             </video> -->
-        <div class="thumb-placeholder">
-          <div class="mock-ui" style="width:84%;height:84%;">
-            <div class="mock-topbar"><div class="mock-dot" style="background:var(--blue)"></div><div style="flex:1;height:3px;background:rgba(255,255,255,.05);border-radius:2px;margin-left:4px;"></div><div style="font-size:6px;color:rgba(56,189,248,.3);">API Conforce · tempo real</div></div>
-            <div style="font-size:7px;color:rgba(56,189,248,.5);margin-bottom:6px;">🚛 Garbage Monitor — Rotas</div>
-            <div style="display:flex;gap:4px;align-items:flex-end;flex:1;">
-              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:6px;color:var(--accent);">98%</div><div style="width:100%;height:50px;background:rgba(79,255,176,.32);border-radius:2px 2px 0 0;"></div></div>
-              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:6px;color:var(--accent);">97%</div><div style="width:100%;height:46px;background:rgba(79,255,176,.28);border-radius:2px 2px 0 0;"></div></div>
-              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:6px;color:var(--amber);">71%</div><div style="width:100%;height:30px;background:rgba(251,191,36,.32);border-radius:2px 2px 0 0;"></div></div>
-              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:6px;color:var(--accent);">96%</div><div style="width:100%;height:44px;background:rgba(79,255,176,.26);border-radius:2px 2px 0 0;"></div></div>
-              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:6px;color:var(--accent);">98%</div><div style="width:100%;height:50px;background:rgba(79,255,176,.3);border-radius:2px 2px 0 0;"></div></div>
-              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="font-size:6px;color:var(--blue);">95%</div><div style="width:100%;height:42px;background:rgba(56,189,248,.28);border-radius:2px 2px 0 0;"></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="project-body">
-        <div class="project-tags"><span class="tag p">Python</span><span class="tag b">Flask</span><span class="tag">Requests</span><span class="tag">REST API</span><span class="tag b">Render</span></div>
-        <div class="project-title">Garbage Monitor — Rotas em Tempo Real</div>
-        <div class="project-desc">Dashboard Flask que consome API Conforce em tempo real. Monitora percentual de execução de rotas por setor com filtros de data, setor e tipo de rota. Scraping com Selenium como fallback.</div>
-        <a href="#" class="project-link">Ver no LinkedIn <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
-    </div>
+    
+    <script>
+    (function(){
+      var pasta = "Imagens (Monitor)/";
+      var imgs = [
+        {src:"dashboard.jpg",  cap:"Dashboard Principal — 75 ordens de serviço monitoradas em tempo real nos distritos Cidade Ademar, Ipiranga e Jabaquara, com cartões coloridos por percentual de execução e atualização automática via AJAX a cada 10 segundos"},
+        {src:"analiticos.jpg", cap:"Analíticos — ranking Top 10 de motoristas por % de execução, com gráficos comparativos por tipo de serviço (Coleta, Lavagem Especial, Varrição, Multirão...) gerados com Plotly.js"},
+        {src:"mapa.jpg",       cap:"Mapa de Acompanhamento — visualização do percurso completo da rota em modal, com pontos de coleta marcados e trajeto registrado pelo veículo em tempo real"}
+      ];
+      var mainImg  = document.getElementById('gm-img');
+      var capEl    = document.getElementById('gm-cap');
+      var thumbsEl = document.getElementById('gm-thumbs');
+      function setActive(i) {
+        mainImg.style.opacity = '0';
+        setTimeout(function(){
+          mainImg.src = pasta + imgs[i].src;
+          capEl.textContent = imgs[i].cap;
+          mainImg.style.opacity = '1';
+        }, 150);
+        thumbsEl.querySelectorAll('button').forEach(function(b, j){
+          b.style.outline = j === i ? '2px solid var(--accent)' : '2px solid transparent';
+          b.style.opacity = j === i ? '1' : '0.45';
+        });
+      }
+      imgs.forEach(function(item, i){
+        var btn = document.createElement('button');
+        btn.style.cssText = 'flex-shrink:0;width:80px;height:50px;padding:0;border:none;border-radius:5px;overflow:hidden;cursor:pointer;outline:2px solid transparent;transition:opacity .2s,outline .2s;opacity:0.45;background:#0f0f1b;';
+        var img = document.createElement('img');
+        img.src = pasta + item.src;
+        img.alt = '';
+        img.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top;pointer-events:none;';
+        btn.appendChild(img);
+        btn.addEventListener('click', function(){ setActive(i); });
+        thumbsEl.appendChild(btn);
+      });
+      setActive(0);
+    })();
+    </script>
 
     <!-- ══════════════════════════════════════
          PROJETO 5 — Gerador de Rotas
          ══════════════════════════════════════ -->
-    <div class="project-card">
-      <div class="project-thumb">
-        <!-- <img src="imagens/rotas-fiscais.png" alt="Gerador de Rotas"> -->
-        <div class="thumb-placeholder">
-          <div class="mock-ui">
-            <div class="mock-topbar"><div class="mock-dot" style="background:var(--accent)"></div><div style="flex:1;height:3px;background:rgba(255,255,255,.05);border-radius:2px;margin-left:4px;"></div></div>
-            <div style="font-size:7px;color:rgba(79,255,176,.5);margin-bottom:4px;">🗺️ Gerador de Rotas — Fiscais</div>
-            <div style="flex:1;background:#0c1c16;border-radius:4px;display:flex;align-items:center;justify-content:center;">
-              <svg viewBox="0 0 100 55" width="88%" height="88%">
-                <circle cx="18" cy="42" r="3.5" fill="var(--accent)" opacity=".8"/>
-                <circle cx="40" cy="16" r="3.5" fill="var(--accent)" opacity=".8"/>
-                <circle cx="60" cy="32" r="3.5" fill="var(--accent)" opacity=".8"/>
-                <circle cx="80" cy="12" r="3.5" fill="var(--accent)" opacity=".8"/>
-                <circle cx="68" cy="46" r="3.5" fill="var(--accent)" opacity=".8"/>
-                <polyline points="18,42 40,16 60,32 80,12 68,46" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="2.5,2" opacity=".5"/>
-                <text x="22" y="40" font-size="5" fill="rgba(255,255,255,.35)">1</text>
-                <text x="44" y="14" font-size="5" fill="rgba(255,255,255,.35)">2</text>
-                <text x="64" y="30" font-size="5" fill="rgba(255,255,255,.35)">3</text>
-                <text x="84" y="10" font-size="5" fill="rgba(255,255,255,.35)">4</text>
-                <text x="72" y="44" font-size="5" fill="rgba(255,255,255,.35)">5</text>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="project-body">
-        <div class="project-tags"><span class="tag p">Python</span><span class="tag g">Leaflet.js</span><span class="tag b">Geocodificação</span><span class="tag">TSP</span></div>
-        <div class="project-title">Gerador de Rotas — Fiscais</div>
-        <div class="project-desc">Recebe lista de endereços, geocodifica automaticamente e gera rota otimizada por proximidade. Mapa interativo com pontos numerados e sequência sugerida.</div>
-        <a href="#" class="project-link">Ver projeto <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
-    </div>
+    
 
     <!-- ══════════════════════════════════════
          PROJETO 6 — Banco SQL Server
          ══════════════════════════════════════ -->
-    <div class="project-card">
-      <div class="project-thumb">
-        <!-- <img src="imagens/sql-cplu.png" alt="Banco SQL Server"> -->
-        <div class="thumb-placeholder">
-          <div class="mock-ui">
-            <div class="mock-topbar"><div class="mock-dot" style="background:var(--blue)"></div><div style="flex:1;height:3px;background:rgba(255,255,255,.05);border-radius:2px;margin-left:4px;"></div></div>
-            <div style="font-size:7px;color:rgba(56,189,248,.5);margin-bottom:5px;">🗄️ cplu_db · SQL Server</div>
-            <div style="background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);border-radius:4px;padding:6px;flex:1;display:flex;flex-direction:column;gap:3px;">
-              <div style="font-size:6px;font-family:monospace;color:rgba(167,139,250,.65);">CREATE SCHEMA flip;</div>
-              <div style="font-size:6px;font-family:monospace;color:rgba(56,189,248,.55);">CREATE TABLE flip.sac_156 (</div>
-              <div style="font-size:6px;font-family:monospace;color:rgba(255,255,255,.25);">  id INT PRIMARY KEY,</div>
-              <div style="font-size:6px;font-family:monospace;color:rgba(255,255,255,.25);">  setor VARCHAR(50)</div>
-              <div style="font-size:6px;font-family:monospace;color:rgba(56,189,248,.55);">);</div>
-              <div style="font-size:6px;font-family:monospace;color:rgba(79,255,176,.5);">-- garbage.ordens_servico ✓</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="project-body">
-        <div class="project-tags"><span class="tag b">SQL Server</span><span class="tag b">SSMS</span><span class="tag g">Python</span><span class="tag">ETL</span></div>
-        <div class="project-title">Banco de Dados — cplu_db</div>
-        <div class="project-desc">Modelagem do banco SQL Server com múltiplos schemas (flip, garbage). Integração com APIs externas via Python para ingestão automática de dados operacionais.</div>
-        <a href="#" class="project-link">Ver projeto <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
-    </div>
+    
 
     <!-- ══════════════════════════════════════
          PROJETO — Estatística Django
@@ -1013,10 +853,220 @@ footer p { font-size: 12px; color: var(--muted); }
     })();
     </script>
 
+    
+    <!-- ======================================
+         PROJETO — Consulta de Mapas (Streamlit)
+         ====================================== -->
+    <div class="project-card wide featured">
+      <div class="project-thumb" style="flex-direction:column;height:auto;padding:0;gap:0;">
+        <div style="position:relative;width:100%;height:300px;overflow:hidden;background:#07070f;flex-shrink:0;">
+          <video id="cm-vid" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;object-position:top center;display:none;"></video>
+          <img id="cm-img" src="" alt="Sistema de Consulta de Mapas" style="width:100%;height:100%;object-fit:cover;object-position:top center;transition:opacity .3s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(7,7,15,.95));pointer-events:none;"></div>
+          <p id="cm-cap" style="position:absolute;bottom:12px;left:16px;right:16px;font-size:12px;line-height:1.5;color:rgba(238,234,224,.85);margin:0;"></p>
+        </div>
+        <div id="cm-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(79,255,176,.3) transparent;"></div>
+      </div>
+      <div class="project-body">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.simpleicons.org/streamlit/FF4B4B" alt="Streamlit" style="width:16px;height:16px;">Streamlit</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">Pandas</div>
+          <div class="tech-pill"><div class="tech-dot" style="background:#e25050"></div>PDF</div>
+          <div class="tech-pill"><div class="tech-dot" style="background:#38bdf8"></div>Rede Local</div>
+        </div>
+        <div class="project-title">Sistema de Consulta de Mapas — CPLU</div>
+        <div class="project-desc">App web em Streamlit para consultar mapas PDF de rotas operacionais do Lote IX (Cidade Ademar, Ipiranga, Jabaquara). Lê diretamente a estrutura de pastas da rede interna, filtra por Regional, Tipo de Serviço, Turno e Data de Execução, e exibe cards com os dados de cada rota — com abertura do PDF em um clique.</div>
+        <ul style="margin:12px 0 16px;padding-left:0;font-size:13px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
+          <li style="color:rgba(238,234,224,.65);">&#10022; Filtros: Regional, Servico, Turno, Data</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; Leitura direta de rede local</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; Cards com metadados da rota</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; Abertura de PDF em 1 clique</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; 3 regionais / multiplos servicos</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; Tema CPLU (verde + laranja)</li>
+        </ul>
+        <a href="https://github.com/paulo2024henriquecostadesouza-hub/consulta-mapas" target="_blank" class="project-link">Ver no GitHub <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+    <script>
+    (function(){
+      var pastaImg = "Imagens (Consulta Mapas)/";
+      var videoSrc = pastaImg + "demo.mp4";
+      var items = [
+        {type:"video", src:videoSrc,          cap:"Demo ao vivo — filtragem por Regional, Tipo de Servico, Turno e Data com abertura de PDF em tempo real"},
+        {type:"img",   src:"filtros.png",     cap:"Painel de Filtros — tela inicial com selecao de Regional, Tipo de Servico, Turno e Data de Execucao"},
+        {type:"img",   src:"resultados.png",  cap:"Resultados — cards de rotas encontradas com Setor, Frequencia, Turno, Horario e botao de abertura"},
+        {type:"img",   src:"visualizador.png",cap:"Visualizador PDF — mapa da rota com traado da via e metadados do setor operacional"}
+      ];
+
+      var vid    = document.getElementById('cm-vid');
+      var imgEl  = document.getElementById('cm-img');
+      var capEl  = document.getElementById('cm-cap');
+      var thumbs = document.getElementById('cm-thumbs');
+      var cur    = 0;
+
+      function setActive(i) {
+        cur = i;
+        var item = items[i];
+        if (item.type === 'video') {
+          imgEl.style.opacity = '0';
+          setTimeout(function(){
+            imgEl.style.display = 'none';
+            vid.src = item.src;
+            vid.style.display = 'block';
+            vid.play();
+            capEl.textContent = item.cap;
+          }, 150);
+        } else {
+          vid.pause();
+          vid.style.display = 'none';
+          imgEl.style.opacity = '0';
+          setTimeout(function(){
+            imgEl.src = pastaImg + item.src;
+            capEl.textContent = item.cap;
+            imgEl.style.display = 'block';
+            imgEl.style.opacity = '1';
+          }, 150);
+        }
+        thumbs.querySelectorAll('button').forEach(function(b, j){
+          b.style.outline = j === i ? '2px solid var(--accent)' : '2px solid transparent';
+          b.style.opacity = j === i ? '1' : '0.45';
+        });
+      }
+
+      items.forEach(function(item, i){
+        var btn = document.createElement('button');
+        btn.style.cssText = 'flex-shrink:0;width:80px;height:50px;padding:0;border:none;border-radius:5px;overflow:hidden;cursor:pointer;outline:2px solid transparent;transition:opacity .2s,outline .2s;opacity:0.45;background:#0f0f1b;position:relative;';
+        if (item.type === 'video') {
+          btn.style.background = '#0f0f1b';
+          var icon = document.createElement('div');
+          icon.style.cssText = 'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:20px;color:rgba(255,255,255,.7);';
+          icon.textContent = '▶';
+          btn.appendChild(icon);
+        } else {
+          var img = document.createElement('img');
+          img.src = pastaImg + item.src;
+          img.alt = '';
+          img.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top;pointer-events:none;';
+          btn.appendChild(img);
+        }
+        btn.addEventListener('click', function(){ setActive(i); });
+        thumbs.appendChild(btn);
+      });
+
+      setActive(0);
+    })();
+    </script>
+
     <!-- ══════════════════════════════════════
          PROJETO — Automação SAC 156 / Flip
          ══════════════════════════════════════ -->
-    <div class="project-card wide">
+    
+    <!-- ======================================
+         PROJETO — Gerador de Rotas Django
+         ====================================== -->
+    <div class="project-card wide featured">
+      <div class="project-thumb" style="flex-direction:column;height:auto;padding:0;gap:0;">
+        <div style="position:relative;width:100%;height:300px;overflow:hidden;background:#07070f;flex-shrink:0;">
+          <video id="gr-vid" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;object-position:top center;display:none;"></video>
+          <img id="gr-img" src="" alt="Gerador de Rotas" style="width:100%;height:100%;object-fit:cover;object-position:top center;transition:opacity .3s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(7,7,15,.95));pointer-events:none;"></div>
+          <p id="gr-cap" style="position:absolute;bottom:12px;left:16px;right:16px;font-size:12px;line-height:1.5;color:rgba(238,234,224,.85);margin:0;"></p>
+        </div>
+        <div id="gr-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(79,255,176,.3) transparent;"></div>
+      </div>
+      <div class="project-body">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" style="background:#fff;padding:2px;border-radius:3px;">Django</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.simpleicons.org/leaflet/199900" alt="Leaflet.js" style="width:16px;height:16px;">Leaflet.js</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.simpleicons.org/google/4285F4" alt="OR-Tools" style="width:16px;height:16px;">OR-Tools</div>
+          <div class="tech-pill"><div class="tech-dot" style="background:#38bdf8"></div>geopy</div>
+          <div class="tech-pill"><div class="tech-dot" style="background:#e25050"></div>ReportLab</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite">SQLite</div>
+        </div>
+        <div class="project-title">Gerador de Rotas — Fiscais CPLU</div>
+        <div class="project-desc">Sistema web em Django que recebe uma lista de endereços, geocodifica automaticamente via OpenStreetMap (Nominatim) e aplica otimizacao por menor distancia com OR-Tools (TSP offline). Exibe mapa interativo Leaflet com pontos numerados, links de navegacao para Google Maps e Waze, KPIs de distancia / tempo / combustivel e exportacao em PDF.</div>
+        <ul style="margin:12px 0 16px;padding-left:0;font-size:13px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
+          <li style="color:rgba(238,234,224,.65);">&#10022; Geocodificacao automatica (OpenStreetMap)</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; Otimizacao TSP via OR-Tools (offline)</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; Mapa interativo com Leaflet.js</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; Links Google Maps e Waze por parada</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; KPIs: distancia, tempo, combustivel</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; Exportacao PDF da rota completa</li>
+        </ul>
+        <a href="https://github.com/paulo2024henriquecostadesouza-hub/gerador-rotas-django" target="_blank" class="project-link">Ver no GitHub <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+    <script>
+    (function(){
+      var pastaImg = "Imagens (Gerador Rotas)/";
+      var items = [
+        {type:"video", src:pastaImg+"demo.mp4",        cap:"Demo ao vivo — entrada de enderecos, geocodificacao, otimizacao da rota e visualizacao no mapa"},
+        {type:"img",   src:"mapa.png",                 cap:"Mapa Interativo — rota otimizada com 17 paradas numeradas em Leaflet.js sobre OpenStreetMap"},
+        {type:"img",   src:"lista.png",                cap:"Lista de Paradas — sequencia otimizada com coordenadas, distancia e tempo ate a proxima parada"},
+        {type:"img",   src:"navegacao.png",            cap:"Navegacao — links Google Maps (rota completa) e Waze parada a parada para uso em campo"}
+      ];
+
+      var vid    = document.getElementById('gr-vid');
+      var imgEl  = document.getElementById('gr-img');
+      var capEl  = document.getElementById('gr-cap');
+      var thumbs = document.getElementById('gr-thumbs');
+      var cur    = 0;
+
+      function setActive(i) {
+        cur = i;
+        var item = items[i];
+        if (item.type === 'video') {
+          imgEl.style.opacity = '0';
+          setTimeout(function(){
+            imgEl.style.display = 'none';
+            vid.src = item.src;
+            vid.style.display = 'block';
+            vid.play();
+            capEl.textContent = item.cap;
+          }, 150);
+        } else {
+          vid.pause();
+          vid.style.display = 'none';
+          imgEl.style.opacity = '0';
+          setTimeout(function(){
+            imgEl.src = pastaImg + item.src;
+            capEl.textContent = item.cap;
+            imgEl.style.display = 'block';
+            imgEl.style.opacity = '1';
+          }, 150);
+        }
+        thumbs.querySelectorAll('button').forEach(function(b, j){
+          b.style.outline = j === i ? '2px solid var(--accent)' : '2px solid transparent';
+          b.style.opacity = j === i ? '1' : '0.45';
+        });
+      }
+
+      items.forEach(function(item, i){
+        var btn = document.createElement('button');
+        btn.style.cssText = 'flex-shrink:0;width:80px;height:50px;padding:0;border:none;border-radius:5px;overflow:hidden;cursor:pointer;outline:2px solid transparent;transition:opacity .2s,outline .2s;opacity:0.45;background:#0f0f1b;position:relative;';
+        if (item.type === 'video') {
+          var icon = document.createElement('div');
+          icon.style.cssText = 'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:20px;color:rgba(255,255,255,.7);';
+          icon.textContent = '▶';
+          btn.appendChild(icon);
+        } else {
+          var img = document.createElement('img');
+          img.src = pastaImg + item.src;
+          img.alt = '';
+          img.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top;pointer-events:none;';
+          btn.appendChild(img);
+        }
+        btn.addEventListener('click', function(){ setActive(i); });
+        thumbs.appendChild(btn);
+      });
+
+      setActive(0);
+    })();
+    </script>
+
+<div class="project-card wide">
       <div class="project-thumb">
         <div class="thumb-placeholder">
           <div class="mock-ui" style="width:84%;height:84%;">
@@ -1068,25 +1118,169 @@ footer p { font-size: 12px; color: var(--muted); }
          preencha com seus dados.
          ══════════════════════════════════════
 
-    <div class="project-card">
-      <div class="project-thumb">
-        <img src="imagens/nome-da-imagem.png" alt="Nome do Projeto">
-      </div>
-      <div class="project-body">
-        <div class="project-tags">
-          <span class="tag g">Python</span>
-          <span class="tag b">Streamlit</span>
-        </div>
-        <div class="project-title">Nome do Projeto</div>
-        <div class="project-desc">Descrição do projeto aqui.</div>
-        <a href="URL_DO_PROJETO" class="project-link">
-          Ver projeto
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-    </div>
+    
 
          ══════════════════════════════════════ -->
+
+    <!-- ══════════════════════════════════════
+         PROJETO — Consulta Integrada (Buscador Django)
+         ══════════════════════════════════════ -->
+    <div class="project-card wide featured">
+      <span class="featured-badge">⭐ Destaque</span>
+      <div class="project-thumb" style="flex-direction:column;height:auto;padding:0;gap:0;">
+        <div style="position:relative;width:100%;height:300px;overflow:hidden;background:#07070f;flex-shrink:0;">
+          <img id="ct-img" src="" alt="Consulta Integrada CPLU" style="width:100%;height:100%;object-fit:cover;object-position:top center;transition:opacity .3s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(7,7,15,.95));pointer-events:none;"></div>
+          <p id="ct-cap" style="position:absolute;bottom:12px;left:16px;right:16px;font-size:12px;line-height:1.5;color:rgba(238,234,224,.85);margin:0;"></p>
+        </div>
+        <div id="ct-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(79,255,176,.3) transparent;"></div>
+      </div>
+      <div class="project-body">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" style="background:#fff;padding:2px;border-radius:3px;">Django</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">Pandas</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" alt="Selenium">Selenium</div>
+          <div class="tech-pill"><div class="tech-dot" style="background:#3fb450"></div>Leaflet.js</div>
+          <div class="tech-pill"><div class="tech-dot" style="background:#1d6f42"></div>OpenPyXL</div>
+          <div class="tech-pill"><div class="tech-dot" style="background:#38bdf8"></div>SQLite</div>
+        </div>
+        <div class="project-title">Consulta Integrada — Mapa de Ocorrências CPLU</div>
+        <div class="project-desc">Plataforma Django de inteligência operacional para o CCO / CPLU. Agrega e geocodifica 290 mil+ ocorrências de serviços municipais de 5 fontes distintas (SAC 156, Ouvidoria, ACIC, BFS, CNC) em um mapa de calor interativo com MarkerCluster. Permite filtrar por tipo, status, data e endereço, visualizar estatísticas em painel dinâmico e importar novos dados manualmente ou via automação Selenium que faz login e baixa os relatórios automaticamente.</div>
+        <ul style="margin:12px 0 16px;padding-left:0;font-size:13px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
+          <li style="color:rgba(238,234,224,.65);">✦ 290 mil+ ocorrências geocodificadas</li>
+          <li style="color:rgba(238,234,224,.65);">✦ 5 fontes municipais integradas</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Mapa de calor com MarkerCluster</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Importação automática via Selenium</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Exportação Excel com filtros</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Painel de estatísticas dinâmico</li>
+        </ul>
+        <span class="project-link" style="opacity:.4;cursor:default;pointer-events:none;">Projeto interno</span>
+      </div>
+    </div>
+    <script>
+    (function(){
+      var pasta = "Imagens (Consultas)/";
+      var imgs = [
+        {src:"dashboard.jpg",    cap:"Mapa de Calor Interativo — 290 mil ocorrências geocodificadas exibidas em clusters, filtráveis por tipo, status, data e endereço. Fontes: SAC 156, Ouvidoria, ACIC, BFS e CNC"},
+        {src:"estatisticas.jpg", cap:"Painel de Estatísticas — contagem total, concluídos e pendentes com breakdown por fonte, status (Top 15), tipo (Top 10) e regional, atualizado dinamicamente conforme os filtros do mapa"},
+        {src:"importacao.jpg",   cap:"Importação de Dados — upload manual de CSV/Excel ou automação via Selenium que faz login no Selimp e baixa os relatórios das 5 fontes automaticamente, com histórico de importações"}
+      ];
+      var mainImg  = document.getElementById('ct-img');
+      var capEl    = document.getElementById('ct-cap');
+      var thumbsEl = document.getElementById('ct-thumbs');
+      function setActive(i) {
+        mainImg.style.opacity = '0';
+        setTimeout(function(){
+          mainImg.src = pasta + imgs[i].src;
+          capEl.textContent = imgs[i].cap;
+          mainImg.style.opacity = '1';
+        }, 150);
+        thumbsEl.querySelectorAll('button').forEach(function(b, j){
+          b.style.outline = j === i ? '2px solid var(--accent)' : '2px solid transparent';
+          b.style.opacity = j === i ? '1' : '0.45';
+        });
+      }
+      imgs.forEach(function(item, i){
+        var btn = document.createElement('button');
+        btn.style.cssText = 'flex-shrink:0;width:80px;height:50px;padding:0;border:none;border-radius:5px;overflow:hidden;cursor:pointer;outline:2px solid transparent;transition:opacity .2s,outline .2s;opacity:0.45;background:#0f0f1b;';
+        var img = document.createElement('img');
+        img.src = pasta + item.src;
+        img.alt = '';
+        img.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top;pointer-events:none;';
+        btn.appendChild(img);
+        btn.addEventListener('click', function(){ setActive(i); });
+        thumbsEl.appendChild(btn);
+      });
+      setActive(0);
+    })();
+    </script>
+
+    <!-- ══════════════════════════════════════
+         PROJETO — Varrição Manual (Django)
+         ══════════════════════════════════════ -->
+    <div class="project-card wide featured">
+      <span class="featured-badge">⭐ Destaque</span>
+      <div class="project-thumb" style="flex-direction:column;height:auto;padding:0;gap:0;">
+        <div style="position:relative;width:100%;height:300px;overflow:hidden;background:#07070f;flex-shrink:0;">
+          <video id="vr-vid" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;object-position:top center;transition:opacity .3s ease;"></video>
+          <img  id="vr-img" src="" alt="Varrição Manual CPLU" style="display:none;width:100%;height:100%;object-fit:cover;object-position:top center;transition:opacity .3s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(7,7,15,.95));pointer-events:none;"></div>
+          <p id="vr-cap" style="position:absolute;bottom:12px;left:16px;right:16px;font-size:12px;line-height:1.5;color:rgba(238,234,224,.85);margin:0;"></p>
+        </div>
+        <div id="vr-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(79,255,176,.3) transparent;"></div>
+      </div>
+      <div class="project-body">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" style="background:#fff;padding:2px;border-radius:3px;">Django</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" alt="Selenium">Selenium</div>
+          <div class="tech-pill"><div class="tech-dot" style="background:#FF6384"></div>Chart.js</div>
+          <div class="tech-pill"><div class="tech-dot" style="background:#38bdf8"></div>REST API</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite">SQLite</div>
+        </div>
+        <div class="project-title">Varrição Manual — Painel Operacional CPLU</div>
+        <div class="project-desc">Dashboard Django de monitoramento de rotas de varrição manual para o CCO / CPLU. Consome a API Conforce em tempo real, classifica cada rota como Excelente (≥90%), Em andamento ou Crítica com código de cores, e gera gráficos de desempenho por regional, dia da semana e tempo de execução via Chart.js. Permite filtrar por regional e turno, exportar CSV e visualizar o mapa de execução de cada rota em modal capturado via Selenium.</div>
+        <ul style="margin:12px 0 16px;padding-left:0;font-size:13px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
+          <li style="color:rgba(238,234,224,.65);">✦ KPIs: Excelente / Em andamento / Críticas</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Gráficos Chart.js por regional e turno</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Filtros por regional, turno e período</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Modal de mapa via Selenium</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Renovação automática de credenciais</li>
+          <li style="color:rgba(238,234,224,.65);">✦ Exportação de dados em CSV</li>
+        </ul>
+        <a href="https://github.com/paulo2024henriquecostadesouza-hub/varricao-django" target="_blank" class="project-link">Ver no GitHub <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+    <script>
+    (function(){
+      var pasta = "Imagens (Varricao)/";
+      var items = [
+        {type:"video", src:"demo.mp4",   cap:"Demonstração ao vivo — filtros por regional e turno, tabela de rotas com percentual colorido, modal de mapa Selenium e exportação CSV"},
+        {type:"image", src:"visual.jpg", cap:"Dashboard Principal — KPIs em tempo real (Excelente ≥90%, Em andamento, Críticas) com gráficos por regional, dia da semana e tempo de execução via Chart.js"},
+        {type:"image", src:"api.jpg",    cap:"Acesso à API Conforce — integração REST com autenticação por cookie JWT, importação de ordens de serviço e detecção automática de sessão expirada"}
+      ];
+      var vid     = document.getElementById('vr-vid');
+      var img     = document.getElementById('vr-img');
+      var capEl   = document.getElementById('vr-cap');
+      var thumbsEl= document.getElementById('vr-thumbs');
+      function setActive(i) {
+        var item = items[i];
+        capEl.textContent = item.cap;
+        if (item.type === 'video') {
+          img.style.display = 'none';
+          vid.style.display = 'block';
+          if (vid.src.indexOf(item.src) === -1) { vid.src = pasta + item.src; }
+          vid.play();
+        } else {
+          vid.pause();
+          vid.style.display = 'none';
+          img.style.opacity = '0';
+          img.style.display = 'block';
+          setTimeout(function(){ img.src = pasta + item.src; img.style.opacity = '1'; }, 50);
+        }
+        thumbsEl.querySelectorAll('button').forEach(function(b, j){
+          b.style.outline = j === i ? '2px solid var(--accent)' : '2px solid transparent';
+          b.style.opacity = j === i ? '1' : '0.45';
+        });
+      }
+      items.forEach(function(item, i){
+        var btn = document.createElement('button');
+        btn.style.cssText = 'flex-shrink:0;width:80px;height:50px;padding:0;border:none;border-radius:5px;overflow:hidden;cursor:pointer;outline:2px solid transparent;transition:opacity .2s,outline .2s;opacity:0.45;background:#0f0f1b;';
+        if (item.type === 'video') {
+          btn.innerHTML = '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:18px;background:rgba(79,255,176,.08);">&#9654;</div>';
+        } else {
+          var timg = document.createElement('img');
+          timg.src = pasta + item.src;
+          timg.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top;pointer-events:none;';
+          btn.appendChild(timg);
+        }
+        btn.addEventListener('click', function(){ setActive(i); });
+        thumbsEl.appendChild(btn);
+      });
+      setActive(0);
+    })();
+    </script>
 
   </div>
 </section>
@@ -1228,16 +1422,16 @@ footer p { font-size: 12px; color: var(--muted); }
             Selenium
           </div>
           <div class="tech-pill">
-            <div class="tech-dot" style="background:#0078d4"></div>
+            <img class="tech-logo" src="https://cdn.simpleicons.org/powerautomate/0078d4" alt="Power Automate">
             Power Automate
           </div>
           <div class="tech-pill">
-            <div class="tech-dot" style="background:#4fffb0"></div>
-            Web Scraping
+            <img class="tech-logo" src="https://cdn.simpleicons.org/postman/FF6C37" alt="REST APIs">
+            REST APIs
           </div>
           <div class="tech-pill">
-            <div class="tech-dot" style="background:#38bdf8"></div>
-            REST APIs
+            <img class="tech-logo" src="https://cdn.simpleicons.org/puppeteer/40B5A4" alt="Web Scraping">
+            Web Scraping
           </div>
         </div>
       </div>
@@ -1247,47 +1441,47 @@ footer p { font-size: 12px; color: var(--muted); }
         <span class="stack-label">IA &amp; Assistentes</span>
         <div class="stack-pills stagger">
           <div class="tech-pill">
-            <div class="tech-dot" style="background:#d97757"></div>
+            <img class="tech-logo" src="https://cdn.simpleicons.org/anthropic/D97757" alt="Claude">
             Claude
           </div>
           <div class="tech-pill">
-            <div class="tech-dot" style="background:#d97757"></div>
+            <img class="tech-logo" src="https://cdn.simpleicons.org/anthropic/D97757" alt="Claude Code">
             Claude Code
           </div>
           <div class="tech-pill">
-            <div class="tech-dot" style="background:#74aa9c"></div>
+            <img class="tech-logo" src="https://cdn.simpleicons.org/chatgpt/10a37f" alt="ChatGPT" style="background:#1a1a2e;padding:2px;border-radius:3px;">
             ChatGPT
           </div>
           <div class="tech-pill">
-            <div class="tech-dot" style="background:#0078d4"></div>
+            <img class="tech-logo" src="https://cdn.simpleicons.org/githubcopilot/ffffff" alt="Copilot" style="background:#1a1a2e;padding:2px;border-radius:3px;">
             Copilot
           </div>
           <div class="tech-pill">
-            <div class="tech-dot" style="background:#1a73e8"></div>
+            <img class="tech-logo" src="https://cdn.simpleicons.org/googlegemini/4285F4" alt="Gemini">
             Gemini
           </div>
           <div class="tech-pill">
-            <div class="tech-dot" style="background:#1a73e8"></div>
+            <img class="tech-logo" src="https://cdn.simpleicons.org/google/4285F4" alt="NotebookLM">
             NotebookLM
           </div>
           <div class="tech-pill">
-            <div class="tech-dot" style="background:#00c2ff"></div>
+            <img class="tech-logo" src="https://cdn.simpleicons.org/x/ffffff" alt="Grok" style="background:#000;padding:2px;border-radius:3px;">
             Grok
           </div>
           <div class="tech-pill">
-            <div class="tech-dot" style="background:#4d6bfe"></div>
+            <img class="tech-logo" src="https://cdn.simpleicons.org/deepseek/4D6BFE" alt="DeepSeek">
             DeepSeek
           </div>
           <div class="tech-pill">
-            <div class="tech-dot" style="background:#20b2aa"></div>
+            <img class="tech-logo" src="https://cdn.simpleicons.org/perplexity/20B2AA" alt="Perplexity">
             Perplexity
           </div>
           <div class="tech-pill">
-            <div class="tech-dot" style="background:#ff6b35"></div>
+            <div class="tech-dot" style="background:#FF6B35"></div>
             Gamma
           </div>
           <div class="tech-pill">
-            <div class="tech-dot" style="background:#a855f7"></div>
+            <img class="tech-logo" src="https://cdn.simpleicons.org/google/4285F4" alt="VEO 3">
             VEO 3
           </div>
         </div>
@@ -1360,8 +1554,7 @@ footer p { font-size: 12px; color: var(--muted); }
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
       LinkedIn
     </a>
-    <!-- Troque paulo@email.com pelo seu e-mail real -->
-    <a href="mailto:paulo@email.com" class="contact-link">
+    <a href="mailto:paulo2024henriquecostadesouza@gmail.com" class="contact-link">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       E-mail
     </a>
