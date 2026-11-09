@@ -712,6 +712,120 @@ footer p { font-size: 12px; color: var(--muted); }
   <div class="projects-grid stagger">
 
     <!-- ══════════════════════════════════════
+         PROJETO — Painel FLIP · Acompanhamento do Contrato
+         ══════════════════════════════════════ -->
+    <div class="project-card wide featured">
+      <div class="project-thumb" style="flex-direction:column;height:auto;padding:0;gap:0;">
+        <div style="position:relative;width:100%;height:300px;overflow:hidden;background:#07070f;flex-shrink:0;">
+          <video id="flip-vid" autoplay muted loop playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:none;"></video>
+          <img id="flip-img" src="" alt="Painel FLIP — Acompanhamento do Contrato" style="width:100%;height:100%;object-fit:cover;object-position:top center;transition:opacity .3s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(7,7,15,.95));pointer-events:none;"></div>
+          <p id="flip-cap" style="position:absolute;bottom:12px;left:16px;right:16px;font-size:12px;line-height:1.5;color:rgba(238,234,224,.85);margin:0;"></p>
+        </div>
+        <div id="flip-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(79,255,176,.3) transparent;"></div>
+      </div>
+      <div class="project-body">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" style="background:#fff;padding:2px;border-radius:3px;">Django 5.2</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">PostgreSQL</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.simpleicons.org/supabase/3FCF8E" alt="Supabase" style="width:16px;height:16px;">Supabase</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">Bootstrap 5</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.simpleicons.org/chartdotjs/FF6384" alt="Chart.js" style="width:16px;height:16px;">Chart.js</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.simpleicons.org/leaflet/199900" alt="Leaflet" style="width:16px;height:16px;">Leaflet</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="pandas" style="background:#fff;padding:2px;border-radius:3px;">pandas</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.simpleicons.org/render/8A5CF6" alt="Render" style="width:16px;height:16px;">Render</div>
+        </div>
+        <div class="project-title">Painel FLIP · Acompanhamento do Contrato — CPLU</div>
+        <div class="project-desc">Painel web que acompanha, em tempo real, o contrato de limpeza urbana do Lote 9 (regionais Ipiranga, Jabaquara e Cidade Ademar). A cada minuto ele sincroniza sozinho com o sistema FLIP da Prefeitura de SP (API → JSON → banco) e consolida tudo numa base única: chamados do SAC 156, Ouvidoria, fiscalizações (BFS/CNC) e multas (ACIC) — hoje mais de 96 mil registros. Em cima dessa base, calcula os indicadores de desempenho do contrato (IRD, IA, IF e IPT, o ADC) com a memória de cálculo aberta, mostra KPIs com tendência de 30 dias, um mapa territorial por camadas, os chamados mais atrasados e um Modo TV para o telão da sala de operações. Hospedado na nuvem (Render + Supabase), com acesso por login e perfis — porque a base contém dados pessoais de munícipes.</div>
+        <ul style="margin:12px 0 16px;padding-left:0;font-size:13px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
+          <li style="color:rgba(238,234,224,.65);">&#10022; Sincronização automática com o FLIP a cada 60s</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; Indicadores ADC (IRD, IA, IF, IPT) com memória de cálculo</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; Visão geral com KPIs e tendência de 30 dias</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; Filtros por período, regional e serviço</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; Ao vivo: filas de SAC, Ouvidoria, CNC e ACIC por status</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; Mapa territorial (Leaflet) com camadas e agrupamento</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; Modo TV para o telão da sala de operações</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; Base única com +96 mil registros consolidados</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; Deploy em nuvem: Render + Supabase (PostgreSQL)</li>
+          <li style="color:rgba(238,234,224,.65);">&#10022; Acesso por login e perfis (admin / consulta)</li>
+        </ul>
+        <span class="project-link" style="opacity:.4;cursor:default;pointer-events:none;">Projeto privado</span>
+      </div>
+    </div>
+    <script>
+    (function(){
+      var pastaImg = "Imagens (FLIP)/";
+      var items = [
+        {type:"video", src:pastaImg+"demo.mp4",  cap:"Demo — visão geral, indicadores ADC, ao vivo, mapa, Modo TV e a sincronização automática"},
+        {type:"img",   src:"geral.jpg",          cap:"Visão geral — atendimento, fiscalização e multas com tendência de 30 dias"},
+        {type:"img",   src:"indicadores.jpg",    cap:"Indicadores ADC — IRD, IA, IF e IPT calculados da nossa base, com memória de cálculo aberta"},
+        {type:"img",   src:"aovivo.jpg",         cap:"Ao vivo — filas de SAC, Ouvidoria, CNC e ACIC por status; chamados mais atrasados e mudanças de status"},
+        {type:"img",   src:"tv.jpg",             cap:"Modo TV — telão da sala de operações, recarrega sozinho a cada minuto"},
+        {type:"img",   src:"mapa.jpg",           cap:"Mapa — chamados, não conformidades e multas por território, com camadas e agrupamento"},
+        {type:"img",   src:"importacoes.jpg",    cap:"Dados e sincronização — carga automática via API do FLIP (API → JSON → banco) a cada 60s"},
+        {type:"img",   src:"entrada.jpg",        cap:"Acesso restrito por login — os dados pessoais de munícipes ficam protegidos (uso interno)"}
+      ];
+
+      var vid    = document.getElementById('flip-vid');
+      var imgEl  = document.getElementById('flip-img');
+      var capEl  = document.getElementById('flip-cap');
+      var thumbs = document.getElementById('flip-thumbs');
+
+      function setActive(i) {
+        var item = items[i];
+        if (item.type === 'video') {
+          imgEl.style.opacity = '0';
+          setTimeout(function(){
+            imgEl.style.display = 'none';
+            vid.src = item.src;
+            vid.style.display = 'block';
+            vid.play();
+            capEl.textContent = item.cap;
+          }, 150);
+        } else {
+          vid.pause();
+          vid.style.display = 'none';
+          imgEl.style.opacity = '0';
+          setTimeout(function(){
+            imgEl.src = pastaImg + item.src;
+            capEl.textContent = item.cap;
+            imgEl.style.display = 'block';
+            imgEl.style.opacity = '1';
+          }, 150);
+        }
+        thumbs.querySelectorAll('button').forEach(function(b, j){
+          b.style.outline = j === i ? '2px solid var(--accent)' : '2px solid transparent';
+          b.style.opacity = j === i ? '1' : '0.45';
+        });
+      }
+
+      items.forEach(function(item, i){
+        var btn = document.createElement('button');
+        btn.setAttribute('aria-label', item.cap.split(' — ')[0]);
+        btn.style.cssText = 'flex-shrink:0;width:80px;height:50px;padding:0;border:none;border-radius:5px;overflow:hidden;cursor:pointer;outline:2px solid transparent;transition:opacity .2s,outline .2s;opacity:0.45;background:#0f0f1b;position:relative;';
+        if (item.type === 'video') {
+          var icon = document.createElement('div');
+          icon.style.cssText = 'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:20px;color:rgba(255,255,255,.7);';
+          icon.textContent = '▶';
+          btn.appendChild(icon);
+        } else {
+          var img = document.createElement('img');
+          img.src = pastaImg + item.src;
+          img.alt = '';
+          img.loading = 'lazy';
+          img.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top;pointer-events:none;';
+          btn.appendChild(img);
+        }
+        btn.addEventListener('click', function(){ setActive(i); });
+        thumbs.appendChild(btn);
+      });
+
+      setActive(0);
+    })();
+    </script>
+
+    <!-- ══════════════════════════════════════
          PROJETO — GME · Gestão de Materiais e Estoque
          ══════════════════════════════════════ -->
     <div class="project-card wide featured">
