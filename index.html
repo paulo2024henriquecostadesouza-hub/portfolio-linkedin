@@ -11,775 +11,636 @@
 <meta property="og:url" content="https://paulo2024henriquecostadesouza-hub.github.io/portfolio-linkedin/">
 <meta property="og:image" content="https://paulo2024henriquecostadesouza-hub.github.io/portfolio-linkedin/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
 <style>
+/* ═══════════════════════════════════════════════════════════════════
+   PORTFÓLIO — visual "Liquid Glass" (paleta verde sálvia)
+   Cores e tempos de animação ficam todos no :root abaixo.
+═══════════════════════════════════════════════════════════════════ */
+:root{
+  --verde:#7B9669;     /* sálvia — cor de destaque */
+  --verde-2:#BAC8B1;   /* sálvia claro */
+  --verde-3:#404E3B;   /* verde floresta — títulos e destaques escuros */
+  --cinza:#E6E6E6;     /* cinza claro — fundo */
+  --ardosia:#6C8480;   /* verde acinzentado */
+  --tinta:#2f3a2b;     /* texto principal */
+  --tinta-2:rgba(47,58,43,.72);
+  --vidro:rgba(255,255,255,.36);
+  --vidro-borda:rgba(255,255,255,.62);
+  --sombra:0 14px 40px rgba(40,52,36,.18);
+  --ease-spring:cubic-bezier(.34,1.56,.64,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --side-w:240px;
+  --side-w-min:78px;
 
-/* ============================================================
-   VARIÁVEIS GLOBAIS — edite as cores aqui se quiser mudar o tema
-   ============================================================ */
-:root {
-  /* paleta inspirada no Dixor: preto + verde-limão neon */
-  --bg:       #0e0f11;
-  --bg2:      #131416;
-  --bg3:      #18191b;
-  --card:     #18191b;
-  --border:   rgba(255,255,255,0.08);
-  --border-h: rgba(255,255,255,0.18);
-  --text:     #f5f5f3;
-  --muted:    #8a8c90;
-  --accent:   #C9F31D;   /* verde-limão — cor principal */
-  --accent-2: #add40c;   /* hover / gradiente */
-  --accent-grad: linear-gradient(45deg, var(--accent-2) 0%, var(--accent) 50%);
-  --ease-elastic: cubic-bezier(0.75, -1.27, 0.3, 2.33);
-  --ease-out: cubic-bezier(0.65, 0, 0.076, 1);
-  --purple:   #a78bfa;
-  --blue:     #38bdf8;
-  --amber:    #fbbf24;
+  /* apelidos usados em estilos inline dos cards de projeto */
+  --accent:var(--verde);
+  --text:var(--tinta);
+  --muted:var(--tinta-2);
+  --border:rgba(255,255,255,.55);
+  --border-h:rgba(255,255,255,.85);
+  --card:rgba(255,255,255,.36);
+  --bg:#BAC8B1;
+  --bg2:#E6E6E6;
+  --bg3:#1f261c;
+  --purple:#6C8480;
+  --blue:#2b7fb8;
+  --amber:#d9902b;
 }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter','Segoe UI',system-ui,sans-serif;
+  color:var(--tinta);
+  background:#BAC8B1;
+  font-size:15px;
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--verde);color:#fff}
+a{color:inherit}
+.serif{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;letter-spacing:.2px}
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+/* ── Fundo: gradiente + manchas desfocadas que derivam ─────────────── */
+.bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;
+  background:linear-gradient(135deg,#eeeeee 0%,#E6E6E6 30%,#BAC8B1 62%,#7B9669 85%,#6C8480 100%)}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.75;will-change:transform}
+.b1{width:46vw;height:46vw;left:-8vw;top:-12vw;background:#f4f5f2;animation:drift1 22s ease-in-out infinite alternate}
+.b2{width:40vw;height:40vw;right:-10vw;top:10vh;background:#7B9669;animation:drift2 26s ease-in-out infinite alternate}
+.b3{width:36vw;height:36vw;left:30vw;bottom:-16vw;background:#6C8480;animation:drift3 30s ease-in-out infinite alternate}
+.b4{width:24vw;height:24vw;left:8vw;bottom:6vh;background:#BAC8B1;animation:drift2 24s ease-in-out infinite alternate-reverse}
+@keyframes drift1{to{transform:translate(9vw,7vh) scale(1.12)}}
+@keyframes drift2{to{transform:translate(-8vw,9vh) scale(.92)}}
+@keyframes drift3{to{transform:translate(7vw,-8vh) scale(1.1)}}
+.grain{position:absolute;inset:0;opacity:.07;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Barlow', sans-serif;
-  font-size: 17px;
-  line-height: 1.7;
-  overflow-x: hidden;
-  cursor: none; /* cursor customizado */
+/* ── Vidro ─────────────────────────────────────────────────────────── */
+.glass{
+  position:relative;
+  background:var(--vidro);
+  -webkit-backdrop-filter:blur(22px) saturate(170%);
+  backdrop-filter:blur(22px) saturate(170%);
+  border:1px solid var(--vidro-borda);
+  border-radius:26px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.75), inset 0 -1px 0 rgba(255,255,255,.18), var(--sombra);
+  overflow:hidden;
 }
-::selection { background: var(--accent); color: var(--bg); }
+/* brilho especular que segue o mouse */
+.glass::before{
+  content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;z-index:0;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,-20%), rgba(255,255,255,.5), transparent 55%);
+  opacity:0;transition:opacity .35s ease;
+}
+.glass:hover::before{opacity:1}
+.glass > *{position:relative;z-index:1}
+.lift.settled{transition:transform .45s var(--ease-spring), box-shadow .45s ease}
+.lift.settled:hover{transform:translateY(-5px);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 22px 48px rgba(40,52,36,.26)}
 
-/* ============================================================
-   CURSOR CUSTOMIZADO — estilo Dixor
-   bolinha verde + círculo que segue com atraso;
-   sobre links/botões a bolinha cresce (efeito elástico) e mostra ↗
-   ============================================================ */
-#cursor {
-  position: fixed;
-  width: 14px; height: 14px;
-  background: var(--accent);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--bg); font-size: 0; font-weight: 700;
-  transition: width .5s var(--ease-elastic), height .5s var(--ease-elastic),
-              background .3s, font-size .3s, opacity .3s;
+.destaque{
+  background:linear-gradient(135deg,var(--verde) 0%,var(--ardosia) 48%,var(--verde-3) 100%);
+  border-color:rgba(255,255,255,.35);
+  color:#fff;
 }
-#cursor::after { content: '↗'; }
-#cursor.hover {
-  width: 54px; height: 54px;
-  background: rgba(201,243,29,0.9);
-  font-size: 20px;
-}
-#cursor-ring {
-  position: fixed;
-  width: 40px; height: 40px;
-  background: rgba(255,255,255,0.12);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform .5s var(--ease-elastic), opacity .3s;
-}
-#cursor-ring.hover { transform: translate(-50%, -50%) scale(0); opacity: .3; }
-@media (hover: none) {
-  #cursor, #cursor-ring { display: none; }
-  body { cursor: auto; }
-}
+.destaque::before{background:radial-gradient(420px circle at var(--mx,50%) var(--my,-20%), rgba(255,255,255,.35), transparent 55%)}
 
-/* ============================================================
-   FUNDO — grade de pontos animada
-   ============================================================ */
-#bg-grid {
-  position: fixed; inset: 0; z-index: 0;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 36px 36px;
-  pointer-events: none;
-  animation: gridDrift 20s ease-in-out infinite alternate;
-}
-@keyframes gridDrift {
-  from { background-position: 0 0; }
-  to   { background-position: 18px 18px; }
-}
+/* ── Splash de abertura ─────────────────────────────────────────────── */
+#splash{position:fixed;inset:0;z-index:999;background:#262f23;display:grid;place-items:center;
+  transition:opacity .7s ease, visibility .7s;
+  animation:splashAuto 0s 4s forwards} /* segurança: some sozinho se o JS falhar */
+#splash.out{opacity:0;visibility:hidden}
+@keyframes splashAuto{to{opacity:0;visibility:hidden}}
+.splash-in{text-align:center;color:#fff;animation:splashIn 1s var(--ease-out) both}
+.splash-logo{font-size:2.6rem;font-weight:800;letter-spacing:.5em;padding-left:.5em;
+  background:linear-gradient(90deg,#fff,#BAC8B1);-webkit-background-clip:text;background-clip:text;color:transparent}
+.splash-sub{margin-top:8px;font-size:.62rem;letter-spacing:.38em;color:rgba(255,255,255,.4)}
+.splash-bar{margin:22px auto 0;width:150px;height:2px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.splash-bar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#BAC8B1,#fff);
+  transform:translateX(-100%);animation:load 1.1s .15s var(--ease-out) forwards}
+@keyframes splashIn{from{opacity:0;transform:translateY(10px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes load{to{transform:translateX(0)}}
 
-/* glow orbs flutuantes */
-.orb {
-  position: fixed; border-radius: 50%;
-  pointer-events: none; z-index: 0;
-  filter: blur(80px);
-  animation: orbFloat 8s ease-in-out infinite alternate;
+/* ── Menu lateral ───────────────────────────────────────────────────── */
+.side{
+  position:fixed;left:14px;top:14px;bottom:14px;z-index:50;
+  width:var(--side-w);padding:16px 12px;display:flex;flex-direction:column;
+  background:linear-gradient(180deg,rgba(64,78,59,.82),rgba(52,64,48,.74));
+  border-color:rgba(255,255,255,.28);color:#fff;
+  transition:width .55s var(--ease-out);
+  transform:translateX(-30px);opacity:0;
 }
-.orb1 { width:600px; height:600px; background:rgba(201,243,29,0.055); top:-150px; left:-150px; animation-duration:10s; }
-.orb2 { width:400px; height:400px; background:rgba(201,243,29,0.035); bottom:-100px; right:-100px; animation-duration:13s; animation-delay:-4s; }
-.orb3 { width:300px; height:300px; background:rgba(255,255,255,0.025); top:40%; left:50%; animation-duration:16s; animation-delay:-7s; }
-@keyframes orbFloat {
-  from { transform: translate(0,0) scale(1); }
-  to   { transform: translate(30px,20px) scale(1.08); }
-}
+.ready .side{animation:sideIn .9s .1s var(--ease-out) forwards}
+@keyframes sideIn{to{transform:none;opacity:1}}
+.side.min{width:var(--side-w-min)}
+.brand{display:flex;align-items:center;gap:11px;padding:4px 6px 18px;position:relative;text-decoration:none;color:#fff}
+.brand-logo{width:38px;height:38px;border-radius:13px;flex-shrink:0;display:grid;place-items:center;
+  background:rgba(255,255,255,.92);color:var(--verde);font-weight:800;font-size:.82rem;letter-spacing:.5px;
+  box-shadow:0 6px 16px rgba(0,0,0,.18)}
+.brand-txt{white-space:nowrap;transition:opacity .25s ease;overflow:hidden}
+.brand-txt b{display:block;font-size:.9rem}
+.brand-txt span{font-size:.62rem;color:rgba(255,255,255,.65)}
+.collapse{position:absolute;right:-6px;top:10px;width:26px;height:26px;border-radius:50%;border:1px solid rgba(255,255,255,.5);
+  background:rgba(255,255,255,.85);color:var(--verde-3);cursor:pointer;display:grid;place-items:center;
+  transition:transform .5s var(--ease-spring);box-shadow:0 4px 10px rgba(0,0,0,.2)}
+.side.min .collapse{transform:rotate(180deg)}
+.nav-label{font-size:.58rem;letter-spacing:.2em;color:rgba(255,255,255,.55);padding:6px 12px;white-space:nowrap;transition:opacity .25s}
+.nav{position:relative;display:flex;flex-direction:column;gap:3px}
+.pill{position:absolute;left:0;top:0;width:0;height:42px;border-radius:14px;background:#fff;z-index:0;
+  box-shadow:0 8px 20px rgba(0,0,0,.18);
+  transition:transform .6s var(--ease-spring), width .45s var(--ease-out), height .3s ease;pointer-events:none}
+.nav a{position:relative;z-index:1;display:flex;align-items:center;gap:12px;height:42px;padding:0 13px;border-radius:14px;
+  color:rgba(255,255,255,.88);text-decoration:none;font-size:.8rem;font-weight:500;white-space:nowrap;cursor:pointer;
+  transition:color .3s, background .3s, transform .3s var(--ease-spring)}
+.nav a:hover{background:rgba(255,255,255,.14);transform:translateX(3px)}
+.nav a.active{color:var(--verde-3);font-weight:600;background:transparent}
+.nav a.active:hover{transform:none}
+.nav svg{flex-shrink:0}
+.nav .t{transition:opacity .25s ease}
+.side.min .t,.side.min .brand-txt,.side.min .nav-label,.side.min .foot-txt,.side.min .foot-link{opacity:0;pointer-events:none}
+.spacer{flex:1}
+.foot{display:flex;align-items:center;gap:11px;padding:10px;border-radius:16px;background:rgba(255,255,255,.14);white-space:nowrap;overflow:hidden}
+.avatar{width:34px;height:34px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;font-size:.72rem;font-weight:700;
+  background:linear-gradient(135deg,#E6E6E6,#BAC8B1);color:#404E3B;border:2px solid rgba(255,255,255,.7)}
+.foot-txt b{display:block;font-size:.76rem}
+.foot-txt span{font-size:.62rem;color:rgba(255,255,255,.62)}
+.foot-link{margin-left:auto;display:grid;place-items:center;color:#fff;opacity:.9;transition:transform .35s var(--ease-spring),opacity .3s}
+.foot-link:hover{transform:scale(1.15);opacity:1}
 
-main { position: relative; z-index: 1; }
+/* ── Área principal ─────────────────────────────────────────────────── */
+main{position:relative;z-index:1;margin-left:calc(var(--side-w) + 28px);padding:14px 14px 40px 0;
+  transition:margin-left .55s var(--ease-out)}
+body.side-min main{margin-left:calc(var(--side-w-min) + 28px)}
 
-/* ============================================================
-   NAVBAR
-   ============================================================ */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 20px 64px;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.4s, background 0.4s, backdrop-filter 0.4s;
-}
-nav.scrolled {
-  border-color: var(--border);
-  background: rgba(14,15,17,0.85);
-  backdrop-filter: blur(24px);
-}
-.logo {
-  font-family: 'Barlow', sans-serif;
-  font-weight: 800; font-size: 18px;
-  letter-spacing: -0.5px; color: var(--text);
-  text-decoration: none;
-}
-.logo span { color: var(--accent); }
+.head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin:6px 4px 18px;flex-wrap:wrap}
+.head h1{font-size:2.05rem;font-weight:600;letter-spacing:-.03em;line-height:1.1}
+.head p{margin-top:6px;font-size:.8rem;color:var(--tinta-2)}
+.head-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{border:0;cursor:pointer;font:600 .76rem Inter,sans-serif;border-radius:999px;padding:11px 18px;display:inline-flex;align-items:center;gap:8px;
+  text-decoration:none;transition:transform .35s var(--ease-spring), box-shadow .3s, background .3s}
+.btn:hover{transform:translateY(-2px) scale(1.03)}
+.btn:active{transform:scale(.97)}
+.btn-glass{background:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.7);color:var(--tinta);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.btn-dark{background:#404E3B;color:#fff;box-shadow:0 8px 20px rgba(0,0,0,.28)}
+.btn-white{background:#fff;color:var(--verde-3);box-shadow:0 6px 16px rgba(0,0,0,.14)}
+.btn-ghost{background:rgba(255,255,255,.2);color:#fff;border:1px solid rgba(255,255,255,.45)}
 
-nav ul { display: flex; gap: 36px; list-style: none; }
-nav a {
-  color: var(--muted); text-decoration: none;
-  font-size: 14px; letter-spacing: 0.01em;
-  transition: color 0.2s;
-  position: relative;
-}
-nav a::after {
-  content: ''; position: absolute; bottom: -3px; left: 0; right: 0;
-  height: 1px; background: var(--accent);
-  transform: scaleX(0); transition: transform 0.25s;
-}
-nav a:hover { color: var(--text); }
-nav a:hover::after { transform: scaleX(1); }
+.grid{display:grid;gap:14px}
+.g-top{grid-template-columns:minmax(0,1.9fr) minmax(0,1fr);margin-bottom:14px}
+.g-kpi{grid-template-columns:repeat(4,minmax(0,1fr))}
 
-.nav-btn {
-  background: var(--accent); color: #0e0f11 !important;
-  padding: 8px 20px; border-radius: 7px;
-  font-weight: 600 !important; font-size: 14px !important;
-  transition: transform 0.2s !important;
-  display: inline-block; overflow: hidden; isolation: isolate;
-}
-.nav-btn:hover { transform: translateY(-1px); }
-/* preenchimento branco que sobe no hover (igual aos botões do Dixor) */
-.nav-btn::after {
-  top: auto !important; bottom: 0 !important; height: 100% !important;
-  background: #fff !important; z-index: -1;
-  transform: translateY(101%) !important; transform-origin: bottom;
-  transition: transform .45s var(--ease-out) !important;
-}
-.nav-btn:hover::after { transform: translateY(0) !important; }
+/* Card de destaque (hero) */
+.hero{padding:30px 32px;display:flex;align-items:center;gap:28px;min-height:270px}
+.hero-l{flex:1;min-width:0}
+.chip{display:inline-flex;align-items:center;gap:7px;font-size:.64rem;font-weight:600;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.4)}
+.chip i{width:6px;height:6px;border-radius:50%;background:#fff;animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35;transform:scale(1.7)}}
+.hero h2{font-size:clamp(1.7rem,2.6vw,2.35rem);font-weight:600;letter-spacing:-.03em;line-height:1.12;margin:14px 0 10px}
+.hero h2 .serif{font-size:1.1em;position:relative;display:inline-block}
+.hero h2 .serif::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:2px;background:rgba(255,255,255,.7);
+  transform:scaleX(0);transform-origin:left}
+.ready .hero h2 .serif::after{animation:underline 1s 1.1s var(--ease-out) forwards}
+@keyframes underline{to{transform:scaleX(1)}}
+.hero p{font-size:.84rem;color:rgba(255,255,255,.86);max-width:470px;line-height:1.55}
+.mini{display:flex;gap:18px;margin:18px 0;flex-wrap:wrap}
+.mini div{padding-right:18px;border-right:1px solid rgba(255,255,255,.35)}
+.mini div:last-child{border:0}
+.mini b{display:block;font-size:1.15rem;font-weight:700}
+.mini span{font-size:.62rem;color:rgba(255,255,255,.78)}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap}
 
-/* ============================================================
-   HERO
-   ============================================================ */
-.hero {
-  min-height: 100vh;
-  display: flex; flex-direction: column; justify-content: center;
-  padding: 140px 64px 80px;
-  position: relative; overflow: hidden;
-}
+.ring-wrap{position:relative;width:190px;height:190px;flex-shrink:0}
+.ring-wrap svg.ring{width:100%;height:100%;transform:rotate(-90deg)}
+.ring .trk{fill:none;stroke:rgba(255,255,255,.22);stroke-width:7}
+.ring .bar{fill:none;stroke:#fff;stroke-width:7;stroke-linecap:round;stroke-dasharray:326.7;stroke-dashoffset:326.7;
+  filter:drop-shadow(0 0 8px rgba(255,255,255,.55))}
+.ring-c{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.ring-c b{font-size:2.1rem;font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.ring-c span{font-size:.6rem;color:rgba(255,255,255,.8)}
+.orb{position:absolute;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+  background:#fff;border:2px solid rgba(255,255,255,.9);box-shadow:0 6px 14px rgba(0,0,0,.22);animation:float 5s ease-in-out infinite;
+  transition:transform .35s var(--ease-spring)}
+.orb img{width:22px;height:22px;object-fit:contain;display:block}
+.orb:hover{animation-play-state:paused;transform:scale(1.18)}
+.orb:nth-of-type(2){animation-delay:-1.2s}.orb:nth-of-type(3){animation-delay:-2.4s}.orb:nth-of-type(4){animation-delay:-3.1s}.orb:nth-of-type(5){animation-delay:-.6s}
+@keyframes float{50%{transform:translateY(-7px)}}
 
-.hero-pill {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(201,243,29,0.07);
-  border: 1px solid rgba(201,243,29,0.2);
-  color: var(--accent); font-size: 13px; font-weight: 500;
-  padding: 6px 16px; border-radius: 99px;
-  margin-bottom: 32px; width: fit-content;
-  opacity: 0; animation: fadeUp 0.7s ease 0.2s forwards;
-}
-.hero-pill-dot {
-  width: 7px; height: 7px; background: var(--accent);
-  border-radius: 50%;
-  animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(.5)} }
+/* Card de data / status */
+.cal{padding:22px}
+.cal-top{display:flex;align-items:flex-start;gap:12px}
+.cal-day{font-size:3.1rem;font-weight:300;line-height:.9;color:var(--verde);letter-spacing:-.04em}
+.cal-meta b{display:block;font-size:.95rem}
+.cal-meta span{font-size:.64rem;color:var(--tinta-2)}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin:16px 0 12px;text-align:center}
+.week small{display:block;font-size:.56rem;color:var(--tinta-2);margin-bottom:5px;font-weight:600}
+.week span{display:grid;place-items:center;height:30px;border-radius:10px;font-size:.72rem;font-weight:600;transition:background .3s,transform .3s var(--ease-spring)}
+.week span:hover{background:rgba(255,255,255,.55);transform:scale(1.12)}
+.week span.today{background:var(--verde);color:#fff;box-shadow:0 6px 14px rgba(123,150,105,.4)}
+.ev{display:flex;gap:11px;align-items:center;padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.55);margin-top:8px;
+  transition:transform .35s var(--ease-spring),background .3s}
+.ev:hover{transform:translateX(5px);background:rgba(255,255,255,.62)}
+.ev em{font-style:normal;font-size:.62rem;color:var(--tinta-2);width:38px;flex-shrink:0}
+.ev i{width:3px;align-self:stretch;border-radius:3px;background:var(--verde);flex-shrink:0}
+.ev b{display:block;font-size:.76rem}
+.ev span{font-size:.62rem;color:var(--tinta-2)}
 
-.hero h1 {
-  font-family: 'Barlow', sans-serif;
-  font-size: clamp(60px, 10.5vw, 150px);
-  font-weight: 800; line-height: 0.92;
-  letter-spacing: -2px; margin-bottom: 32px;
-  text-transform: uppercase;
-}
-/* segunda linha recuada, como no hero do Dixor */
-.hero h1 .line:nth-child(2) { padding-left: clamp(24px, 7vw, 110px); }
-/* cada linha do h1 anima separado */
-.hero h1 .line {
-  display: block; overflow: hidden;
-}
-.hero h1 .line span {
-  display: block;
-  opacity: 0; transform: translateY(100%);
-  animation: slideUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards;
-}
-.hero h1 .line:nth-child(1) span { animation-delay: 0.35s; }
-.hero h1 .line:nth-child(2) span { animation-delay: 0.5s; }
-.hero h1 .line:nth-child(3) span { animation-delay: 0.65s; }
+/* KPIs */
+.kpi{padding:18px 18px 16px;min-height:150px;display:flex;flex-direction:column}
+.kpi-top{display:flex;justify-content:space-between;align-items:center}
+.ico{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.8);color:var(--verde-3);flex-shrink:0}
+.destaque .ico{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.4);color:#fff}
+.kpi-val{font-size:2.05rem;font-weight:700;letter-spacing:-.03em;margin-top:14px;font-variant-numeric:tabular-nums;line-height:1}
+.kpi-lbl{font-size:.76rem;font-weight:600;margin-top:6px;max-width:65%}
+.kpi-sub{font-size:.62rem;color:var(--tinta-2)}
+.destaque .kpi-sub{color:rgba(255,255,255,.78)}
+.spark{position:absolute;right:14px;bottom:14px;width:92px;height:34px;overflow:visible;z-index:1}
+.spark path{fill:none;stroke:var(--verde);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1}
+.destaque .spark path{stroke:#fff}
+.spark circle{fill:#fff;stroke:var(--verde);stroke-width:2;opacity:0;transition:opacity .3s 1.4s}
+.destaque .spark circle{stroke:#fff;fill:var(--verde)}
+.visible .spark path{animation:draw 1.5s .5s var(--ease-out) forwards}
+.visible .spark circle{opacity:1}
+@keyframes draw{to{stroke-dashoffset:0}}
 
-@keyframes slideUp {
-  from { opacity:0; transform:translateY(100%); }
-  to   { opacity:1; transform:translateY(0); }
-}
-@keyframes fadeUp {
-  from { opacity:0; transform:translateY(16px); }
-  to   { opacity:1; transform:translateY(0); }
-}
+/* ── Seções ─────────────────────────────────────────────────────────── */
+.section{padding:38px 0 0}
+.section-label{font-size:.64rem;letter-spacing:.2em;font-weight:700;color:var(--tinta-2);text-transform:uppercase;margin:0 4px 10px}
+.section-title{font-size:clamp(1.9rem,3vw,2.6rem);font-weight:600;letter-spacing:-.03em;line-height:1.1;margin:0 4px 8px}
+.section-title .serif{font-size:1.1em;color:var(--verde-3)}
+.section-sub{font-size:.86rem;color:var(--tinta-2);max-width:560px;margin:0 4px 20px}
 
-.hero h1 em { font-style: normal; color: transparent; -webkit-text-stroke: 1.5px rgba(255,255,255,0.35); }
-.hero h1 .accent { color: var(--accent); -webkit-text-stroke: 0; }
+/* ── Projetos ───────────────────────────────────────────────────────── */
+.projects-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+.project-card.featured{border-color:rgba(255,255,255,.75)}
+.project-thumb{height:220px;margin:10px 10px 0;border-radius:18px;background:var(--bg3);overflow:hidden;position:relative;
+  display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px rgba(0,0,0,.25)}
+/* faixa de miniaturas das galerias: ocupa a largura do card e rola na horizontal */
+.project-thumb > [id$="-thumbs"]{align-self:stretch;width:100%;max-width:100%}
+.project-thumb img,.project-thumb video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease-out)}
+.project-card:hover .project-thumb img,.project-card:hover .project-thumb video{transform:scale(1.03)}
+.thumb-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.thumb-placeholder::before{content:'';position:absolute;inset:0;
+  background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.04) 50%,transparent 70%);
+  background-size:200% 100%;animation:shimmer 2.5s ease-in-out infinite}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.mock-ui{width:82%;height:80%;background:#2a3326;border-radius:8px;padding:10px;display:flex;flex-direction:column;gap:6px;border:1px solid rgba(255,255,255,.08)}
+.mock-topbar{display:flex;gap:4px;align-items:center;margin-bottom:2px}
+.mock-dot{width:5px;height:5px;border-radius:50%}
+.featured-badge{position:absolute;top:20px;right:20px;z-index:3;background:var(--verde);color:#fff;font-size:.62rem;font-weight:700;
+  padding:4px 11px;border-radius:999px;box-shadow:0 6px 14px rgba(123,150,105,.4)}
+.project-body{padding:20px 22px 22px}
+.tech-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.75);
+  border-radius:999px;padding:6px 13px;font-size:.74rem;font-weight:600;color:var(--tinta);cursor:default;
+  transition:transform .35s var(--ease-spring),background .3s,box-shadow .3s}
+.tech-pill:hover{transform:translateY(-2px) scale(1.04);background:rgba(255,255,255,.75);box-shadow:0 8px 18px rgba(40,52,36,.15)}
+.tech-logo{width:18px;height:18px;object-fit:contain;flex-shrink:0;border-radius:4px}
+.tech-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.project-title{font-size:1.05rem;font-weight:700;letter-spacing:-.02em;margin-bottom:8px;transition:color .3s}
+.project-card:hover .project-title{color:var(--verde-3)}
+.project-desc{font-size:.8rem;color:var(--tinta-2);line-height:1.6;margin-bottom:12px}
+.project-body ul li{line-height:1.45}
+.project-link{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:700;color:var(--verde-3);text-decoration:none;transition:gap .3s var(--ease-spring)}
+.project-link:hover{gap:10px}
+.tag{font-size:.6rem;font-weight:700;padding:3px 9px;border-radius:999px;background:rgba(255,255,255,.45);color:var(--tinta-2)}
 
-.hero-sub {
-  font-size: 18px; color: var(--muted);
-  max-width: 520px; line-height: 1.65;
-  margin-bottom: 48px; font-weight: 300;
-  opacity: 0; animation: fadeUp 0.7s ease 0.8s forwards;
-}
+/* ── Stack ──────────────────────────────────────────────────────────── */
+.stack-section{padding:38px 0 0}
+.stack-inner{padding:28px 30px}
+.stack-groups{display:flex;flex-direction:column;gap:18px;margin-top:20px}
+.stack-row{display:flex;gap:18px;align-items:flex-start}
+.stack-label{font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--tinta-2);min-width:130px;padding-top:9px}
+.stack-pills{display:flex;flex-wrap:wrap;gap:8px}
+.stack-pills .tech-pill{opacity:0;transform:translateY(12px) scale(.9)}
+.stack-pills.in .tech-pill{opacity:1;transform:none;
+  transition:opacity .5s ease, transform .6s var(--ease-spring), background .3s, box-shadow .3s;
+  transition-delay:calc(var(--i,0) * 40ms)}
+.stack-pills.in.settled .tech-pill{transition-delay:0s}
+.stack-pills.in.settled .tech-pill:hover{transform:translateY(-2px) scale(1.04)}
 
-.hero-actions {
-  display: flex; gap: 14px; align-items: center;
-  opacity: 0; animation: fadeUp 0.7s ease 0.95s forwards;
-}
-/* Botões: um bloco desliza de baixo para cima no hover (efeito Dixor) */
-.btn-primary, .btn-ghost {
-  position: relative; overflow: hidden; isolation: isolate;
-  padding: 14px 30px; border-radius: 7px;
-  text-decoration: none; font-weight: 600; font-size: 16px;
-  display: inline-flex; align-items: center; gap: 8px;
-  transition: color .35s ease-in-out, border-color .35s, transform .2s, box-shadow .3s;
-}
-.btn-primary::after, .btn-ghost::after {
-  content: ''; position: absolute; left: -5%; bottom: 0;
-  width: 110%; height: 100%; z-index: -1;
-  border-radius: 50% 50% 0 0 / 30% 30% 0 0;
-  transform: translateY(102%);
-  transition: transform .45s var(--ease-out), border-radius .45s var(--ease-out);
-}
-.btn-primary:hover::after, .btn-ghost:hover::after { transform: translateY(0); border-radius: 0; }
-.btn-primary { background: var(--accent); color: #0e0f11; }
-.btn-primary::after { background: #fff; }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 34px rgba(201,243,29,0.22); }
-.btn-ghost { color: var(--text); border: 1px solid var(--border-h); }
-.btn-ghost::after { background: var(--accent); }
-.btn-ghost:hover { color: #0e0f11; border-color: var(--accent); transform: translateY(-2px); }
+/* ── Sobre ──────────────────────────────────────────────────────────── */
+.sobre-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:14px;align-items:start}
+.panel{padding:28px 30px}
+#sobre .panel > p:not(.section-label){font-size:.86rem;color:var(--tinta-2);line-height:1.7;margin:0 4px 12px}
+#sobre .panel strong{color:var(--tinta);font-weight:600}
+.formacao-list{display:flex;flex-direction:column;gap:8px}
+.formacao-card{position:relative;padding:11px 14px 11px 22px;border-radius:14px;background:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.55);
+  transition:transform .35s var(--ease-spring),background .3s}
+.formacao-card::before{content:'';position:absolute;left:10px;top:10px;bottom:10px;width:3px;border-radius:3px;background:var(--verde)}
+.formacao-card:hover{transform:translateX(5px);background:rgba(255,255,255,.62)}
+.formacao-inst{font-size:.62rem;color:var(--tinta-2)}
+.formacao-title{font-size:.8rem;font-weight:600}
+.formacao-year{font-size:.62rem;color:var(--tinta-2)}
+.formacao-badge{display:inline-block;font-size:.58rem;font-weight:700;padding:2px 8px;border-radius:99px;margin-top:5px;background:rgba(123,150,105,.15);color:var(--verde-3)}
 
-.hero-stats {
-  display: flex; gap: 52px; flex-wrap: wrap;
-  margin-top: 80px; padding-top: 48px;
-  border-top: 1px solid var(--border);
-  opacity: 0; animation: fadeUp 0.7s ease 1.1s forwards;
-}
-.stat-num {
-  font-family: 'Barlow', sans-serif;
-  font-size: 38px; font-weight: 800; letter-spacing: -1.5px;
-  background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-}
-.stat-label { font-size: 13px; color: var(--muted); margin-top: 2px; }
+/* ── Contato ────────────────────────────────────────────────────────── */
+.contact-section{margin-top:38px;padding:40px 30px;text-align:center}
+.contact-section .section-label{color:rgba(255,255,255,.8)}
+.contact-section .section-title .serif{color:#fff}
+.contact-section .section-sub{color:rgba(255,255,255,.86);margin:0 auto 24px}
+.contact-links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.contact-link{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--verde-3);border-radius:999px;padding:11px 18px;
+  text-decoration:none;font-size:.78rem;font-weight:600;box-shadow:0 6px 16px rgba(0,0,0,.14);
+  transition:transform .35s var(--ease-spring),box-shadow .3s}
+.contact-link:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 12px 26px rgba(0,0,0,.2)}
+.contact-link svg{width:16px;height:16px;flex-shrink:0}
 
-/* Linha decorativa animada */
-.hero-line {
-  position: absolute; right: 80px; top: 20%; bottom: 20%;
-  width: 1px; background: linear-gradient(to bottom, transparent, var(--accent), transparent);
-  opacity: 0.15;
-  animation: linePulse 4s ease-in-out infinite;
-}
-@keyframes linePulse {
-  0%,100% { opacity: 0.1; }
-  50%      { opacity: 0.3; }
-}
+footer{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;padding:24px 4px 0;text-align:center}
+footer p{font-size:.64rem;color:var(--tinta-2)}
 
-/* ============================================================
-   SEÇÕES — estrutura base
-   ============================================================ */
-.section {
-  padding: 100px 64px;
-  max-width: 1280px;
-  margin: 0 auto;
+/* ── Entrada em cascata ao rolar ────────────────────────────────────── */
+.rise,.reveal,.reveal-left,.reveal-right,.project-card{
+  opacity:0;transform:translateY(26px) scale(.97);
+  transition:opacity .85s var(--ease-out), transform .85s var(--ease-out);
+  transition-delay:calc(var(--i,0) * 75ms);
 }
-.section-label {
-  font-size: 11px; font-weight: 500;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--accent); margin-bottom: 14px;
-}
-.section-title {
-  font-family: 'Barlow', sans-serif;
-  font-size: clamp(34px, 4.4vw, 58px);
-  font-weight: 700; letter-spacing: -1px;
-  line-height: 1.05; margin-bottom: 14px;
-}
-.section-sub {
-  font-size: 17px; color: var(--muted);
-  max-width: 520px; font-weight: 300;
-  margin-bottom: 60px;
-}
+.reveal-left{transform:translateX(-26px)}
+.reveal-right{transform:translateX(26px)}
+.rise.visible,.reveal.visible,.reveal-left.visible,.reveal-right.visible,.project-card.visible{opacity:1;transform:none}
+.settled{transition-delay:0s !important}
 
-/* ============================================================
-   SCROLL REVEAL — classes aplicadas por JS
-   ============================================================ */
-.reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1),
-              transform 0.8s cubic-bezier(0.16,1,0.3,1);
+/* ── Responsivo ─────────────────────────────────────────────────────── */
+@media (max-width:1200px){
+  .g-top{grid-template-columns:minmax(0,1fr)}
+  .g-kpi{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .projects-grid{grid-template-columns:minmax(0,1fr)}
 }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-left  { opacity:0; transform:translateX(-32px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
-.reveal-left.visible { opacity:1; transform:translateX(0); }
-.reveal-right { opacity:0; transform:translateX(32px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
-.reveal-right.visible { opacity:1; transform:translateX(0); }
-
-/* atraso escalonado para filhos */
-.stagger > *:nth-child(1) { transition-delay: 0s; }
-.stagger > *:nth-child(2) { transition-delay: 0.08s; }
-.stagger > *:nth-child(3) { transition-delay: 0.16s; }
-.stagger > *:nth-child(4) { transition-delay: 0.24s; }
-.stagger > *:nth-child(5) { transition-delay: 0.32s; }
-.stagger > *:nth-child(6) { transition-delay: 0.40s; }
-.stagger > *:nth-child(7) { transition-delay: 0.48s; }
-
-/* ============================================================
-   TÍTULOS — palavras sobem uma a uma ao entrar na tela
-   (versão sem bibliotecas do SplitText do Dixor)
-   ============================================================ */
-.split-word { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .08em; margin-bottom: -.08em; }
-.split-word > span {
-  display: inline-block; transform: translateY(105%);
-  transition: transform .9s cubic-bezier(0.16,1,0.3,1);
-  transition-delay: calc(var(--i) * 0.045s);
+@media (max-width:900px){
+  /* menu vira barra de ícones embaixo */
+  .side{left:10px;right:10px;top:auto;bottom:10px;width:auto !important;height:62px;padding:8px;flex-direction:row;border-radius:22px}
+  .side .brand,.side .nav-label,.side .spacer,.side .foot,.side .collapse{display:none}
+  .nav{flex-direction:row;flex:1;justify-content:space-between}
+  .nav a{flex:1;justify-content:center;padding:0;height:46px}
+  .nav a:hover{transform:none}
+  .nav .t{display:none}
+  .pill{height:46px}
+  main,body.side-min main{margin-left:0;padding:10px 10px 90px}
+  .hero{flex-direction:column;align-items:flex-start;padding:24px 22px}
+  .ring-wrap{align-self:center;margin:6px 0 4px}
+  .head h1{font-size:1.6rem}
+  .sobre-grid{grid-template-columns:minmax(0,1fr)}
+  .hero h2{font-size:1.6rem}
+  .chip{white-space:normal}
+  .stack-row{flex-direction:column;gap:8px}
+  .stack-label{min-width:0;padding-top:0}
+  .project-body ul{grid-template-columns:1fr !important}
 }
-.split-in .split-word > span { transform: translateY(0); }
-
-/* ============================================================
-   TEXTO QUE "PINTA" COM A ROLAGEM — começa apagado e
-   vai ficando branco linha a linha conforme você rola
-   ============================================================ */
-.text-fill .fill-inner {
-  color: rgba(255,255,255,0.16);
-  background: linear-gradient(to right, var(--text), var(--text)) no-repeat;
-  background-size: 0% 100%;
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-box-decoration-break: slice; box-decoration-break: slice; /* slice = preenche linha após linha */
-}
-.text-fill strong { color: inherit !important; }
-
-/* quem prefere menos movimento vê tudo pronto, sem animação */
-@media (prefers-reduced-motion: reduce) {
-  .split-word > span { transform: none; transition: none; }
-  .text-fill .fill-inner { background-size: 100% 100% !important; }
-  #cursor, #cursor-ring { transition: none; }
-}
-
-/* ============================================================
-   PROJETOS
-   ============================================================ */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.project-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px; overflow: hidden;
-  transition: border-color 0.3s, transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
-  position: relative;
-  /* cada card revela individualmente */
-  opacity: 0; transform: translateY(28px);
-  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1),
-              border-color 0.3s, box-shadow 0.4s;
-}
-.project-card.visible { opacity: 1; transform: translateY(0); }
-.project-card:hover {
-  border-color: var(--border-h);
-  transform: translateY(-6px) !important;
-  box-shadow: 0 24px 64px rgba(0,0,0,0.4);
-}
-.project-card.wide { grid-column: span 2; }
-.project-card.featured { border-color: rgba(201,243,29,0.2); }
-.project-card.featured:hover {
-  border-color: rgba(201,243,29,0.4);
-  box-shadow: 0 24px 64px rgba(201,243,29,0.08);
+@media (max-width:520px){
+  .g-kpi{grid-template-columns:minmax(0,1fr)}
+  .stack-inner,.panel{padding:22px 18px}
+  .hero{padding:22px 18px}
+  .mini{gap:12px}
+  .mini div{padding-right:12px}
 }
 
-/* ── THUMBNAIL DO PROJETO ──────────────────────────────────
-   COMO ADICIONAR SUA IMAGEM:
-   Substitua o <div class="thumb-placeholder"> por:
-   <img src="imagens/nome-da-imagem.png" alt="Descrição">
-
-   PARA VÍDEO, use:
-   <video autoplay muted loop playsinline>
-     <source src="videos/nome-do-video.mp4" type="video/mp4">
-   </video>
-
-   Coloque as imagens na pasta /imagens/ e os vídeos em /videos/
-   ao lado do index.html no GitHub.
-   ─────────────────────────────────────────────────────── */
-.project-thumb {
-  height: 200px;
-  background: var(--bg3);
-  overflow: hidden;
-  position: relative;
-  display: flex; align-items: center; justify-content: center;
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-delay:0ms !important;transition-duration:.01ms !important;transition-delay:0ms !important}
+  .rise,.reveal,.reveal-left,.reveal-right,.project-card,.stack-pills .tech-pill{opacity:1;transform:none}
+  .spark path{stroke-dashoffset:0}
+  .spark circle{opacity:1}
+  html{scroll-behavior:auto}
 }
-.project-card.wide .project-thumb { height: 240px; }
-
-/* imagem e vídeo ocupam 100% do thumb automaticamente */
-.project-thumb img,
-.project-thumb video {
-  width: 100%; height: 100%;
-  object-fit: cover; display: block;
-  transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);
-}
-.project-card:hover .project-thumb img,
-.project-card:hover .project-thumb video {
-  transform: scale(1.04);
-}
-
-/* overlay escuro sobre imagem ao hover */
-.project-thumb::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: rgba(14,15,17,0);
-  transition: background 0.3s;
-  pointer-events: none;
-}
-.project-card:hover .project-thumb::after {
-  background: rgba(14,15,17,0.2);
-}
-
-/* placeholder animado (usado enquanto não tem imagem real) */
-.thumb-placeholder {
-  width: 100%; height: 100%;
-  display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden;
-}
-/* shimmer de loading */
-.thumb-placeholder::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(110deg,
-    transparent 30%,
-    rgba(255,255,255,0.025) 50%,
-    transparent 70%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 2.5s ease-in-out infinite;
-}
-@keyframes shimmer {
-  0%   { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
-
-/* mini mock dashboard — remova quando tiver imagem real */
-.mock-ui {
-  width: 82%; height: 80%;
-  background: #11111e;
-  border-radius: 8px; padding: 10px;
-  display: flex; flex-direction: column; gap: 6px;
-  border: 1px solid rgba(255,255,255,0.07);
-}
-.mock-topbar { display: flex; gap: 4px; align-items: center; margin-bottom: 2px; }
-.mock-dot    { width: 5px; height: 5px; border-radius: 50%; }
-.mock-kpis   { display: flex; gap: 4px; }
-.mock-kpi    { flex:1; background: rgba(255,255,255,0.04); border-radius:3px; padding:4px 5px; }
-.mock-kpi-n  { font-size:9px; font-weight:600; margin-bottom:1px; }
-.mock-kpi-l  { font-size:6px; color:rgba(255,255,255,0.28); }
-.mock-bars   { display:flex; align-items:flex-end; gap:3px; flex:1; }
-.mock-bar    { flex:1; border-radius:2px 2px 0 0; min-width:5px; }
-.mock-line   { width:100%; }
-
-/* badge destaque */
-.featured-badge {
-  position: absolute; top: 14px; right: 14px; z-index: 2;
-  background: rgba(201,243,29,0.12);
-  border: 1px solid rgba(201,243,29,0.28);
-  color: var(--accent); font-size: 11px; font-weight: 500;
-  padding: 3px 10px; border-radius: 99px;
-  backdrop-filter: blur(8px);
-}
-
-/* corpo do card */
-.project-body { padding: 22px 24px; }
-.project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
-.tag {
-  font-size: 11px; font-weight: 500;
-  padding: 3px 10px; border-radius: 99px;
-  background: rgba(255,255,255,0.05);
-  color: var(--muted); border: 1px solid var(--border);
-  transition: border-color 0.2s, color 0.2s;
-}
-.tag:hover { border-color: var(--border-h); color: var(--text); }
-.tag.g { background:rgba(201,243,29,.07);  color:var(--accent); border-color:rgba(201,243,29,.2); }
-.tag.p { background:rgba(167,139,250,.07); color:var(--purple); border-color:rgba(167,139,250,.2); }
-.tag.b { background:rgba(56,189,248,.07);  color:var(--blue);   border-color:rgba(56,189,248,.2); }
-.tag.a { background:rgba(251,191,36,.07);  color:var(--amber);  border-color:rgba(251,191,36,.2); }
-
-.project-title {
-  font-family: 'Barlow', sans-serif;
-  font-size: 18px; font-weight: 800;
-  letter-spacing: -0.4px; margin-bottom: 10px;
-  transition: color 0.2s;
-}
-.project-card:hover .project-title { color: var(--accent); }
-.project-desc {
-  font-size: 13px; color: var(--muted);
-  line-height: 1.65; margin-bottom: 20px; font-weight: 300;
-}
-.project-link {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 13px; font-weight: 500;
-  color: var(--accent); text-decoration: none;
-  transition: gap 0.25s;
-}
-.project-link:hover { gap: 10px; }
-
-/* ============================================================
-   STACK — com logos
-   ============================================================ */
-.stack-section {
-  background: var(--bg2);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 90px 0;
-}
-.stack-inner { max-width: 1280px; margin: 0 auto; padding: 0 64px; }
-
-.stack-groups { display: flex; flex-direction: column; gap: 32px; margin-top: 52px; }
-.stack-row    { display: flex; gap: 20px; align-items: flex-start; }
-.stack-label  {
-  font-size: 11px; font-weight: 500;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--muted); min-width: 140px; padding-top: 12px;
-}
-.stack-pills  { display: flex; flex-wrap: wrap; gap: 10px; }
-
-/* ── CARD DE TECNOLOGIA ──────────────────────────────────────
-   O logo é carregado automaticamente do CDN de ícones dev.
-   Se quiser adicionar um logo próprio, mude o src da <img>.
-   ─────────────────────────────────────────────────────────── */
-.tech-pill {
-  display: flex; align-items: center; gap: 10px;
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: 10px; padding: 10px 18px;
-  font-size: 13px; font-weight: 500; color: var(--text);
-  transition: border-color 0.25s, transform 0.3s, box-shadow 0.3s;
-  cursor: default;
-}
-.tech-pill:hover {
-  border-color: var(--border-h);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-.tech-logo {
-  width: 22px; height: 22px;
-  object-fit: contain; flex-shrink: 0;
-  border-radius: 4px;
-}
-/* dot colorido fallback quando não tem logo */
-.tech-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-
-/* ============================================================
-   SOBRE
-   ============================================================ */
-.sobre-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 72px; align-items: start;
-}
-.sobre-text p {
-  font-size: 16px; color: var(--muted);
-  margin-bottom: 16px; line-height: 1.8; font-weight: 300;
-}
-.sobre-text p strong { color: var(--text); font-weight: 500; }
-
-.formacao-list  { display: flex; flex-direction: column; gap: 12px; }
-.formacao-card  {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 12px; padding: 18px 20px;
-  transition: border-color 0.25s, transform 0.3s;
-}
-.formacao-card:hover { border-color: var(--border-h); transform: translateX(4px); }
-.formacao-inst  { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
-.formacao-title { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
-.formacao-year  { font-size: 11px; color: var(--muted); }
-.formacao-badge {
-  display: inline-block; font-size: 10px; font-weight: 500;
-  padding: 2px 8px; border-radius: 99px; margin-top: 6px;
-  background: rgba(167,139,250,.1); color: var(--purple);
-  border: 1px solid rgba(167,139,250,.2);
-}
-
-/* ============================================================
-   CONTATO
-   ============================================================ */
-.contact-section {
-  background: var(--bg2);
-  border-top: 1px solid var(--border);
-  padding: 100px 64px;
-  text-align: center;
-  position: relative; overflow: hidden;
-}
-/* linha animada atrás do contato */
-.contact-section::before {
-  content: '';
-  position: absolute; left: 50%; top: 0; bottom: 0;
-  width: 1px;
-  background: linear-gradient(to bottom, transparent, rgba(201,243,29,0.15), transparent);
-  animation: linePulse 5s ease-in-out infinite;
-}
-.contact-section .section-sub { margin: 0 auto 52px; }
-
-.contact-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-.contact-link {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: 12px; padding: 14px 24px;
-  color: var(--text); text-decoration: none;
-  font-size: 14px; font-weight: 500;
-  transition: border-color 0.25s, transform 0.3s, box-shadow 0.3s;
-}
-.contact-link:hover {
-  border-color: var(--border-h);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 36px rgba(0,0,0,0.3);
-}
-.contact-link svg { width: 18px; height: 18px; flex-shrink: 0; }
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-footer {
-  padding: 28px 64px;
-  display: flex; justify-content: space-between; align-items: center;
-  border-top: 1px solid var(--border);
-}
-footer p { font-size: 12px; color: var(--muted); }
-
-/* ============================================================
-   RESPONSIVO
-   ============================================================ */
-@media (max-width: 1024px) {
-  nav { padding: 16px 24px; }
-  nav ul { display: none; }
-  .hero { padding: 110px 24px 60px; }
-  .section { padding: 60px 24px; }
-  .stack-inner { padding: 0 24px; }
-  .contact-section { padding: 60px 24px; }
-  footer { padding: 20px 24px; flex-direction: column; gap: 6px; text-align: center; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .project-card.wide { grid-column: span 1; }
-  .sobre-grid { grid-template-columns: 1fr; gap: 40px; }
-  .stack-row { flex-direction: column; gap: 10px; }
-  .stack-label { min-width: unset; padding-top: 0; }
-  .hero-stats { gap: 28px; }
-  .hero-line { display: none; }
-}
-
 </style>
 </head>
 <body>
 
-<!-- ── CURSOR CUSTOMIZADO ────────────────────────── -->
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
+<!-- ── FUNDO: gradiente + manchas que derivam + granulado ─────────── -->
+<div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div><div class="grain"></div></div>
 
-<!-- ── FUNDO ANIMADO ────────────────────────────── -->
-<div id="bg-grid"></div>
-<div class="orb orb1"></div>
-<div class="orb orb2"></div>
-<div class="orb orb3"></div>
+<!-- ── SPLASH DE ABERTURA ──────────────────────────────────────────── -->
+<div id="splash"><div class="splash-in">
+  <div class="splash-logo">PH</div>
+  <div class="splash-sub">PORTFÓLIO · DADOS · PYTHON</div>
+  <div class="splash-bar"><i></i></div>
+</div></div>
 
-<!-- ── NAVBAR ───────────────────────────────────── -->
-<nav id="navbar">
-  <a href="#" class="logo">PH<span>.</span></a>
-  <ul>
-    <li><a href="#projetos">Projetos</a></li>
-    <li><a href="#stack">Stack</a></li>
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#contato" class="nav-btn">Contato</a></li>
-  </ul>
-</nav>
+<!-- ── MENU LATERAL (vira barra de ícones no celular) ──────────────── -->
+<aside class="side glass" id="side">
+  <div class="brand">
+    <div class="brand-logo">PH</div>
+    <div class="brand-txt"><b>Paulo Henrique</b><span>Dados · Python · Django</span></div>
+    <button class="collapse" id="collapse" type="button" title="Recolher menu" aria-label="Recolher menu"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+  </div>
+  <div class="nav-label">NAVEGAÇÃO</div>
+  <nav class="nav" id="nav"><div class="pill" id="pill"></div></nav>
+  <div class="spacer"></div>
+  <div class="foot">
+    <div class="avatar">PH</div>
+    <div class="foot-txt"><b>Paulo Henrique</b><span>São Paulo · SP</span></div>
+    <a class="foot-link" href="https://www.linkedin.com/in/paulo-henrique-python" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+  </div>
+</aside>
 
 <main>
 
 <!-- ══════════════════════════════════════════════════
-     HERO
+     INÍCIO
      ══════════════════════════════════════════════════ -->
-<div class="hero">
-  <div class="hero-line"></div>
-
-  <div class="hero-pill">
-    <div class="hero-pill-dot"></div>
-    Disponível para oportunidades em dados &amp; tecnologia
+<div id="inicio">
+  <div class="head rise" style="--i:0">
+    <div><h1 id="greet">Olá! Eu sou o Paulo.</h1><p id="dateline">Analista de Dados e Desenvolvedor Python · São Paulo</p></div>
+    <div class="head-actions">
+      <a class="btn btn-glass" href="https://www.linkedin.com/in/paulo-henrique-python" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+      <a class="btn btn-dark" href="#contato">+ Entrar em contato</a>
+    </div>
   </div>
 
-  <h1>
-    <span class="line"><span>Paulo</span></span>
-    <span class="line"><span><em>Henrique</em></span></span>
-    <span class="line"><span class="accent">Dados.</span></span>
-  </h1>
+  <div class="grid g-top">
+    <div class="glass destaque hero rise lift" style="--i:1">
+      <div class="hero-l">
+        <span class="chip"><i></i>Disponível para oportunidades em dados &amp; tecnologia</span>
+        <h2>Sistemas, dashboards e automações <span class="serif">em produção</span></h2>
+        <p>Desenvolvo com Python, Django e SQL dentro de uma operação real de limpeza urbana, sem equipe de TI. Por iniciativa própria.</p>
+        <div class="mini">
+          <div><b>Python</b><span>linguagem principal</span></div>
+          <div><b>Django</b><span>sistemas web</span></div>
+          <div><b>SQL · BI</b><span>dados e painéis</span></div>
+        </div>
+        <div class="hero-btns"><a class="btn btn-white" href="#projetos">Ver projetos ↗</a><a class="btn btn-ghost" href="#stack">Ver stack</a></div>
+      </div>
+      <div class="ring-wrap">
+        <svg class="ring" viewBox="0 0 120 120"><circle class="trk" cx="60" cy="60" r="52"/><circle class="bar" id="ringbar" cx="60" cy="60" r="52"/></svg>
+        <div class="ring-c"><b>PH</b><span>dados · python</span></div>
+        <!-- logos das tecnologias flutuando em volta do anel -->
+        <div class="orb" style="left:-8px;top:56px" title="Python"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"></div>
+        <div class="orb" style="left:116px;top:-12px" title="Django"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django"></div>
+        <div class="orb" style="right:-12px;top:56px" title="SQL Server"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server"></div>
+        <div class="orb" style="left:24px;bottom:-8px" title="pandas"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="pandas"></div>
+        <div class="orb" style="right:20px;bottom:-6px" title="APIs REST"><img src="https://cdn.simpleicons.org/postman/FF6C37" alt="APIs REST"></div>
+      </div>
+    </div>
 
-  <p class="hero-sub">
-    Desenvolvo sistemas, dashboards e automações com Python, Django e SQL —
-    dentro de uma operação real de limpeza urbana, sem equipe de TI.
-    Por iniciativa própria.
-  </p>
-
-  <div class="hero-actions">
-    <a href="#projetos" class="btn-primary">
-      Ver projetos
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-    <a href="#contato" class="btn-ghost">Entrar em contato</a>
+    <div class="glass cal rise lift" style="--i:2">
+      <div class="cal-top"><div class="cal-day" id="calday">—</div>
+        <div class="cal-meta"><b id="calwd">Hoje</b><span id="calmo">—</span></div></div>
+      <div class="week" id="week"></div>
+      <div class="ev"><em>Agora</em><i></i><div><b>Aberto a oportunidades</b><span>Analista de Dados · BI · Dev Python Jr</span></div></div>
+      <div class="ev"><em>Base</em><i></i><div><b>São Paulo · CPLU</b><span>Operação de limpeza urbana</span></div></div>
+    </div>
   </div>
 
-  <div class="hero-stats">
-    <div>
-      <div class="stat-num">7+</div>
-      <div class="stat-label">Projetos entregues</div>
+  <div class="grid g-kpi" id="kpis">
+    <div class="glass kpi lift rise" style="--i:3">
+      <div class="kpi-top"><div class="ico" data-ic="layers"></div></div>
+      <div class="kpi-val" data-to="7" data-suf="+">0</div>
+      <div class="kpi-lbl">Projetos entregues</div><div class="kpi-sub">rodando na operação</div>
+      <svg class="spark" data-spark="3,4,4,5,6,6,7,8"></svg>
     </div>
-    <div>
-      <div class="stat-num">2</div>
-      <div class="stat-label">MBAs concluídos</div>
+    <div class="glass kpi lift rise" style="--i:4">
+      <div class="kpi-top"><div class="ico" data-ic="grad"></div></div>
+      <div class="kpi-val" data-to="2">0</div>
+      <div class="kpi-lbl">MBAs concluídos</div><div class="kpi-sub">Dados · IA e Machine Learning</div>
+      <svg class="spark" data-spark="2,3,3,5,5,6,7,8"></svg>
     </div>
-    <div>
-      <div class="stat-num">290 mil+</div>
-      <div class="stat-label">Ocorrências geocodificadas</div>
+    <div class="glass destaque kpi lift rise" style="--i:5">
+      <div class="kpi-top"><div class="ico" data-ic="pin"></div></div>
+      <div class="kpi-val" data-to="290" data-suf=" mil+">0</div>
+      <div class="kpi-lbl">Ocorrências geocodificadas</div><div class="kpi-sub">mapa da operação</div>
+      <svg class="spark" data-spark="2,3,5,6,8,9,11,12"></svg>
     </div>
-    <div>
-      <div class="stat-num">300+</div>
-      <div class="stat-label">Funcionários no sistema de estatística</div>
+    <div class="glass kpi lift rise" style="--i:6">
+      <div class="kpi-top"><div class="ico" data-ic="users"></div></div>
+      <div class="kpi-val" data-to="300" data-suf="+">0</div>
+      <div class="kpi-lbl">Funcionários no sistema</div><div class="kpi-sub">estatística operacional</div>
+      <svg class="spark" data-spark="4,5,5,6,6,7,7,8"></svg>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     PROJETOS
-     ══════════════════════════════════════════════════ -->
 <section class="section" id="projetos">
   <div class="reveal">
     <p class="section-label">Portfólio</p>
-    <h2 class="section-title">Projetos reais,<br>resultados reais.</h2>
-    <p class="section-sub">Tudo desenvolvido por conta própria dentro da CPLU — sem cargo de TI, sem equipe de dados.</p>
+    <h2 class="section-title">Projetos reais,<br><span class="serif">resultados reais.</span></h2>
+    <p class="section-sub">Tudo desenvolvido por conta própria — dentro da CPLU, sem cargo de TI nem equipe de dados, e para clientes como freelancer.</p>
   </div>
 
   <div class="projects-grid stagger">
 
     <!-- ══════════════════════════════════════
+         PROJETO — Casa do Açaí · Sistema de Pedidos e Caixa (freelance)
+         ══════════════════════════════════════ -->
+    <div class="glass lift project-card wide featured">
+      <div class="project-thumb" style="flex-direction:column;height:auto;padding:0;gap:0;">
+        <div style="position:relative;width:100%;height:300px;overflow:hidden;background:#0e0f11;flex-shrink:0;">
+          <video id="ca-vid" autoplay muted loop playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:none;"></video>
+          <img id="ca-img" src="" alt="Casa do Açaí — Sistema de Pedidos e Caixa" style="width:100%;height:100%;object-fit:cover;object-position:top center;transition:opacity .3s ease;">
+          <div id="ca-grad" style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(14,15,17,.95));pointer-events:none;transition:opacity .3s ease;"></div>
+          <p id="ca-cap" style="position:absolute;bottom:12px;left:16px;right:16px;font-size:12px;line-height:1.5;color:rgba(238,234,224,.85);margin:0;"></p>
+        </div>
+        <div id="ca-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(186,200,177,.3) transparent;"></div>
+      </div>
+      <div class="project-body">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" style="background:#fff;padding:2px;border-radius:3px;">Django 5.2</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite">SQLite</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.simpleicons.org/chartdotjs/FF6384" alt="Chart.js" style="width:16px;height:16px;">Chart.js</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">JavaScript</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">CSS (liquid glass)</div>
+          <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows11/windows11-original.svg" alt="Windows">Instalador Windows</div>
+        </div>
+        <div class="project-title">Casa do Açaí · Sistema de Pedidos e Caixa — açaiteria delivery (freelance)</div>
+        <div class="project-desc">Sistema de pedidos e caixa (PDV) feito sob medida para uma açaiteria com delivery, que controlava tudo no papel. A atendente lança pedidos de balcão, mesa ou delivery em poucos toques — no açaí, o sistema respeita as regras do cardápio (até 3 acompanhamentos sem custo e até 2 frutas cobradas) — registra o pagamento com troco ou fiado e imprime a comanda com a logo. O caixa fecha conferido, com sangria, suprimento e diferença entre o contado e o esperado. O dono acompanha faturamento, lucro, lucro por produto, fluxo de caixa e gastos num painel com gráficos. Roda no computador da própria loja, com instalador de um clique e backup automático diário.</div>
+        <ul style="margin:12px 0 16px;padding-left:0;font-size:13px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
+          <li style="color:var(--tinta-2);">&#10022; Pedidos de balcão, mesa e delivery</li>
+          <li style="color:var(--tinta-2);">&#10022; Adicionais com limite por grupo (até 3 / até 2)</li>
+          <li style="color:var(--tinta-2);">&#10022; Preço e custo congelados na venda</li>
+          <li style="color:var(--tinta-2);">&#10022; Pix, dinheiro com troco, cartão e fiado</li>
+          <li style="color:var(--tinta-2);">&#10022; Caixa com sangria, suprimento e fechamento conferido</li>
+          <li style="color:var(--tinta-2);">&#10022; Comanda com logo: ticket 80/58 mm, A4 e PDF</li>
+          <li style="color:var(--tinta-2);">&#10022; Painel: lucro, fluxo de caixa e lucro por produto</li>
+          <li style="color:var(--tinta-2);">&#10022; Gastos com comprovante e exportação CSV</li>
+          <li style="color:var(--tinta-2);">&#10022; Perfis Dono e Atendente, telas próprias de cardápio</li>
+          <li style="color:var(--tinta-2);">&#10022; Instalador de 1 clique, backup diário e 53 testes</li>
+        </ul>
+        <span class="project-link" style="opacity:.4;cursor:default;pointer-events:none;">Projeto freelance · privado</span>
+      </div>
+    </div>
+    <script>
+    (function(){
+      var pastaImg = "Imagens (Casa do Acai)/";
+      var items = [
+        {type:"video", src:pastaImg+"demo.mp4",  cap:"Demo — pedido de delivery com regras do açaí, pagamento com troco, comanda, caixa, painel e celular"},
+        {type:"video", src:pastaImg+"tour.mp4",  cap:"Tour — cada item do menu: painel, pedidos, fiado, caixa, gastos, relatórios, cardápio e usuários"},
+        {type:"img",   src:"pedido.jpg",         cap:"Novo pedido — até 3 acompanhamentos sem custo e até 2 frutas; o sistema bloqueia o que passar do limite"},
+        {type:"img",   src:"painel.jpg",         cap:"Painel do dono — faturamento, lucro, ticket médio, fiado a receber, gastos por categoria e fluxo de caixa"},
+        {type:"img",   src:"caixa.jpg",          cap:"Caixa — sangria, suprimento e fechamento com dinheiro esperado, contado e diferença"},
+        {type:"img",   src:"comanda.jpg",        cap:"Comanda com a logo — ticket térmico 80/58 mm, folha A4 ou PDF"},
+        {type:"img",   src:"cardapio.jpg",       cap:"Cardápio — produtos com preço, custo e margem; adicionais e grupos com limite"},
+        {type:"img",   src:"celular.jpg",        cap:"Responsivo — o mesmo sistema no computador, tablet e celular"},
+        {type:"img",   src:"entrada.jpg",        cap:"Acesso por usuário — Dono vê tudo; Atendente só pedidos, fiado e caixa"}
+      ];
+
+      var vid    = document.getElementById('ca-vid');
+      var imgEl  = document.getElementById('ca-img');
+      var capEl  = document.getElementById('ca-cap');
+      var thumbs = document.getElementById('ca-thumbs');
+      var grad   = document.getElementById('ca-grad');
+
+      function setActive(i) {
+        var item = items[i];
+        if (item.type === 'video') {
+          imgEl.style.opacity = '0';
+          setTimeout(function(){
+            imgEl.style.display = 'none';
+            vid.src = item.src;
+            vid.style.display = 'block';
+            vid.play();
+            capEl.textContent = '';          // o vídeo já tem legendas gravadas
+            vid.setAttribute('aria-label', item.cap);
+            grad.style.opacity = '0';
+          }, 150);
+        } else {
+          vid.pause();
+          vid.style.display = 'none';
+          imgEl.style.opacity = '0';
+          setTimeout(function(){
+            imgEl.src = pastaImg + item.src;
+            capEl.textContent = item.cap;
+            grad.style.opacity = '1';
+            imgEl.style.display = 'block';
+            imgEl.style.opacity = '1';
+          }, 150);
+        }
+        thumbs.querySelectorAll('button').forEach(function(b, j){
+          b.style.outline = j === i ? '2px solid var(--accent)' : '2px solid transparent';
+          b.style.opacity = j === i ? '1' : '0.45';
+        });
+      }
+
+      items.forEach(function(item, i){
+        var btn = document.createElement('button');
+        btn.setAttribute('aria-label', item.cap.split(' — ')[0]);
+        btn.title = item.cap;
+        btn.style.cssText = 'flex-shrink:0;width:80px;height:50px;padding:0;border:none;border-radius:5px;overflow:hidden;cursor:pointer;outline:2px solid transparent;transition:opacity .2s,outline .2s;opacity:0.45;background:#0f0f1b;position:relative;';
+        if (item.type === 'video') {
+          var icon = document.createElement('div');
+          icon.style.cssText = 'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:20px;color:rgba(255,255,255,.7);';
+          icon.textContent = '▶';
+          btn.appendChild(icon);
+        } else {
+          var img = document.createElement('img');
+          img.src = pastaImg + item.src;
+          img.alt = '';
+          img.loading = 'lazy';
+          img.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top;pointer-events:none;';
+          btn.appendChild(img);
+        }
+        btn.addEventListener('click', function(){ setActive(i); });
+        thumbs.appendChild(btn);
+      });
+
+      setActive(0);
+    })();
+    </script>
+
+    <!-- ══════════════════════════════════════
          PROJETO — Painel FLIP · Acompanhamento do Contrato
          ══════════════════════════════════════ -->
-    <div class="project-card wide featured">
+    <div class="glass lift project-card wide featured">
       <div class="project-thumb" style="flex-direction:column;height:auto;padding:0;gap:0;">
         <div style="position:relative;width:100%;height:300px;overflow:hidden;background:#0e0f11;flex-shrink:0;">
           <video id="flip-vid" autoplay muted loop playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:none;"></video>
@@ -787,7 +648,7 @@ footer p { font-size: 12px; color: var(--muted); }
           <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(14,15,17,.95));pointer-events:none;"></div>
           <p id="flip-cap" style="position:absolute;bottom:12px;left:16px;right:16px;font-size:12px;line-height:1.5;color:rgba(238,234,224,.85);margin:0;"></p>
         </div>
-        <div id="flip-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(201,243,29,.3) transparent;"></div>
+        <div id="flip-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(186,200,177,.3) transparent;"></div>
       </div>
       <div class="project-body">
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
@@ -804,16 +665,16 @@ footer p { font-size: 12px; color: var(--muted); }
         <div class="project-title">Painel FLIP · Acompanhamento do Contrato — CPLU</div>
         <div class="project-desc">Painel web que acompanha, em tempo real, o contrato de limpeza urbana do Lote 9 (regionais Ipiranga, Jabaquara e Cidade Ademar). A cada minuto ele sincroniza sozinho com o sistema FLIP da Prefeitura de SP (API → JSON → banco) e consolida tudo numa base única: chamados do SAC 156, Ouvidoria, fiscalizações (BFS/CNC) e multas (ACIC) — hoje mais de 96 mil registros. Em cima dessa base, calcula os indicadores de desempenho do contrato (IRD, IA, IF e IPT, o ADC) com a memória de cálculo aberta, mostra KPIs com tendência de 30 dias, um mapa territorial por camadas, os chamados mais atrasados e um Modo TV para o telão da sala de operações. Hospedado na nuvem (Render + Supabase), com acesso por login e perfis — porque a base contém dados pessoais de munícipes.</div>
         <ul style="margin:12px 0 16px;padding-left:0;font-size:13px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
-          <li style="color:rgba(238,234,224,.65);">&#10022; Sincronização automática com o FLIP a cada 60s</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Indicadores ADC (IRD, IA, IF, IPT) com memória de cálculo</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Visão geral com KPIs e tendência de 30 dias</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Filtros por período, regional e serviço</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Ao vivo: filas de SAC, Ouvidoria, CNC e ACIC por status</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Mapa territorial (Leaflet) com camadas e agrupamento</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Modo TV para o telão da sala de operações</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Base única com +96 mil registros consolidados</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Deploy em nuvem: Render + Supabase (PostgreSQL)</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Acesso por login e perfis (admin / consulta)</li>
+          <li style="color:var(--tinta-2);">&#10022; Sincronização automática com o FLIP a cada 60s</li>
+          <li style="color:var(--tinta-2);">&#10022; Indicadores ADC (IRD, IA, IF, IPT) com memória de cálculo</li>
+          <li style="color:var(--tinta-2);">&#10022; Visão geral com KPIs e tendência de 30 dias</li>
+          <li style="color:var(--tinta-2);">&#10022; Filtros por período, regional e serviço</li>
+          <li style="color:var(--tinta-2);">&#10022; Ao vivo: filas de SAC, Ouvidoria, CNC e ACIC por status</li>
+          <li style="color:var(--tinta-2);">&#10022; Mapa territorial (Leaflet) com camadas e agrupamento</li>
+          <li style="color:var(--tinta-2);">&#10022; Modo TV para o telão da sala de operações</li>
+          <li style="color:var(--tinta-2);">&#10022; Base única com +96 mil registros consolidados</li>
+          <li style="color:var(--tinta-2);">&#10022; Deploy em nuvem: Render + Supabase (PostgreSQL)</li>
+          <li style="color:var(--tinta-2);">&#10022; Acesso por login e perfis (admin / consulta)</li>
         </ul>
         <span class="project-link" style="opacity:.4;cursor:default;pointer-events:none;">Projeto privado</span>
       </div>
@@ -893,7 +754,7 @@ footer p { font-size: 12px; color: var(--muted); }
     <!-- ══════════════════════════════════════
          PROJETO — GME · Gestão de Materiais e Estoque
          ══════════════════════════════════════ -->
-    <div class="project-card wide featured">
+    <div class="glass lift project-card wide featured">
       <div class="project-thumb" style="flex-direction:column;height:auto;padding:0;gap:0;">
         <div style="position:relative;width:100%;height:300px;overflow:hidden;background:#0e0f11;flex-shrink:0;">
           <video id="gme-vid" autoplay muted loop playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:none;"></video>
@@ -901,7 +762,7 @@ footer p { font-size: 12px; color: var(--muted); }
           <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(14,15,17,.95));pointer-events:none;"></div>
           <p id="gme-cap" style="position:absolute;bottom:12px;left:16px;right:16px;font-size:12px;line-height:1.5;color:rgba(238,234,224,.85);margin:0;"></p>
         </div>
-        <div id="gme-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(201,243,29,.3) transparent;"></div>
+        <div id="gme-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(186,200,177,.3) transparent;"></div>
       </div>
       <div class="project-body">
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
@@ -916,16 +777,16 @@ footer p { font-size: 12px; color: var(--muted); }
         <div class="project-title">GME · Gestão de Materiais e Estoque — Almoxarifado CPLU</div>
         <div class="project-desc">Sistema web completo para o almoxarifado da CPLU, desenvolvido do zero para substituir planilhas e papel. Cobre todo o caminho do material: o setor faz a requisição, o chefe aprova dentro da sua alçada, o almoxarifado separa pelo endereço da prateleira e entrega com confirmação por PIN do recebedor. O estoque é atualizado automaticamente, com entradas por nota fiscal conferidas item a item, controle de lote e validade (FEFO), painel analítico de gastos e trilha de auditoria de todas as ações. Sete perfis de acesso, tema claro e escuro e uso em computador, tablet e celular.</div>
         <ul style="margin:12px 0 16px;padding-left:0;font-size:13px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
-          <li style="color:rgba(238,234,224,.65);">&#10022; Requisição → aprovação → separação → entrega</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Entrega confirmada com PIN do recebedor</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Alçadas de aprovação por valor e perfil</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Entrada de NF com conferência item a item</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Lote, validade e reserva FEFO/FIFO</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Ajustes, transferências e estornos</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Painel analítico com exportação CSV</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Auditoria completa e 7 perfis de acesso</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Segurança: CSP estrita, bloqueio por tentativas, Argon2</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; +190 testes automatizados (unitários e E2E)</li>
+          <li style="color:var(--tinta-2);">&#10022; Requisição → aprovação → separação → entrega</li>
+          <li style="color:var(--tinta-2);">&#10022; Entrega confirmada com PIN do recebedor</li>
+          <li style="color:var(--tinta-2);">&#10022; Alçadas de aprovação por valor e perfil</li>
+          <li style="color:var(--tinta-2);">&#10022; Entrada de NF com conferência item a item</li>
+          <li style="color:var(--tinta-2);">&#10022; Lote, validade e reserva FEFO/FIFO</li>
+          <li style="color:var(--tinta-2);">&#10022; Ajustes, transferências e estornos</li>
+          <li style="color:var(--tinta-2);">&#10022; Painel analítico com exportação CSV</li>
+          <li style="color:var(--tinta-2);">&#10022; Auditoria completa e 7 perfis de acesso</li>
+          <li style="color:var(--tinta-2);">&#10022; Segurança: CSP estrita, bloqueio por tentativas, Argon2</li>
+          <li style="color:var(--tinta-2);">&#10022; +190 testes automatizados (unitários e E2E)</li>
         </ul>
         <span class="project-link" style="opacity:.4;cursor:default;pointer-events:none;">Projeto privado</span>
       </div>
@@ -1065,7 +926,7 @@ footer p { font-size: 12px; color: var(--muted); }
     <!-- ══════════════════════════════════════
          PROJETO — Estatística Operacional Django
          ══════════════════════════════════════ -->
-    <div class="project-card wide featured">
+    <div class="glass lift project-card wide featured">
       <div class="project-thumb" style="flex-direction:column;height:auto;padding:0;gap:0;">
         <!-- Vídeo demo (descomente e preencha src quando tiver a gravação) -->
         <!-- <video controls poster="Imagens  (Estatistica)/equipe do user.png"
@@ -1077,7 +938,7 @@ footer p { font-size: 12px; color: var(--muted); }
           <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(14,15,17,.95));pointer-events:none;"></div>
           <p id="eg-cap" style="position:absolute;bottom:12px;left:16px;right:16px;font-size:12px;line-height:1.5;color:rgba(238,234,224,.85);margin:0;"></p>
         </div>
-        <div id="eg-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(201,243,29,.3) transparent;"></div>
+        <div id="eg-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(186,200,177,.3) transparent;"></div>
       </div>
       <div class="project-body">
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
@@ -1094,16 +955,16 @@ footer p { font-size: 12px; color: var(--muted); }
         <div class="project-title">Sistema de Estatística Operacional — CPLU</div>
         <div class="project-desc">Plataforma web multi-usuário desenvolvida do zero para o Consórcio Paulista de Limpeza Urbana. Controla a frequência diária de +300 colaboradores em 4 regionais, com grade totalmente interativa editável em tempo real via JavaScript puro. Inclui design system próprio com alternância Dark / Light Mode, painel estatístico com rankings por equipe, sistema de transferências de colaboradores entre fiscais, histórico de punições por funcionário e geração automática de PDFs (convocações, advertências, suspensões). Em produção no Render com PostgreSQL via Supabase.</div>
         <ul style="margin:12px 0 16px;padding-left:0;font-size:13px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
-          <li style="color:rgba(238,234,224,.65);">✦ Controle de acesso por perfil</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Grade de frequência interativa</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Dark / Light Mode — design system</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Geração de PDF automática</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Painel estatístico com rankings</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Transferências entre equipes</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Histórico de punições por colaborador</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Importação de Excel (Base RH)</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Log de auditoria completo</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Deploy em produção (Render)</li>
+          <li style="color:var(--tinta-2);">✦ Controle de acesso por perfil</li>
+          <li style="color:var(--tinta-2);">✦ Grade de frequência interativa</li>
+          <li style="color:var(--tinta-2);">✦ Dark / Light Mode — design system</li>
+          <li style="color:var(--tinta-2);">✦ Geração de PDF automática</li>
+          <li style="color:var(--tinta-2);">✦ Painel estatístico com rankings</li>
+          <li style="color:var(--tinta-2);">✦ Transferências entre equipes</li>
+          <li style="color:var(--tinta-2);">✦ Histórico de punições por colaborador</li>
+          <li style="color:var(--tinta-2);">✦ Importação de Excel (Base RH)</li>
+          <li style="color:var(--tinta-2);">✦ Log de auditoria completo</li>
+          <li style="color:var(--tinta-2);">✦ Deploy em produção (Render)</li>
         </ul>
         <a href="https://estatisticas-cplu-daoo.onrender.com" target="_blank" rel="noopener" class="project-link">Ver demo ao vivo →</a>
       </div>
@@ -1165,7 +1026,7 @@ footer p { font-size: 12px; color: var(--muted); }
     <!-- ======================================
          PROJETO — Consulta de Mapas (Streamlit)
          ====================================== -->
-    <div class="project-card wide featured">
+    <div class="glass lift project-card wide featured">
       <div class="project-thumb" style="flex-direction:column;height:auto;padding:0;gap:0;">
         <div style="position:relative;width:100%;height:300px;overflow:hidden;background:#0e0f11;flex-shrink:0;">
           <video id="cm-vid" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;object-position:top center;display:none;"></video>
@@ -1173,7 +1034,7 @@ footer p { font-size: 12px; color: var(--muted); }
           <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(14,15,17,.95));pointer-events:none;"></div>
           <p id="cm-cap" style="position:absolute;bottom:12px;left:16px;right:16px;font-size:12px;line-height:1.5;color:rgba(238,234,224,.85);margin:0;"></p>
         </div>
-        <div id="cm-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(201,243,29,.3) transparent;"></div>
+        <div id="cm-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(186,200,177,.3) transparent;"></div>
       </div>
       <div class="project-body">
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
@@ -1186,12 +1047,12 @@ footer p { font-size: 12px; color: var(--muted); }
         <div class="project-title">Sistema de Consulta de Mapas — CPLU</div>
         <div class="project-desc">App web em Streamlit para consultar mapas PDF de rotas operacionais do Lote IX (Cidade Ademar, Ipiranga, Jabaquara). Lê diretamente a estrutura de pastas da rede interna, filtra por Regional, Tipo de Serviço, Turno e Data de Execução, e exibe cards com os dados de cada rota — com abertura do PDF em um clique.</div>
         <ul style="margin:12px 0 16px;padding-left:0;font-size:13px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
-          <li style="color:rgba(238,234,224,.65);">&#10022; Filtros: Regional, Servico, Turno, Data</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Leitura direta de rede local</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Cards com metadados da rota</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Abertura de PDF em 1 clique</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; 3 regionais / multiplos servicos</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Tema CPLU (verde + laranja)</li>
+          <li style="color:var(--tinta-2);">&#10022; Filtros: Regional, Servico, Turno, Data</li>
+          <li style="color:var(--tinta-2);">&#10022; Leitura direta de rede local</li>
+          <li style="color:var(--tinta-2);">&#10022; Cards com metadados da rota</li>
+          <li style="color:var(--tinta-2);">&#10022; Abertura de PDF em 1 clique</li>
+          <li style="color:var(--tinta-2);">&#10022; 3 regionais / multiplos servicos</li>
+          <li style="color:var(--tinta-2);">&#10022; Tema CPLU (verde + laranja)</li>
         </ul>
         <a href="https://github.com/paulo2024henriquecostadesouza-hub/consulta-mapas" target="_blank" class="project-link">Ver no GitHub <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
@@ -1273,7 +1134,7 @@ footer p { font-size: 12px; color: var(--muted); }
     <!-- ======================================
          PROJETO — Gerador de Rotas Django
          ====================================== -->
-    <div class="project-card wide featured">
+    <div class="glass lift project-card wide featured">
       <div class="project-thumb" style="flex-direction:column;height:auto;padding:0;gap:0;">
         <div style="position:relative;width:100%;height:300px;overflow:hidden;background:#0e0f11;flex-shrink:0;">
           <video id="gr-vid" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;object-position:top center;display:none;"></video>
@@ -1281,7 +1142,7 @@ footer p { font-size: 12px; color: var(--muted); }
           <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(14,15,17,.95));pointer-events:none;"></div>
           <p id="gr-cap" style="position:absolute;bottom:12px;left:16px;right:16px;font-size:12px;line-height:1.5;color:rgba(238,234,224,.85);margin:0;"></p>
         </div>
-        <div id="gr-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(201,243,29,.3) transparent;"></div>
+        <div id="gr-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(186,200,177,.3) transparent;"></div>
       </div>
       <div class="project-body">
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
@@ -1296,12 +1157,12 @@ footer p { font-size: 12px; color: var(--muted); }
         <div class="project-title">Gerador de Rotas — Fiscais CPLU</div>
         <div class="project-desc">Sistema web em Django que recebe uma lista de endereços, geocodifica automaticamente via OpenStreetMap (Nominatim) e aplica otimizacao por menor distancia com OR-Tools (TSP offline). Exibe mapa interativo Leaflet com pontos numerados, links de navegacao para Google Maps e Waze, KPIs de distancia / tempo / combustivel e exportacao em PDF.</div>
         <ul style="margin:12px 0 16px;padding-left:0;font-size:13px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
-          <li style="color:rgba(238,234,224,.65);">&#10022; Geocodificacao automatica (OpenStreetMap)</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Otimizacao TSP via OR-Tools (offline)</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Mapa interativo com Leaflet.js</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Links Google Maps e Waze por parada</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; KPIs: distancia, tempo, combustivel</li>
-          <li style="color:rgba(238,234,224,.65);">&#10022; Exportacao PDF da rota completa</li>
+          <li style="color:var(--tinta-2);">&#10022; Geocodificacao automatica (OpenStreetMap)</li>
+          <li style="color:var(--tinta-2);">&#10022; Otimizacao TSP via OR-Tools (offline)</li>
+          <li style="color:var(--tinta-2);">&#10022; Mapa interativo com Leaflet.js</li>
+          <li style="color:var(--tinta-2);">&#10022; Links Google Maps e Waze por parada</li>
+          <li style="color:var(--tinta-2);">&#10022; KPIs: distancia, tempo, combustivel</li>
+          <li style="color:var(--tinta-2);">&#10022; Exportacao PDF da rota completa</li>
         </ul>
         <a href="https://github.com/paulo2024henriquecostadesouza-hub/gerador-rotas-django" target="_blank" class="project-link">Ver no GitHub <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
@@ -1374,7 +1235,7 @@ footer p { font-size: 12px; color: var(--muted); }
     })();
     </script>
 
-<div class="project-card wide">
+<div class="glass lift project-card wide">
       <div class="project-thumb">
         <div class="thumb-placeholder">
           <div class="mock-ui" style="width:84%;height:84%;">
@@ -1382,17 +1243,17 @@ footer p { font-size: 12px; color: var(--muted); }
               <div class="mock-dot" style="background:var(--accent)"></div>
               <div class="mock-dot" style="background:var(--amber)"></div>
               <div style="flex:1;height:3px;background:rgba(255,255,255,.05);border-radius:2px;margin-left:4px;"></div>
-              <div style="font-size:6px;color:rgba(201,243,29,.35);">🤖 Robô SAC 156 · Selenium · loop 2min</div>
+              <div style="font-size:6px;color:rgba(186,200,177,.35);">🤖 Robô SAC 156 · Selenium · loop 2min</div>
             </div>
             <div style="font-size:7px;color:rgba(255,255,255,.3);margin:6px 0 4px;">Terminal</div>
             <div style="display:flex;flex-direction:column;gap:3px;flex:1;font-family:monospace;">
-              <div style="font-size:6px;color:rgba(201,243,29,.7);">✔ Ciclo #1 — 08:00:12</div>
+              <div style="font-size:6px;color:rgba(186,200,177,.7);">✔ Ciclo #1 — 08:00:12</div>
               <div style="font-size:6px;color:rgba(255,255,255,.35);">Processando Serviço #1...</div>
               <div style="font-size:6px;color:rgba(255,255,255,.35);">Mapeamento: PROGRAMAÇÃO</div>
-              <div style="font-size:6px;color:rgba(201,243,29,.55);">✔ Serviço finalizado. PDF gerado.</div>
+              <div style="font-size:6px;color:rgba(186,200,177,.55);">✔ Serviço finalizado. PDF gerado.</div>
               <div style="font-size:6px;color:rgba(255,255,255,.35);">Processando Serviço #2...</div>
               <div style="font-size:6px;color:rgba(255,255,255,.35);">Mapeamento: PADRÃO</div>
-              <div style="font-size:6px;color:rgba(201,243,29,.55);">✔ Serviço finalizado.</div>
+              <div style="font-size:6px;color:rgba(186,200,177,.55);">✔ Serviço finalizado.</div>
               <div style="font-size:6px;color:rgba(251,191,36,.6);">✔ LISTA ZERADA. 7 serviços processados.</div>
               <div style="font-size:6px;color:rgba(255,255,255,.2);">Pausando 120s... próximo ciclo às 08:02</div>
             </div>
@@ -1403,18 +1264,18 @@ footer p { font-size: 12px; color: var(--muted); }
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
           <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</div>
           <div class="tech-pill"><img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" alt="Selenium">Selenium</div>
-          <div class="tech-pill"><div class="tech-dot" style="background:#C9F31D"></div>WebDriver</div>
+          <div class="tech-pill"><div class="tech-dot" style="background:#7B9669"></div>WebDriver</div>
           <div class="tech-pill"><div class="tech-dot" style="background:#38bdf8"></div>Web Scraping</div>
         </div>
         <div class="project-title">Automação de Respostas — SAC 156 / Sistema Flip</div>
         <div class="project-desc">Dois robôs Python com Selenium que acessam o sistema SAC 156 da Prefeitura de SP (Flip), identificam serviços nas filas "Executado" e "Não Procede", geram respostas automáticas personalizadas por tipo de serviço e finalizam cada chamado. O ciclo roda a cada 2 minutos, zerando a fila automaticamente sem intervenção humana.</div>
         <ul style="margin:12px 0 16px;padding-left:0;font-size:13px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
-          <li style="color:rgba(238,234,224,.65);">✦ Login e navegação automatizados</li>
-          <li style="color:rgba(238,234,224,.65);">✦ 3 tipos de resposta mapeados</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Loop contínuo a cada 2 minutos</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Tratamento de erros e retry</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Log de cada ciclo executado</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Execução contínua e automática</li>
+          <li style="color:var(--tinta-2);">✦ Login e navegação automatizados</li>
+          <li style="color:var(--tinta-2);">✦ 3 tipos de resposta mapeados</li>
+          <li style="color:var(--tinta-2);">✦ Loop contínuo a cada 2 minutos</li>
+          <li style="color:var(--tinta-2);">✦ Tratamento de erros e retry</li>
+          <li style="color:var(--tinta-2);">✦ Log de cada ciclo executado</li>
+          <li style="color:var(--tinta-2);">✦ Execução contínua e automática</li>
         </ul>
         <span class="project-link" style="opacity:.4;cursor:default;pointer-events:none;">Projeto interno</span>
       </div>
@@ -1433,7 +1294,7 @@ footer p { font-size: 12px; color: var(--muted); }
     <!-- ══════════════════════════════════════
          PROJETO — Consulta Integrada (Buscador Django)
          ══════════════════════════════════════ -->
-    <div class="project-card wide featured">
+    <div class="glass lift project-card wide featured">
       <span class="featured-badge">⭐ Destaque</span>
       <div class="project-thumb" style="flex-direction:column;height:auto;padding:0;gap:0;">
         <div style="position:relative;width:100%;height:300px;overflow:hidden;background:#0e0f11;flex-shrink:0;">
@@ -1441,7 +1302,7 @@ footer p { font-size: 12px; color: var(--muted); }
           <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(14,15,17,.95));pointer-events:none;"></div>
           <p id="ct-cap" style="position:absolute;bottom:12px;left:16px;right:16px;font-size:12px;line-height:1.5;color:rgba(238,234,224,.85);margin:0;"></p>
         </div>
-        <div id="ct-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(201,243,29,.3) transparent;"></div>
+        <div id="ct-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(186,200,177,.3) transparent;"></div>
       </div>
       <div class="project-body">
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
@@ -1456,12 +1317,12 @@ footer p { font-size: 12px; color: var(--muted); }
         <div class="project-title">Consulta Integrada — Mapa de Ocorrências CPLU</div>
         <div class="project-desc">Plataforma Django de inteligência operacional para o CCO / CPLU. Agrega e geocodifica 290 mil+ ocorrências de serviços municipais de 5 fontes distintas (SAC 156, Ouvidoria, ACIC, BFS, CNC) em um mapa de calor interativo com MarkerCluster. Permite filtrar por tipo, status, data e endereço, visualizar estatísticas em painel dinâmico e importar novos dados manualmente ou via automação Selenium que faz login e baixa os relatórios automaticamente.</div>
         <ul style="margin:12px 0 16px;padding-left:0;font-size:13px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
-          <li style="color:rgba(238,234,224,.65);">✦ 290 mil+ ocorrências geocodificadas</li>
-          <li style="color:rgba(238,234,224,.65);">✦ 5 fontes municipais integradas</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Mapa de calor com MarkerCluster</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Importação automática via Selenium</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Exportação Excel com filtros</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Painel de estatísticas dinâmico</li>
+          <li style="color:var(--tinta-2);">✦ 290 mil+ ocorrências geocodificadas</li>
+          <li style="color:var(--tinta-2);">✦ 5 fontes municipais integradas</li>
+          <li style="color:var(--tinta-2);">✦ Mapa de calor com MarkerCluster</li>
+          <li style="color:var(--tinta-2);">✦ Importação automática via Selenium</li>
+          <li style="color:var(--tinta-2);">✦ Exportação Excel com filtros</li>
+          <li style="color:var(--tinta-2);">✦ Painel de estatísticas dinâmico</li>
         </ul>
         <span class="project-link" style="opacity:.4;cursor:default;pointer-events:none;">Projeto interno</span>
       </div>
@@ -1507,7 +1368,7 @@ footer p { font-size: 12px; color: var(--muted); }
     <!-- ══════════════════════════════════════
          PROJETO — Varrição Manual (Django)
          ══════════════════════════════════════ -->
-    <div class="project-card wide featured">
+    <div class="glass lift project-card wide featured">
       <span class="featured-badge">⭐ Destaque</span>
       <div class="project-thumb" style="flex-direction:column;height:auto;padding:0;gap:0;">
         <div style="position:relative;width:100%;height:300px;overflow:hidden;background:#0e0f11;flex-shrink:0;">
@@ -1516,7 +1377,7 @@ footer p { font-size: 12px; color: var(--muted); }
           <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(14,15,17,.95));pointer-events:none;"></div>
           <p id="vr-cap" style="position:absolute;bottom:12px;left:16px;right:16px;font-size:12px;line-height:1.5;color:rgba(238,234,224,.85);margin:0;"></p>
         </div>
-        <div id="vr-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(201,243,29,.3) transparent;"></div>
+        <div id="vr-thumbs" style="display:flex;gap:5px;padding:8px 10px;background:rgba(0,0,0,.55);overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(186,200,177,.3) transparent;"></div>
       </div>
       <div class="project-body">
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
@@ -1530,12 +1391,12 @@ footer p { font-size: 12px; color: var(--muted); }
         <div class="project-title">Varrição Manual — Painel Operacional CPLU</div>
         <div class="project-desc">Dashboard Django de monitoramento de rotas de varrição manual para o CCO / CPLU. Consome a API Conforce em tempo real, classifica cada rota como Excelente (≥90%), Em andamento ou Crítica com código de cores, e gera gráficos de desempenho por regional, dia da semana e tempo de execução via Chart.js. Permite filtrar por regional e turno, exportar CSV e visualizar o mapa de execução de cada rota em modal capturado via Selenium.</div>
         <ul style="margin:12px 0 16px;padding-left:0;font-size:13px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
-          <li style="color:rgba(238,234,224,.65);">✦ KPIs: Excelente / Em andamento / Críticas</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Gráficos Chart.js por regional e turno</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Filtros por regional, turno e período</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Modal de mapa via Selenium</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Renovação automática de credenciais</li>
-          <li style="color:rgba(238,234,224,.65);">✦ Exportação de dados em CSV</li>
+          <li style="color:var(--tinta-2);">✦ KPIs: Excelente / Em andamento / Críticas</li>
+          <li style="color:var(--tinta-2);">✦ Gráficos Chart.js por regional e turno</li>
+          <li style="color:var(--tinta-2);">✦ Filtros por regional, turno e período</li>
+          <li style="color:var(--tinta-2);">✦ Modal de mapa via Selenium</li>
+          <li style="color:var(--tinta-2);">✦ Renovação automática de credenciais</li>
+          <li style="color:var(--tinta-2);">✦ Exportação de dados em CSV</li>
         </ul>
         <a href="https://github.com/paulo2024henriquecostadesouza-hub/varricao-django" target="_blank" class="project-link">Ver no GitHub <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
@@ -1576,7 +1437,7 @@ footer p { font-size: 12px; color: var(--muted); }
         var btn = document.createElement('button');
         btn.style.cssText = 'flex-shrink:0;width:80px;height:50px;padding:0;border:none;border-radius:5px;overflow:hidden;cursor:pointer;outline:2px solid transparent;transition:opacity .2s,outline .2s;opacity:0.45;background:#0f0f1b;';
         if (item.type === 'video') {
-          btn.innerHTML = '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:18px;background:rgba(201,243,29,.08);">&#9654;</div>';
+          btn.innerHTML = '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:18px;background:rgba(186,200,177,.08);">&#9654;</div>';
         } else {
           var timg = document.createElement('img');
           timg.src = pasta + item.src;
@@ -1597,10 +1458,10 @@ footer p { font-size: 12px; color: var(--muted); }
      STACK — com logos reais
      ══════════════════════════════════════════════════ -->
 <div class="stack-section" id="stack">
-  <div class="stack-inner">
+  <div class="stack-inner glass">
     <div class="reveal">
       <p class="section-label">Tecnologias</p>
-      <h2 class="section-title">Stack completa</h2>
+      <h2 class="section-title">Stack <span class="serif">completa</span></h2>
       <p class="section-sub">Da análise de dados ao deploy em produção.</p>
     </div>
 
@@ -1673,11 +1534,15 @@ footer p { font-size: 12px; color: var(--muted); }
             Matplotlib
           </div>
           <div class="tech-pill">
+            <img class="tech-logo" src="https://cdn.simpleicons.org/chartdotjs/FF6384" alt="Chart.js">
+            Chart.js
+          </div>
+          <div class="tech-pill">
             <div class="tech-dot" style="background:#1d6f42"></div>
             Excel Avançado
           </div>
           <div class="tech-pill">
-            <div class="tech-dot" style="background:#C9F31D"></div>
+            <div class="tech-dot" style="background:#7B9669"></div>
             OpenPyXL
           </div>
           <div class="tech-pill">
@@ -1820,10 +1685,10 @@ footer p { font-size: 12px; color: var(--muted); }
      ══════════════════════════════════════════════════ -->
 <section class="section" id="sobre">
   <div class="sobre-grid">
-    <div class="reveal-left">
+    <div class="reveal-left glass panel">
       <p class="section-label">Sobre mim</p>
       <h2 class="section-title" style="margin-bottom:28px;">
-        Trabalho na<br>operação. Penso<br>em <span style="color:var(--accent)">dados.</span>
+        Trabalho na<br>operação. Penso<br>em <span class="serif">dados.</span>
       </h2>
       <p>Sou <strong>Paulo Henrique</strong>, Auxiliar de Controle Operacional na CPLU — Consórcio Paulista de Limpeza Urbana, em São Paulo.</p>
       <p>Por conta própria, desenvolvi sistemas web com Django, dashboards com Python e Excel, aplicações com Streamlit e Flask, automações via API REST e banco de dados com SQL Server e Supabase — tudo rodando em produção no Render. <strong>Sem equipe de TI, sem cargo de tecnologia.</strong></p>
@@ -1836,7 +1701,7 @@ footer p { font-size: 12px; color: var(--muted); }
       </div>
     </div>
 
-    <div class="reveal-right">
+    <div class="reveal-right glass panel">
       <p class="section-label" style="margin-bottom:20px;">Formação</p>
       <div class="formacao-list">
         <div class="formacao-card">
@@ -1867,10 +1732,10 @@ footer p { font-size: 12px; color: var(--muted); }
 <!-- ══════════════════════════════════════════════════
      CONTATO
      ══════════════════════════════════════════════════ -->
-<div class="contact-section" id="contato">
+<div class="contact-section glass destaque" id="contato">
   <div class="reveal">
     <p class="section-label">Contato</p>
-    <h2 class="section-title">Vamos conversar?</h2>
+    <h2 class="section-title">Vamos <span class="serif">conversar?</span></h2>
     <p class="section-sub">Aberto a oportunidades em dados, BI e desenvolvimento Python.</p>
   </div>
   <div class="contact-links reveal">
@@ -1902,204 +1767,178 @@ footer p { font-size: 12px; color: var(--muted); }
 </main>
 
 <!-- ============================================================
-     JAVASCRIPT — cursor, navbar, scroll reveal, animações
+     JAVASCRIPT — menu, entrada em cascata, números, gráficos
      ============================================================ -->
 <script>
+(function(){
+const $  = (s,r=document)=>r.querySelector(s);
+const $$ = (s,r=document)=>[...r.querySelectorAll(s)];
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* ── CURSOR CUSTOMIZADO ───────────────────────── */
-const cursor     = document.getElementById('cursor');
-const cursorRing = document.getElementById('cursor-ring');
-let mx = 0, my = 0, rx = 0, ry = 0;
+/* ── Ícones (traço simples, estilo lucide) ── */
+const IC = {
+  home:'<path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/>',
+  folder:'<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',
+  layers:'<path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/>',
+  user:'<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/>',
+  mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
+  grad:'<path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/>',
+  pin:'<path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+  users:'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14c2.2.6 3.5 2.6 3.5 6"/>'
+};
+const svg = (n,s=18)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${IC[n]}</svg>`;
+$$('[data-ic]').forEach(el=>el.innerHTML=svg(el.dataset.ic,16));
 
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  cursor.style.left = mx + 'px';
-  cursor.style.top  = my + 'px';
+/* ── Menu lateral com pílula deslizante ── */
+const NAV = [
+  {id:'inicio',   t:'Início',   ic:'home'},
+  {id:'projetos', t:'Projetos', ic:'folder'},
+  {id:'stack',    t:'Stack',    ic:'layers'},
+  {id:'sobre',    t:'Sobre',    ic:'user'},
+  {id:'contato',  t:'Contato',  ic:'mail'}
+];
+const nav=$('#nav'), pill=$('#pill');
+NAV.forEach(n=>{
+  const a=document.createElement('a');
+  a.href='#'+n.id; a.dataset.id=n.id; a.title=n.t;
+  a.innerHTML=svg(n.ic,18)+`<span class="t">${n.t}</span>`;
+  nav.appendChild(a);
 });
-
-/* círculo segue com atraso (mesma suavização do Dixor: distância / 9) */
-function animateRing() {
-  rx += (mx - rx) / 9;
-  ry += (my - ry) / 9;
-  cursorRing.style.left = rx + 'px';
-  cursorRing.style.top  = ry + 'px';
-  requestAnimationFrame(animateRing);
+let current='inicio';
+function movePill(id){
+  const a=$(`.nav a[data-id="${id}"]`); if(!a) return;
+  current=id;
+  pill.style.width=a.offsetWidth+'px';
+  pill.style.height=a.offsetHeight+'px';
+  pill.style.transform=`translate(${a.offsetLeft}px,${a.offsetTop}px)`;
+  $$('.nav a').forEach(x=>x.classList.toggle('active',x===a));
 }
-animateRing();
-
-/* sobre links e botões: bolinha cresce com efeito elástico e mostra ↗,
-   o círculo de trás encolhe. Delegação de eventos = funciona também
-   nos botões criados pelas galerias. */
-document.addEventListener('mouseover', e => {
-  const alvo = e.target.closest('a, button, .contact-link');
-  cursor.classList.toggle('hover', !!alvo);
-  cursorRing.classList.toggle('hover', !!alvo);
-});
-document.addEventListener('mouseleave', () => { cursor.style.opacity = cursorRing.style.opacity = '0'; });
-document.addEventListener('mouseenter', () => { cursor.style.opacity = cursorRing.style.opacity = ''; });
-
-/* ── TÍTULOS: quebra em palavras e anima ao entrar na tela ── */
-function splitWords(el) {
-  let i = 0;
-  (function walk(node) {
-    [...node.childNodes].forEach(child => {
-      if (child.nodeType === 3) {               /* texto */
-        const frag = document.createDocumentFragment();
-        child.textContent.split(/(\s+)/).forEach(part => {
-          if (!part) return;
-          if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
-          const w = document.createElement('span');
-          w.className = 'split-word';
-          const inner = document.createElement('span');
-          inner.style.setProperty('--i', i++);
-          inner.textContent = part;
-          w.appendChild(inner);
-          frag.appendChild(w);
-        });
-        child.replaceWith(frag);
-      } else if (child.nodeType === 1 && child.tagName !== 'BR') {
-        walk(child);                            /* ex.: <span> colorido */
-      }
-    });
-  })(el);
+/* a pílula acompanha a seção que está no meio da tela */
+const secs=NAV.map(n=>document.getElementById(n.id)).filter(Boolean);
+function spy(){
+  const meio=innerHeight*0.45;
+  let ativo=secs[0].id;
+  secs.forEach(s=>{ if(s.getBoundingClientRect().top<=meio) ativo=s.id; });
+  if(innerHeight+scrollY>=document.documentElement.scrollHeight-4) ativo='contato';
+  if(ativo!==current) movePill(ativo);
 }
-const splitObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('split-in');
-      splitObserver.unobserve(entry.target);
+addEventListener('scroll',spy,{passive:true});
+addEventListener('resize',()=>movePill(current));
+
+/* recolher / expandir o menu */
+$('#collapse').addEventListener('click',e=>{
+  e.preventDefault(); e.stopPropagation();
+  $('#side').classList.toggle('min');
+  document.body.classList.toggle('side-min');
+  const t0=performance.now();
+  (function f(){ movePill(current); if(performance.now()-t0<700) requestAnimationFrame(f); })();
+});
+
+/* ── Saudação e data reais (relógio de quem visita) ── */
+(function(){
+  const d=new Date(), h=d.getHours();
+  $('#greet').textContent=(h<12?'Bom dia':h<18?'Boa tarde':'Boa noite')+'! Eu sou o Paulo.';
+  const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+  const wd=cap(d.toLocaleDateString('pt-BR',{weekday:'long'}));
+  $('#dateline').textContent=`${wd}, ${d.toLocaleDateString('pt-BR',{day:'numeric',month:'long'})} · Analista de Dados e Desenvolvedor Python · São Paulo`;
+  $('#calday').textContent=String(d.getDate()).padStart(2,'0');
+  $('#calwd').textContent=wd;
+  $('#calmo').textContent=cap(d.toLocaleDateString('pt-BR',{month:'long',year:'numeric'}));
+  const ini=new Date(d); ini.setDate(d.getDate()-d.getDay());
+  const L=['D','S','T','Q','Q','S','S'];
+  $('#week').innerHTML=[...Array(7)].map((_,i)=>{const x=new Date(ini);x.setDate(ini.getDate()+i);
+    return `<div><small>${L[i]}</small><span class="${x.toDateString()===d.toDateString()?'today':''}">${x.getDate()}</span></div>`}).join('');
+})();
+
+/* ── Mini-gráficos (traço que se desenha) ── */
+$$('svg.spark').forEach(s=>{
+  const data=s.dataset.spark.split(',').map(Number);
+  const w=92,h=34,min=Math.min(...data),max=Math.max(...data);
+  const pts=data.map((v,i)=>[i/(data.length-1)*w, h-4-(v-min)/(max-min||1)*(h-10)]);
+  const dd=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');
+  const last=pts[pts.length-1];
+  s.setAttribute('viewBox',`0 0 ${w} ${h}`);
+  s.innerHTML=`<path pathLength="1" d="${dd}"/><circle cx="${last[0]}" cy="${last[1]}" r="3"/>`;
+});
+
+/* ── Números com dígitos "embaralhando" até assentar ── */
+function rollNumber(el,delay=0){
+  const to=parseFloat(el.dataset.to), suf=el.dataset.suf||'';
+  const final=String(to)+suf;
+  if(REDUCED){el.textContent=final;return;}
+  const dur=1500, t0=performance.now()+delay;
+  (function tick(now){
+    if(now<t0){requestAnimationFrame(tick);return;}
+    const p=Math.min((now-t0)/dur,1);
+    const base=String(Math.round(to*(1-Math.pow(1-p,3))))+suf;
+    let out='';
+    for(let i=0;i<final.length;i++){
+      const ch=final[i], assenta=(i+1)/final.length*.8+.12;   // da esquerda para a direita
+      out += (/\d/.test(ch) && p<assenta) ? Math.floor(Math.random()*10) : (base[i]??ch);
     }
-  });
-}, { rootMargin: '0px 0px -10% 0px' });
-document.querySelectorAll('.section-title').forEach(t => {
-  splitWords(t);
-  splitObserver.observe(t);
-});
-
-/* ── TEXTO QUE PINTA COM A ROLAGEM ─────────────── */
-const fillEls = [...document.querySelectorAll('.section-sub, #sobre .reveal-left > p')];
-fillEls.forEach(p => {
-  p.classList.add('text-fill');
-  const inner = document.createElement('span');
-  inner.className = 'fill-inner';
-  while (p.firstChild) inner.appendChild(p.firstChild);
-  p.appendChild(inner);
-});
-function updateFill() {
-  const vh = window.innerHeight;
-  fillEls.forEach(p => {
-    const r = p.getBoundingClientRect();
-    const centro = r.top + r.height / 2;
-    /* começa quando o centro do texto entra embaixo (100%) e
-       termina quando chega na metade da tela (50%) */
-    const prog = Math.min(Math.max((vh - centro) / (vh * 0.5), 0), 1);
-    p.firstChild.style.backgroundSize = (prog * 100).toFixed(1) + '% 100%';
-  });
-}
-window.addEventListener('scroll', updateFill, { passive: true });
-window.addEventListener('resize', updateFill);
-updateFill();
-
-/* ── NAVBAR — aparece ao rolar ───────────────── */
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 60);
-});
-
-/* ── SCROLL REVEAL ───────────────────────────── */
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.reveal, .reveal-left, .reveal-right')
-  .forEach(el => revealObserver.observe(el));
-
-/* ── CARDS DE PROJETO — reveal escalonado ────── */
-const cardObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      /* delay baseado na posição do card na grade */
-      const delay = (entry.target.dataset.delay || 0);
-      setTimeout(() => {
-        entry.target.classList.add('visible');
-      }, delay);
-      cardObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.08 });
-
-document.querySelectorAll('.project-card').forEach((card, i) => {
-  card.dataset.delay = (i % 3) * 100; /* escalonamento por coluna */
-  cardObserver.observe(card);
-});
-
-/* ── STACK PILLS — reveal escalonado ─────────── */
-const pillObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll('.tech-pill').forEach((pill, i) => {
-        pill.style.opacity = '0';
-        pill.style.transform = 'translateY(16px)';
-        pill.style.transition = `opacity 0.5s ease ${i * 0.06}s, transform 0.5s cubic-bezier(0.16,1,0.3,1) ${i * 0.06}s`;
-        setTimeout(() => {
-          pill.style.opacity = '1';
-          pill.style.transform = 'translateY(0)';
-        }, 50);
-      });
-      pillObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.2 });
-
-document.querySelectorAll('.stack-pills').forEach(g => pillObserver.observe(g));
-
-/* ── PARALLAX LEVE nos orbs de fundo ─────────── */
-window.addEventListener('scroll', () => {
-  const y = window.scrollY;
-  document.querySelector('.orb1').style.transform = `translate(0, ${y * 0.08}px)`;
-  document.querySelector('.orb2').style.transform = `translate(0, ${-y * 0.05}px)`;
-});
-
-/* ── CONTADOR ANIMADO nas estatísticas ───────── */
-function animateCounter(el, target, suffix = '') {
-  let start = 0;
-  const duration = 1500;
-  const step = (timestamp) => {
-    if (!start) start = timestamp;
-    const progress = Math.min((timestamp - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3); /* ease out cubic */
-    el.textContent = Math.floor(eased * target) + suffix;
-    if (progress < 1) requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
+    el.textContent = p>=1 ? final : out;
+    if(p<1) requestAnimationFrame(tick);
+  })(performance.now());
 }
 
-const statsObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const nums = entry.target.querySelectorAll('.stat-num');
-      const data = [
-        { target: 7,   suffix: '+' },
-        { target: 2,   suffix: ''  },
-        { target: 290, suffix: ' mil+' },
-        { target: 300, suffix: '+' },
-      ];
-      nums.forEach((el, i) => {
-        if (data[i]) animateCounter(el, data[i].target, data[i].suffix);
-      });
-      statsObserver.unobserve(entry.target);
-    }
+/* ── Anel de progresso do card de destaque ── */
+function drawRing(){
+  const rb=$('#ringbar'); if(!rb) return;
+  rb.style.transition=REDUCED?'none':'stroke-dashoffset 1.8s .5s cubic-bezier(.16,1,.3,1)';
+  rb.style.strokeDashoffset=0;
+}
+
+/* ── Entrada em cascata ao rolar ── */
+/* cards de projeto entram em pares (coluna 0 e 1) */
+$$('.project-card').forEach((c,i)=>c.style.setProperty('--i',i%2));
+const lifts=new Set($$('.lift'));
+/* navegador sem IntersectionObserver: mostra tudo de uma vez */
+if(!('IntersectionObserver' in window)){
+  window.IntersectionObserver=class{constructor(cb){this.cb=cb}observe(el){this.cb([{isIntersecting:true,target:el}])}unobserve(){}};
+}
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(!en.isIntersecting) return;
+    const el=en.target; io.unobserve(el);
+    el.classList.add('visible');
+    $$('[data-to]',el).forEach((n,k)=>rollNumber(n,300+k*70));
+    const i=parseFloat(getComputedStyle(el).getPropertyValue('--i'))||0;
+    /* depois de entrar, tira o atraso para o hover responder na hora */
+    setTimeout(()=>el.classList.add('settled'), REDUCED?0:900+i*75);
   });
-}, { threshold: 0.5 });
+},{threshold:0.12, rootMargin:'0px 0px -6% 0px'});
+const observarTudo=()=>$$('.rise, .reveal, .reveal-left, .reveal-right, .project-card').forEach(el=>io.observe(el));
+lifts.forEach(el=>{ if(!el.matches('.rise, .reveal, .reveal-left, .reveal-right, .project-card')) el.classList.add('settled'); });
 
-const statsEl = document.querySelector('.hero-stats');
-if (statsEl) statsObserver.observe(statsEl);
+/* pílulas da stack aparecem uma a uma com efeito de mola */
+const pio=new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(!en.isIntersecting) return;
+    const g=en.target; pio.unobserve(g);
+    $$('.tech-pill',g).forEach((p,i)=>p.style.setProperty('--i',i));
+    g.classList.add('in');
+    setTimeout(()=>g.classList.add('settled'), REDUCED?0:1200);
+  });
+},{threshold:0.2});
+const observarPills=()=>$$('.stack-pills').forEach(g=>pio.observe(g));
 
+/* ── Brilho do vidro acompanhando o mouse ── */
+document.addEventListener('pointermove',e=>{
+  const g=e.target.closest && e.target.closest('.glass'); if(!g) return;
+  const r=g.getBoundingClientRect();
+  g.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
+  g.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
+},{passive:true});
+
+/* ── Abertura: splash → página ── */
+function start(){
+  document.body.classList.add('ready');
+  $('#splash').classList.add('out');
+  pill.style.transition='none'; movePill(current); void pill.offsetWidth; pill.style.transition='';
+  spy(); drawRing(); observarTudo(); observarPills();
+}
+setTimeout(start, REDUCED?0:1300);
+})();
 </script>
 </body>
 </html>
